@@ -43,5 +43,6 @@ x = int(input().strip())
 ```
 x = list(map(int, input().strip.split())  
 ```
+>Made some changes
 
 
