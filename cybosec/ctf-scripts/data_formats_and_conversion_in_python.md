@@ -41,3 +41,7 @@ int(123,8)
 x = '414243'
  ''.join([chr((int(x[i]+x[i+1],16))) for i in range(0,len(x),2)])
 ```
+## Convert string to hex bytes
+```
+'abcd'.encode().hex()
+```
