@@ -8,7 +8,7 @@
 set <key> <value>
 // Example 
 set name ram
-set age 10Redis (/ˈrɛdɪs/;[7][8] Remote Dictionary Server)[7] is a source-available, in-memory storage, used as a distributed, in-memory key–value database, cache and message broker, with optional durability.[
+set age 10
 ```
 
 ### Getting the value
