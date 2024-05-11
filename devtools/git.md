@@ -70,4 +70,6 @@ git branch -vv
 ```
 git branch --set-upstream-to=origin/remote-feature-branch your-local-branch
 ```
-
+### Edit last commit message (before any change has been made)
+```git commit --amend
+```
