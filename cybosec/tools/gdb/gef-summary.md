@@ -58,7 +58,7 @@ address: 0x(4 bytes) 0x(4 bytes) 0x(4 bytes) 0x(4 bytes) => total 16 bytes
 address+10: ...
 ```
 
-![](/home/sudoerson/myDigiNotes/cybosec/tools/gdb/images/2.png)
+![](./images/2.png)
 
 ### Stack Frame Structure
 
