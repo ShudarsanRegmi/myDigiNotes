@@ -11,7 +11,7 @@ Motion can animate:
 
 
 
-When animating to a non-animatable value like `"block"`, this value will be set instantly. By setting this value within `transitionEnd`, this value will be set at the end of the animation.
+When animating to a non-animateable value like `"block"`, this value will be set instantly. By setting this value within `transitionEnd`, this value will be set at the end of the animation.
 
 ```jsx
 <motion.div
