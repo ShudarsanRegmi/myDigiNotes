@@ -77,3 +77,6 @@ a[0 if condition1 else 1 if condition2 else 2]
 arr = [0]*10
 ```
 
+### Reversing a String
+```python
+"string"[::-1]
