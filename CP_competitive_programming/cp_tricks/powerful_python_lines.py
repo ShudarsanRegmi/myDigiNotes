@@ -80,3 +80,14 @@ arr = [0]*10
 ### Reversing a String
 ```python
 "string"[::-1]
+```
+
+### breaking out of two loops directly in nested loop
+```python
+try:
+  for i in a:
+    for j in b:
+      raise breakLoop
+except breakLooop:
+  # code to execute after breakloop
+  ```
