@@ -169,3 +169,9 @@ In Kotlin, it's possible to have a `null` value. To help prevent issues with `nu
 
 `?:` is the Elvis operator, providing a default value if the expression on the left is null.
 
+
+
+### Some important points
+
+- Parameters in Kotlin are immutable
+- 
