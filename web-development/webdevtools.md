@@ -1,19 +1,27 @@
-#  Useful tools for making web development easy
+# Useful Tools for Making Web Development Easy
 
-  webcode.tools --> use to interactively control various css properties
-  https://www.hover.dev/ --> Animated componnet library for react
-  https://devicon.dev/ --> Programming Languages / Frameworks Best Icons
-  https://icons8.com/icons/set/mail --> Icons library
+## Web Development Tools
 
-  # Best React UI component libraries
-  [] Material UI
-  [] Chakra UI
-  [] Ant Design
-  [] Next UI
+- **[Webcode Tools](https://webcode.tools)**: Interactively control various CSS properties.
+- **[Hover.dev](https://www.hover.dev/)**: Animated component library for React.
+- **[Devicon](https://devicon.dev/)**: Best icons for programming languages and frameworks.
+- **[Icons8](https://icons8.com/icons/set/mail)**: Comprehensive icon library.
 
-  # React animation Library
-  [] framer-motion
+## Best React UI Component Libraries
 
+- Material UI
+- Chakra UI
+- Ant Design
+- Next UI
 
-  # Prebuilt react component libraries
-  [] hover.dev
+## React Animation Library
+
+- framer-motion
+
+## Prebuilt React Component Libraries
+
+- Hover.dev
+
+## Regular Expression Visualizer
+
+- **[Regex Tester](https://extendsclass.com/regex-tester.html)**
