@@ -171,7 +171,18 @@ In Kotlin, it's possible to have a `null` value. To help prevent issues with `nu
 
 
 
+### Some Important Plugins
+
+- coil for using network images(take internet permission in manifest file)
+
 ### Some important points
 
 - Parameters in Kotlin are immutable
-- 
+
+- The annotation must be used on a composable function that does not take in parameters. For this reason, you can't preview the `MessageCard` function directly. Instead, make a second function named `PreviewMessageCard`
+
+- Material Design is built around three pillars: `Color`, `Typography`, and `Shape`.
+
+- `ctrl+click` to find the properties of ui components
+
+  
