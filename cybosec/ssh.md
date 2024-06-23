@@ -32,7 +32,7 @@ After establishing the SSH tunnel, you can connect to the remote database as if 
 ```bash
 mysql -h 127.0.0.1 -P 3307 -u dbuser -p
 ```
-![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
+![image](https://github.com/ShudIn local port forwarding, the forwarding starts from the local machine, and in remote port forwarding, the forwarding starts from the remote machine.arsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
 Local Port Forwarding
 
 ** This technique can be used to**
@@ -47,16 +47,18 @@ Local Port Forwarding
   ssh -L 5001:api.example.com:5000 user@bastion.example.com
 ```
 Traffic sent to localhost:5001 on your local machine is forwarded through the SSH connection to api.example.com:5000. Hence the name local port forwarding.
+**Local Port Forwarding**
 ```
 +------------------+                      +------------------+                      +------------------+
 | Local Machine    |                      | SSH Server       |                      | Remote Host      |
 | (Your Computer)  |                      | (bastion.example)|                      | (api.example.com)|
-|------------------|                      |------------------|                      |------------------|
+|------------------|            In local port forwarding, the forwarding starts from the local machine, and in remote port forwarding, the forwarding starts from the remote machine.          |------------------|                      |------------------|
 | localhost:5001 --|---- SSH Tunnel ----> |                  |---- Forward ---->    | port 5000        |
 |                  |                      |                  |                      |                  |
 +------------------+                      +------------------+                      +------------------+
 ```
 
+**Remote Port Forwarding**
 ```
 +------------------+                      +------------------+                      +------------------+
 | Local Machine    |                      | SSH Server       |                      | Remote Host      |
@@ -67,3 +69,15 @@ Traffic sent to localhost:5001 on your local machine is forwarded through the SS
 +------------------+                      +------------------+                      +------------------+
 ```
 
+In local port forwarding, the forwarding starts from the local machine, and in remote port forwarding, the forwarding starts from the remote machine.
+
+
+## Remote Port Forwarding
+
+**Traffic sent to bastion.example.com:5000 is forwarded through the SSH connection to localhost:3000 on your local machine.**
+```bash
+ssh -R 5000:localhost:3000 user@bastion.example.com
+```
+
+Usecase: 
+If you've a server that is publicly exposed you can use that server to make your local service accessible to the internet. 
