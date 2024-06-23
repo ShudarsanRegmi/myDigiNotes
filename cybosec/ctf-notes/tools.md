@@ -4,3 +4,5 @@ https://infosecwriteups.com/use-these-cheatsheets-to-increase-your-ctf-speed-ca1
 https://github.com/Rajchowdhury420/CTF-CheatSheet
 
 
+# Forensics tool
+- rifiuti2 --> Windows recycle bin analysis tool
