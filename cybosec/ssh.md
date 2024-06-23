@@ -82,3 +82,34 @@ ssh -R 5000:localhost:3000 user@bastion.example.com
 
 Usecase: 
 If you've a server that is publicly exposed you can use that server to make your local service accessible to the internet. 
+
+### Using SSH tunnel for socks proxy
+```bash
+ ssh -D 1337 -q -C -N user@ma.ttias.be
+# -D = used to create socks proxy -q = Quiet, -C = Compress -N = Do not execute remote commands
+```
+
+### Generating ssh public/private key pairs with ssh-keygen
+**ssh-keygen** is an openssh key utility
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "email@gmail.com"
+# -t -> key type( RSA default) 
+```
+- ssh-keygen can create keys for use by SSH protocol version 2.
+- ssh-keygen is also used to generate groups for use in Diffie-Hellman group exchange (DH-GEX).
+- ssh-keygen will by default write keys in an OpenSSH-specific format
+- 
+
+
+## ssh-copy-id
+ssh-copy-id is a handy utility for securely installing SSH keys(public key) on remote servers. It simplifies the process of adding your SSH public key to a remote server's authorized_keys file, allowing you to authenticate without needing to enter a password each time you connect via SSH.
+
+```bash
+ssh-copy-id -i ~/.ssh/my_key.pub user@remote-server
+```
+
+
+
+### Material to read later
+[Differences between known_hosts and authorized_keys file](https://security.stackexchange.com/questions/20706/what-is-the-difference-between-authorized-keys-and-known-hosts-file-for-ssh/20710#20710)
