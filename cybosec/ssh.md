@@ -32,7 +32,8 @@ After establishing the SSH tunnel, you can connect to the remote database as if 
 ```bash
 mysql -h 127.0.0.1 -P 3307 -u dbuser -p
 ```
-![image](https://github.com/ShudIn local port forwarding, the forwarding starts from the local machine, and in remote port forwarding, the forwarding starts from the remote machine.arsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
+dIn local port forwarding, the forwarding starts from the local machine, and in remote port forwarding, the forwarding starts from the remote machine.arsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
 Local Port Forwarding
 
 ** This technique can be used to**
