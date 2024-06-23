@@ -33,5 +33,37 @@ After establishing the SSH tunnel, you can connect to the remote database as if 
 mysql -h 127.0.0.1 -P 3307 -u dbuser -p
 ```
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
+Local Port Forwarding
 
+** This technique can be used to**
+- Accessing internal api
+- Accessing web application that is only accessible to local network
+- Accessing the remote databse
+
+  ### Local Port Forwarding Vs. Remote Port Forwarding
+  **Local port forwarding** allows you to forward a port from your local machine (the client) to a port on a remote machine through an SSH connection.
+
+```bash
+  ssh -L 5001:api.example.com:5000 user@bastion.example.com
+```
+Traffic sent to localhost:5001 on your local machine is forwarded through the SSH connection to api.example.com:5000. Hence the name local port forwarding.
+```
++------------------+                      +------------------+                      +------------------+
+| Local Machine    |                      | SSH Server       |                      | Remote Host      |
+| (Your Computer)  |                      | (bastion.example)|                      | (api.example.com)|
+|------------------|                      |------------------|                      |------------------|
+| localhost:5001 --|---- SSH Tunnel ----> |                  |---- Forward ---->    | port 5000        |
+|                  |                      |                  |                      |                  |
++------------------+                      +------------------+                      +------------------+
+```
+
+```
++------------------+                      +------------------+                      +------------------+
+| Local Machine    |                      | SSH Server       |                      | Remote Host      |
+| (Your Computer)  |                      | (bastion.example)|                      | (your machine)   |
+|------------------|                      |------------------|                      |------------------|
+|                  |<--- Forward <--------| Remote:5000      |<---- SSH Tunnel ----| localhost:3000   |
+|                  |                      |                  |                      |                  |
++------------------+                      +------------------+                      +------------------+
+```
 
