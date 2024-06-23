@@ -32,4 +32,6 @@ After establishing the SSH tunnel, you can connect to the remote database as if 
 ```bash
 mysql -h 127.0.0.1 -P 3307 -u dbuser -p
 ```
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/9e86fbdc-2df4-468a-b820-97a6821d420c)
+
 
