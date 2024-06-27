@@ -71,7 +71,21 @@ df.head(10) # Fetches the first 10 rows
 df.tail() # Fetches the last 5 rows
 df.info() # display the information about the data
 
+# Manipulating Data
+
+### Accessing a specific row
+```python
+df.loc[column_no]
 ```
+### Dropping Few columns from top
+```python
+mdf = df.iloc[column_no:]
+```
+### Deleting specific column_no from last
+```python
+d.iloc[:,:22]
+```
+
 
 # Data Cleaning
 >Data cleaning means removing bad data(empty cells, data in wrong format, wrong data, duplicates) from the data frame
