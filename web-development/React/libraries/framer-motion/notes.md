@@ -110,7 +110,49 @@ const variants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0 },
 }
-<motion.div variants={variants} />
+<motion.div inital="hidden" animate="visible" variants={variants} />
 
 ```
 
+- By default, Framer Motion transitions between these states smoothly. If you want to control how the animation transitions between `visible` and `hidden`, you can use additional properties such as `transition` within each state object or define global `transition` properties at the `motion.div` level.
+- When you apply `variants={variants}` to a `motion.div`, it means that the `motion.div` component will animate between the `visible` and `hidden` states based on the animation controls (like `initial`, `animate`, etc.) provided.
+
+### More sophisticated Example
+
+```jsx
+import { motion } from 'framer-motion';
+
+// Define variants for different states
+const variants = {
+  initial: { opacity: 0, scale: 0 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+  hover: { scale: 1.2 },
+  hidden: { opacity: 0, scale: 0 },
+};
+
+const SophisticatedAnimationExample = () => {
+  const [currentState, setCurrentState] = useState('initial');
+
+  const handleClick = () => {
+    setCurrentState(currentState === 'hidden' ? 'initial' : 'hidden');
+  };
+
+  return (
+    <motion.div
+      className="box"
+      variants={variants}
+      initial="initial"
+      animate={currentState}
+      whileHover="hover"
+      onClick={handleClick}
+    >
+      Hover over me and click to see animations!
+    </motion.div>
+  );
+};
+
+export default SophisticatedAnimationExample;
+```
+
+- **Propagation of animaton** : **Parent-Child Relationship**: In Framer Motion, animation properties defined on a parent (`<motion.ul>` in the the main example) can propagate to its children (`<motion.li>` items) if specific animation controls are not overridden at the child level.
+- 
