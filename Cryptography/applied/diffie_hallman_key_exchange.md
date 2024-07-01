@@ -52,5 +52,4 @@ print(shared_key_alice == shared_key_bob)  # Should be True
   ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/638b5087-e10f-4919-9c7c-0b23dc753198)
 
 ### How it worked?
-
-![1719851381241](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/99997e34-eecb-4f3a-bf1a-e73bd52c29c6)
+ will upload
