@@ -5,3 +5,13 @@
 (select city,length(city) from STATION order by length(city), city asc) union (select city,length(city) from STATION order by
  length(city) desc, city asc);
 ```
+
+### fetch all cities whose name starts with vowel
+
+```sql
+SELECT CITY from STATION WHERE city like "a%" or city like "e%" or city like "i%" or city like "o%" or city like "u%";
+```
+### Fetch distinct cities whose name ends with vowels
+```sql
+SELECT DISTINCT CITY from STATION WHERE city like "%a" or city like "%e" or city like "%i" or city like "%o" or city like "%u";
+```
