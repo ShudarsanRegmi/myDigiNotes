@@ -141,5 +141,44 @@ set from = "yourusername@gmail.com"
 set use_from = yes
 ```
 
+### For web mail interface
+```bash
+sudo apt-get install roundcube roundcube-core roundcube-mysql roundcube-plugins
+```
+
+### SPAM filter service
+```bash
+sudo apt-get install spamassassin
+sudo systemctl enable spamassassin
+sudo systemctl start spamassassin
+```
+### Intalling mailutils
+```bash
+sudo apt-get install mailutils
+```
+### Free email client
+ A lightweight and user-friendly email client developed by the GNOME project.
+
+```bash
+sudo apt install geary
+sudo apt install evolution
+```
+### Configuring host
+```bash
+sudo hostnamectl set-hostname domainn.com
+```
+
+### Reconfiguring postfix
+```bash
+sudo dpkg-reconfigure
+```
+### Postfix configuraiton that changes the email storing format to Maildir
+```conf
+#/etc/postfix/main.cf
+home_mailbox= Maildir/
+```
+
+[Dovecot configuration guide](https://ubuntu.com/server/docs/install-and-configure-dovecot)
+
 
 
