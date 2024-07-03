@@ -31,3 +31,6 @@
 ### DES Decryption
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/3d8858e7-722a-420b-85f5-1824ee7a5d54)
 
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/7e801aaa-4835-48b8-8632-3e42e12fdd66)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/f9a78e29-32c0-40e6-b1f9-273f786091e7)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/1510da5b-a833-49b4-bd97-b822bc3b03e3)
