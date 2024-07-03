@@ -141,5 +141,61 @@ set from = "yourusername@gmail.com"
 set use_from = yes
 ```
 
+### For web mail interface
+```bash
+sudo apt-get install roundcube roundcube-core roundcube-mysql roundcube-plugins
+```
+
+### SPAM filter service
+```bash
+sudo apt-get install spamassassin
+sudo systemctl enable spamassassin
+sudo systemctl start spamassassin
+```
+### Intalling mailutils
+```bash
+sudo apt-get install mailutils
+```
+### Free email client
+ A lightweight and user-friendly email client developed by the GNOME project.
+
+```bash
+sudo apt install geary
+sudo apt install evolution
+```
+### Configuring host
+```bash
+sudo hostnamectl set-hostname domainn.com
+```
+
+### Reconfiguring postfix
+```bash
+sudo dpkg-reconfigure
+```
+### Postfix configuraiton that changes the email storing format to Maildir
+```conf
+#/etc/postfix/main.cf
+home_mailbox= Maildir/
+```
+### Testing PoP3 Server
+```bash
+telnet your-pop3-server-domain-or-ip 110
++OK Hello there
+USER your-username
+PASS your-password
+LIST
+# Retriving messages
+RETR message-number
+# Deleting messages
+DELE message-number
+QUIT
+```
+>OpenDKIM (Open DomainKeys Identified Mail) is an open-source implementation of the DKIM (DomainKeys Identified Mail) standard. DKIM is a method for validating the authenticity of email messages. It works by adding a digital signature to the header of outgoing emails, which can then be verified by the recipient's email server to confirm that the message was sent from an authorized sender and that it has not been tampered with during transit.
+
+
+## References
+[Dovecot configuration guide](https://ubuntu.com/server/docs/install-and-configure-dovecot)
+[Video resource](https://www.youtube.com/watch?v=6SfXXtb-nHM)
+
 
 
