@@ -16,5 +16,18 @@
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/8c1084d7-a2ac-4559-b97b-5350ccd9f3b1)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/7804d2d3-3271-4f1f-a30e-834a0adf53b2)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/3c3fb42b-42d1-4d91-839e-43a1adb51110)
-![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/e07cd909-e93a-44e4-a614-f1865e2377df)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/62728df9-0e13-457f-a295-89270eff7a22)
+
+
+### F functions
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/8ed721f6-3114-4de4-91c1-6844a99e8351)
+
+### S box
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/152d906c-dbde-44bc-8014-52a2b77bb7ae)
+
+ ### Permutation
+ ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/dad6e43a-b80d-403c-8b81-0317e20d024c)
+
+### DES Decryption
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/3d8858e7-722a-420b-85f5-1824ee7a5d54)
 
