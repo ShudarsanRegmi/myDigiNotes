@@ -52,3 +52,4 @@ Certainly! Here's a concise list of commonly used regular expression components:
 - Email Validation: `^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$`
 - Phone Number: `^\+?[0-9]{1,3}?[-. ]?\(?[0-9]{1,4}?\)?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}$`
 - URL: `^(https?|ftp)://[^\s/$.?#].[^\s]*$`
+- o
