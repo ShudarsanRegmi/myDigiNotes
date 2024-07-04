@@ -4,6 +4,12 @@
 ```cpp
 std::cout << "print string" << std::endl;
 ```
+### Installing cppman for accessing man pages in Linux
+```bash
+pip install cppman
+cppman -c # update the database
+xdg-open https://en.cppreference.com/w/ # reference website
+```
 
 ### Data Types
 - Int -> 2 or 4 bytes
@@ -46,5 +52,20 @@ int main() {
     return 0;
 }
 ```
+
+### Strings
+```cpp
+/* str is an object
+.length() -> returns the length
+*/
+```
+
+## OOP
+
+### Important points
+- In C++, using `this->` is necessary when there is a naming conflict between a member variable and a parameter or local variable; otherwise, it is optional and can be omitted for cleaner and more readable code.
+
+- .\ASE computer lab
+- Amma123
 
 
