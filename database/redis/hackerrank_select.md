@@ -15,3 +15,9 @@ SELECT CITY from STATION WHERE city like "a%" or city like "e%" or city like "i%
 ```sql
 SELECT DISTINCT CITY from STATION WHERE city like "%a" or city like "%e" or city like "%i" or city like "%o" or city like "%u";
 ```
+### Fetch distinct cities which starts and ends with vowels
+```sql
+SELECT DISTINCT CITY 
+FROM STATION 
+WHERE CITY REGEXP '^[aeiouAEIOU].*[aeiouAEIOU]$';
+```
