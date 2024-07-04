@@ -41,5 +41,7 @@ SELECT * FROM my_table WHERE my_column % 2 <> 0;
 ## Some Points for further studying
 **union all** vs. **union** => `union all` includes all duplicate fetches while `union` doesn't
 
+## 
+
 ## Important Notes
 - White space matters or not depends upon the configuration. (Ref)[https://stackoverflow.com/questions/2501704/does-sql-standard-allows-whitespace-between-function-names-and-parenthesis]
