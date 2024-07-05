@@ -18,6 +18,20 @@ SELECT DISTINCT CITY FROM STATION WHERE MOD(ID,2) = 0;
 - % represents zero, one or multiple characters
 - _ only one single character
 
+### Having Caluse
+Having caluse was added to sql because where keyword cannot be used with aggregate functions
+```sql
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+```
+
+### Aggregate functions
+An aggregate function is a function that performs a calculation on a set of values, and returns a single value.
+Example: min(), max(), avg(), count(), sum(), etc.
 
 ## Some Real Usecases
 
@@ -32,6 +46,7 @@ SELECT * FROM my_table WHERE MOD(my_column, 2) <> 0;
 SELECT * FROM my_table WHERE my_column % 2 = 0;
 SELECT * FROM my_table WHERE my_column % 2 <> 0;
 ```
+
 
 
 ## Functions
