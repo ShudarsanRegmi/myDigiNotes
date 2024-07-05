@@ -17,3 +17,8 @@ select teacher_id, count(distinct subject_id) as cnt from Teacher group by teach
 ```sql
 select event_day as day, emp_id, sum(out_time-in_time) as total_time from Employees group by event_day,emp_id;
 ```
+### 175. Combine Two Tables: Easy
+```sql
+select Person.firstName, Person.lastName, Address.city, Address.state from Person left join Address on Person.personId=Address.personId;
+```
+# I'll learn subqueries now onwards
