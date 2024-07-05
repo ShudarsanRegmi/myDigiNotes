@@ -13,6 +13,7 @@ select product_id from Products where low_fats='Y' and recyclable='Y';
 ```sql
 select teacher_id, count(distinct subject_id) as cnt from Teacher group by teacher_id;
 ```
-1693
-2356
-1741
+### 1741. Find Total Time Spent by Each Employee: Easy
+```sql
+select event_day as day, emp_id, sum(out_time-in_time) as total_time from Employees group by event_day,emp_id;
+```
