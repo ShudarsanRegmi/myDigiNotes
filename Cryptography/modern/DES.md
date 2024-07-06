@@ -36,7 +36,6 @@
  ### Fiestatl Function
  ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/893d1e1b-6e61-4e42-a756-194478ed015c)
 
-
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/8c1084d7-a2ac-4559-b97b-5350ccd9f3b1)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/7804d2d3-3271-4f1f-a30e-834a0adf53b2)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/3c3fb42b-42d1-4d91-839e-43a1adb51110)
@@ -58,6 +57,15 @@
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/7e801aaa-4835-48b8-8632-3e42e12fdd66)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/f9a78e29-32c0-40e6-b1f9-273f786091e7)
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/1510da5b-a833-49b4-bd97-b822bc3b03e3)
+
+
+## My Notes
+### Overall algorithm
+![DocScanner 06-Jul-2024 11-18 am_1](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/1af436aa-29a3-4a16-9312-0f65487e4f68)
+
+### Round function
+![DocScanner 06-Jul-2024 11-18 am_2](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/6f8ad3f4-bf5c-467f-aa15-ef2d061eacea)
+
 
 ### Security And Cryptanalysis
 Although more information has been published on the cryptanalysis of DES than any other block cipher, the most practical attack to date is still a brute-force approach. Various minor cryptanalytic properties are known, and three theoretical attacks are possible which, while having a theoretical complexity less than a brute-force attack, require an unrealistic number of known or chosen plaintexts to carry out, and are not a concern in practice.
