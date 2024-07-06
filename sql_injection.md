@@ -65,6 +65,10 @@ SQLite
  ```sql
 SELECT a, b FROM table1 UNION SELECT c, d FROM table2
 ```
+## Testing with SQLMap
+```bash
+sqlmap -u <url> --foorms
+```
 
 ## Finding Database structure in mysql
 
@@ -76,6 +80,8 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = 'databasen
 ```sql
 SELECT table_name, column_name FROM information_schema.columns WHERE table_name = 'tablename'
 ```
+
+
 
 
 # References
