@@ -65,6 +65,7 @@
 
 ### Round function
 ![DocScanner 06-Jul-2024 11-18 am_2](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/6f8ad3f4-bf5c-467f-aa15-ef2d061eacea)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/c795d8ba-44db-4523-bf9d-d29866d6361b)
 
 
 ### Security And Cryptanalysis
