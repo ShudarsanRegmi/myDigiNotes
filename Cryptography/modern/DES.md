@@ -64,9 +64,7 @@
 ![DocScanner 06-Jul-2024 11-18 am_1](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/1af436aa-29a3-4a16-9312-0f65487e4f68)
 
 ### Round function
-![DocScanner 06-Jul-2024 11-18 am_2](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/6f8ad3f4-bf5c-467f-aa15-ef2d061eacea)
-![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/c795d8ba-44db-4523-bf9d-d29866d6361b)
-
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/de8f3596-d9b1-44fe-87ee-abc19aa5f10d)
 
 ### Security And Cryptanalysis
 Although more information has been published on the cryptanalysis of DES than any other block cipher, the most practical attack to date is still a brute-force approach. Various minor cryptanalytic properties are known, and three theoretical attacks are possible which, while having a theoretical complexity less than a brute-force attack, require an unrealistic number of known or chosen plaintexts to carry out, and are not a concern in practice.
