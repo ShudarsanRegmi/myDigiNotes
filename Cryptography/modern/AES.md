@@ -9,8 +9,9 @@
 ## Description of the cipher
 - AES is based on a design principle known as a substitution–permutation network, and is efficient in both software and hardware.
 - AES operates on a 4 × 4 column-major order array of 16 bytes b0, b1, ..., b15 termed the state.
-  ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/ba19b198-590c-4b4a-be7c-01ee32062a71)
-The key size used for an AES cipher specifies the number of transformation rounds that convert the input, called the plaintext, into the final output, called the ciphertext. The number of rounds are as follows:
+- ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/f7bff3fb-bf3c-49b8-9304-8317346a13e1)
+- 
+- The key size used for an AES cipher specifies the number of transformation rounds that convert the input, called the plaintext, into the final output, called the ciphertext. The number of rounds are as follows:
   - 10 rounds for 128-bit keys.
   - 12 rounds for 192-bit keys.
   - 14 rounds for 256-bit keys
