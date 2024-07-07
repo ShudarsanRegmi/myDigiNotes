@@ -1,5 +1,19 @@
 # Postgres Database Notes
 
+## Connecting to database server
+
+### Connecting from local machine
+```bash
+psql -U username
+```
+
+### Connecting to a remote server
+```bash
+psql -h hostname -U username -d database_name
+```
+
+
+
 ### Connecting to a database
 ```postgres
 \c <db_name>
