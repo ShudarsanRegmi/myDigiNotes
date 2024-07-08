@@ -58,5 +58,18 @@ SELECT * FROM my_table WHERE my_column % 2 <> 0;
 
 ## 
 
+## JOIn
+Used to join two tables
+- Inner Join
+- Outer Join
+  - Left Join
+  - Right Join
+  - Full Outer Join
+
+JOIN = INNER JOIN
+
+Left Join = Inner Join + unmatching rows in left column
+Right join = Outer Join + unmatching rows in right column
+
 ## Important Notes
 - White space matters or not depends upon the configuration. (Ref)[https://stackoverflow.com/questions/2501704/does-sql-standard-allows-whitespace-between-function-names-and-parenthesis]
