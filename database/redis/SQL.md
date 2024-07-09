@@ -71,5 +71,13 @@ JOIN = INNER JOIN
 Left Join = Inner Join + unmatching rows in left column
 Right join = Outer Join + unmatching rows in right column
 
+
+### Lab questions
+
+21. select Customer, Order_date, max(purch_amt) from Orders group by customers, Order_date;
+22.select *,max(Purch_amt) from Orders where  Order_date='2016-8-17' group by Salesman_id having Salesman_id is not null;
+23. select  Customer_id, max(Purch_amt) Order_date from Orders group by Customer_id having Purch_amt>=2000;
+ 
+
 ## Important Notes
 - White space matters or not depends upon the configuration. (Ref)[https://stackoverflow.com/questions/2501704/does-sql-standard-allows-whitespace-between-function-names-and-parenthesis]
