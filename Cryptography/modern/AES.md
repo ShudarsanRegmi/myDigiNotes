@@ -58,3 +58,5 @@ In the AddRoundKey step, the subkey is combined with the state. For each round, 
 ## AES S-box
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/a5fc0335-236c-44bf-bc5f-7c8c6a8123e3)
 
+## Other reading materials
+- https://braincoke.fr/blog/2020/08/the-aes-key-schedule-explained/#conclusion
