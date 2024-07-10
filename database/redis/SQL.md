@@ -77,6 +77,7 @@ Right join = Outer Join + unmatching rows in right column
 21. select Customer, Order_date, max(purch_amt) from Orders group by customers, Order_date;
 22.select *,max(Purch_amt) from Orders where  Order_date='2016-8-17' group by Salesman_id having Salesman_id is not null;
 23. select  Customer_id, max(Purch_amt) Order_date from Orders group by Customer_id having Purch_amt>=2000;
+24. select count(Order_date) from Orders where Order_date='17-08-2012';
  
 
 ## Important Notes
