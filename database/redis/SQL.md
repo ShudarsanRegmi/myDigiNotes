@@ -58,7 +58,18 @@ SELECT * FROM my_table WHERE my_column % 2 <> 0;
 
 ## 
 
-## JOIn
+## Group By Clause Working
+The SQL engine processes a query with a GROUP BY clause by first parsing and checking the syntax of the query. It then identifies the columns specified for grouping and scans the table to collect the values of these columns. Rows with identical values in the specified columns are grouped together. If aggregate functions are present, the engine computes these functions for each group. Any HAVING clause is then applied to filter the groups based on specified conditions. Finally, the engine generates and returns the result set, which includes one row per group and any computed aggregate values
+
+Without aggregate function group by clause can be used as below. But using aggregate function is its most common use case.
+
+```sql
+SELECT Department
+FROM Employees
+GROUP BY Department;
+```
+
+## JOIN Statements
 Used to join two tables
 - Inner Join
 - Outer Join
@@ -75,7 +86,8 @@ Right join = Outer Join + unmatching rows in right column
 ### Lab questions
 
 21. select Customer, Order_date, max(purch_amt) from Orders group by customers, Order_date;
-22.select *,max(Purch_amt) from Orders where  Order_date='2016-8-17' group by Salesman_id having Salesman_id is not null;
+22.select max(Purch_amt) from Orders where  Order_date='2016-8-17' group by Salesman_id having Salesman_id is not null;
+select max(Purch_amt) from Orders group by Salesman_id having Order_date='';
 23. select  Customer_id, max(Purch_amt) Order_date from Orders group by Customer_id having Purch_amt>=2000;
 24. select count(Order_date) from Orders where Order_date='17-08-2012';
  
