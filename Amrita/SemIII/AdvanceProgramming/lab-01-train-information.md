@@ -129,7 +129,7 @@ details.
             margin: 20px;
             color: #333;
         }
-        .booking-form table {
+        .booking-form table {Homepage
             margin: auto;
         }
         .booking-form input[type="text"],
@@ -205,7 +205,7 @@ details.
 </body>
 </html>
 ```
-![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/44ef5191-e643-42ae-bfb2-402e6796b89f)
+![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/ed5c9545-7845-4213-8d77-dad0ff4610a8)
 
 ## Train Information Page
 ```html
