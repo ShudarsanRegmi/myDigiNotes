@@ -21,4 +21,22 @@ select event_day as day, emp_id, sum(out_time-in_time) as total_time from Employ
 ```sql
 select Person.firstName, Person.lastName, Address.city, Address.state from Person left join Address on Person.personId=Address.personId;
 ```
+### 1587. Account Summamry: Easy :Rev
+```sql
+ select u.name as NAME,sum(t.amount) as BALANCE
+from Users u inner join Transactions t on u.account=t.account group by u.account having BALANCE>=10000;
+```
+### 1068. Product Sales Analysis :Easy :conf in left or inner join
+```sql
+select p.product_name, s.year, s.price
+from Sales s inner join Product p on s.product_id=p.product_id;
+```
+
+### 577. Employee Bonus :Easy
+```sql
+select e.name, b.bonus
+from
+employee e left join bonus b on e.empId=b.empId having b.bonus<1000 or b.bonus is null;
+```
+
 # I'll learn subqueries now onwards
