@@ -64,6 +64,7 @@ int main() {
 
 ### Important points
 - In C++, using `this->` is necessary when there is a naming conflict between a member variable and a parameter or local variable; otherwise, it is optional and can be omitted for cleaner and more readable code.
+- Don't use `()` when you're not passing anything to constructor.
 
 
 
