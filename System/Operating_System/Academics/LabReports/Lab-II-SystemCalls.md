@@ -52,4 +52,91 @@ int main() {
 	}
 }
 ```
+### Code and Output
 ![image](https://github.com/user-attachments/assets/92bbe517-b4f5-4a46-b50b-0416c2fadc86)
+
+## 4. 05. To write a program to calculate number of times a message is printed using fork() system and apply AND command .
+05. To write a program to calculate number of times a message is printed using fork() system and apply AND command .
+
+```C
+
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+	if ( fork() && fork() ) {
+		printf("%d True\n", getpid());
+	}else {
+		printf("%d False\n", getpid());
+	}
+}
+```
+
+### Code and Output
+![image](https://github.com/user-attachments/assets/5c8ee6b9-51c7-47d0-b920-7f6a1a305fa6)
+
+## 5. execv system call 
+```C
+#include <stdio.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+printf("PID of this main program = %d\n", getpid());
+char *args[] = {"Hello","C","Programming",NULL};
+execv("./anotherProg",args);
+printf("Back to 9.c");
+return 0;
+}
+```
+
+![image](https://github.com/user-attachments/assets/1a8e9bc9-fe34-4e50-8f96-2143899513d0)
+
+## 6. 
+```C
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/wait.h>
+
+int main()
+{
+if(fork() == 0)
+printf("hello from child\n");
+else
+{
+printf("hello from parent\n");
+wait(NULL);
+printf("child has terminated\n");
+}
+printf("Hi\n");
+return 0;
+}
+```
+### Output
+![image](https://github.com/user-attachments/assets/fb8cf79c-5c3e-46c5-a4aa-bc9d94ce83d9)
+
+### 7. Sleep system call
+```C
+#include <stdio.h>
+#include <unistd.h>
+
+int main()
+{
+fork();
+if(fork() == 0)
+{
+sleep(5);
+printf("This will finish after the parent\n");
+}
+else
+printf("This will finish below the child\n");
+return 0;
+}
+
+```
+![image](https://github.com/user-attachments/assets/0f3cad73-eb3e-49d0-aaf0-bab274d6f8c9)
+
+### 8. 
+
+
+
