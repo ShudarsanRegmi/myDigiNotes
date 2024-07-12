@@ -90,7 +90,20 @@ Right join = Outer Join + unmatching rows in right column
 22. select max(Purch_amt) from Orders group by Salesman_id having Order_date=''; ( doubt) 
 23. select  Customer_id, max(Purch_amt) Order_date from Orders group by Customer_id having Purch_amt>=2000;
 24. select count(Order_date) from Orders where Order_date='17-08-2012';
- 
+
+
+## Questions given
+```sql
+# Fetch all the employees names, their department names, their managers named and the project they worked on.
+```
+```sql
+select e.emp_name,d.dept_name,m.manager_name,p.project_name
+from [employee e left join department d on e.dept_id=d.dept_id]
+join manager m on e.m_id=m.m_id
+join project p on p.team_member_id=e.emp_id;
+```
+
+- If there is no common attribute
 
 ## Important Notes
 - White space matters or not depends upon the configuration. (Ref)[https://stackoverflow.com/questions/2501704/does-sql-standard-allows-whitespace-between-function-names-and-parenthesis]
