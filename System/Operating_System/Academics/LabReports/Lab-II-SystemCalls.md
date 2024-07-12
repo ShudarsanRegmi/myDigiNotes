@@ -41,8 +41,6 @@ int main() {
 **Didn't Understand**
 ## 3. Write a program to print number of times a message is printed using fork system call and apply OR Command
 ```C
-
-```
 #include <stdio.h>
 #include <unistd.h>
 
@@ -53,5 +51,5 @@ int main() {
 		printf("%d False\n", getpid());
 	}
 }
-
-
+```
+![image](https://github.com/user-attachments/assets/92bbe517-b4f5-4a46-b50b-0416c2fadc86)
