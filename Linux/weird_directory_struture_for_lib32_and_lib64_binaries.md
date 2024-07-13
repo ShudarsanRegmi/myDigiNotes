@@ -32,6 +32,32 @@ The directory structure in Linux, while it may seem complex at first, has histor
 
 - **System Configuration**: Not all distributions create a `/usr/local/lib64` directory by default. It depends on the distribution's policies and whether the user or administrator has installed 64-bit libraries manually.
 - **Need-Based Creation**: The directory may only be created if there's a specific need to separate 64-bit local libraries. If no such libraries are installed, the directory might not exist.
+Yes, you are correct. Here is a summary of how these directories are typically used:
+
+`/lib`
+Contains: Shared libraries and binaries for essential system programs.
+Purpose: Stores libraries needed for the basic functionality of the system, especially during the boot process, before other filesystems are mounted.
+
+`/usr/lib`
+Contains: Shared libraries and binaries for user-installed programs, typically installed via the system's package manager.
+Purpose: Holds libraries used by standard software installed on the system, excluding the core system utilities.
+
+`/usr/local/lib`
+Contains: Shared libraries and binaries for software manually installed by the system administrator.
+Purpose: Keeps libraries for software that is not managed by the system's package manager, typically custom or third-party software compiled and installed by the user.
+
+`/lib64`
+Contains: 64-bit shared libraries and binaries for essential system programs.
+Purpose: Similar to /lib, but specifically for 64-bit libraries.
+
+`/usr/lib64`
+Contains: 64-bit shared libraries and binaries for user-installed programs.
+Purpose: Similar to /usr/lib, but specifically for 64-bit libraries.
+
+`/usr/local/lib64`
+Contains: 64-bit shared libraries and binaries for software manually installed by the system administrator.
+Purpose: Similar to /usr/local/lib, but specifically for 64-bit libraries.
+
 
 ### Summary
 
