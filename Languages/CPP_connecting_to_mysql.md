@@ -45,5 +45,64 @@ clean:
 
 ```
 
+```cpp
+#include <mysql_driver.h>
+#include <mysql_connection.h>
+#include <cppconn/statement.h>
+#include <cppconn/resultset.h>
+#include <iostream>
+#include <iomanip> // For setw
+
+int main() {
+    sql::mysql::MySQL_Driver *driver;
+    sql::Connection *con;
+    sql::Statement *stmt;
+    sql::ResultSet *res;
+
+    try {
+        // Establish connection to MySQL server
+        driver = sql::mysql::get_mysql_driver_instance();
+        con = driver->connect("tcp://127.0.0.1:3306", "shudarsan", "shudarsan@localhost");
+        con->setSchema("hackerrank");
+
+        // Create SQL statement
+        stmt = con->createStatement();
+        res = stmt->executeQuery("SELECT * FROM STATION");
+
+        // Print column names
+        sql::ResultSetMetaData *metaData = res->getMetaData();
+        int numColumns = metaData->getColumnCount();
+        std::cout << "Fetching all columns from STATION table:" << std::endl;
+        for (int i = 1; i <= numColumns; ++i) {
+            std::cout << std::setw(15) << metaData->getColumnName(i) << " | ";
+        }
+        std::cout << std::endl;
+
+        // Iterate through the result set
+        while (res->next()) {
+            for (int i = 1; i <= numColumns; ++i) {
+                std::cout << std::setw(15) << res->getString(i) << " | ";
+            }
+            std::cout << std::endl;
+        }
+
+        // Clean up
+        delete res;
+        delete stmt;
+        delete con;
+    } catch (sql::SQLException &e) {
+        std::cerr << "# ERR: SQLException in " << __FILE__;
+        std::cerr << "(" << __FUNCTION__ << ") on line " << __LINE__ << std::endl;
+        std::cerr << "# ERR: " << e.what();
+        std::cerr << " (MySQL error code: " << e.getErrorCode();
+        std::cerr << ", SQLState: " << e.getSQLState() << " )" << std::endl;
+    }
+
+    return 0;
+}
+
+```
+	
+
 
 
