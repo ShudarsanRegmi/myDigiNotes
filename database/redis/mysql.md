@@ -2,6 +2,12 @@
 
 ## Creating user and granting permissions
 
+### Wanna do it real quick?
+```mysql
+CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'new_user'@'localhost';
+FLUSH PRIVILEGES;
+```
 ### Login in with root
 ```bash
 mysql -u root -p
