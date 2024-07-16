@@ -28,3 +28,6 @@
 
 ## Making table in different formats(md, json, excel, LaTex)
 - **[Table Converter](https://tableconvert.com/)**
+
+## Fake Rest API
+- [Reqres](https://reqres.in/)
