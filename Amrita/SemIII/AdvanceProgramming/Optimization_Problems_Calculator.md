@@ -19,6 +19,9 @@
 ![image](https://github.com/user-attachments/assets/242829ee-2d00-4795-a2d4-92fb8081b37b)
 
 
+### Problem
+![image](https://github.com/user-attachments/assets/50849c39-51b5-454c-bb5c-97187c470597)
+
 ### Important Links
 - [Case Studies](https://neos-guide.org/case-studies/)
 - 
