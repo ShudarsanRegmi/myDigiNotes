@@ -1,5 +1,8 @@
 # My soution for leetCode challenges
 
+## Gheu Points
+- Look for `null` if you're not looking something.(Eg. customer who've never ordered)
+
 ### Duplicate Emails: Easy
 - Fetch the emails from Person table who is having duplicate entires 
 ```sql
@@ -40,3 +43,15 @@ employee e left join bonus b on e.empId=b.empId having b.bonus<1000 or b.bonus i
 ```
 
 # I'll learn subqueries now onwards
+
+## Join based leet code problems
+
+### 183. Customers who've never ordered
+```sql
+select C.name as Customers from Customers C left join Orders O on C.id = O.customerId where O.id is null;
+```
+```sql
+select user_id,count(distinct follower_id) as followers_count from Followers group by user_id order by user_id asc;
+```
+
+172, 595, 1581, 
