@@ -1,6 +1,7 @@
 <div align="center">
+
 ![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
-    
+
 # Amrita Vishwa Vidyapeetham
 ## Chennai Campus
 337/1A, Vengal Village,  
@@ -16,8 +17,8 @@ Tamil Nadu, India
 
 </div>
 
-## Task 5: The goal is to create a quick short brief webpage using HTML and CSS tags. It’s kind of
-flyer
+
+## Task 5: The goal is to create a quick short brief webpage using HTML and CSS tags. It’s kind of flyer
 
 ```html
 <!DOCTYPE html>
