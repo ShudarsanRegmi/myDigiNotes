@@ -1,5 +1,3 @@
-# UID Lab - 3 Tourist Information Webpage
-
 <div align="center">
 
 ![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
@@ -18,6 +16,8 @@ Tamil Nadu, India
 **Roll No.:** CH.SC.U4CYS23055
 
 </div>
+
+## UID Lab - 3 Tourist Information Webpage
 
 ```
 • Design a tourist information webpage implementing image hotspot to get useful information
