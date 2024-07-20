@@ -1,5 +1,8 @@
 # UID Lab - 3 Tourist Information Webpage
 
+- Submitted by: Shudarsan Regmi
+- Roll no: CH.SC.U4CYS23055
+
 ```
 • Design a tourist information webpage implementing image hotspot to get useful information
 about the countries.
@@ -10,6 +13,7 @@ states.
 • Make sure all links are opened in new tab.
 • You can use additional html tags to make your web page more attractive
 ```
+
 
 ## Homepage
 ![image](https://github.com/user-attachments/assets/5071c0f7-2c26-495a-936e-759e4e5ef845)
