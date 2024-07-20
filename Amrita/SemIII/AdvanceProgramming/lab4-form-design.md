@@ -1,12 +1,9 @@
-<center style="color:'pink'">Amrita Vishwa Vidyapeetham Chennai Campus</center>
-<center style="color:'pink'">Vengal Village / 3-7 </center>
+
 - Submitted By: Shudarsan Regmi
 - Roll no: CH.SC.U4CYS23055
 
 ## Task 4: Design a form given below. Make sure you are using all form elements. Your form design should
 match with the design mentioned below.
-
-
 
 ### Code
 ```html
