@@ -1,7 +1,6 @@
 <div align="center">
-
 ![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
-
+    
 # Amrita Vishwa Vidyapeetham
 ## Chennai Campus
 337/1A, Vengal Village,  
