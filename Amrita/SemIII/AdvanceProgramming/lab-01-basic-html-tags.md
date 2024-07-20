@@ -24,17 +24,17 @@ Tamil Nadu, India
 
 ```html
 <!DOCTYPE html>
-2 <html lang="en">
-3 <head>
-4
+ <html lang="en">
+ <head>
+
 <meta charset="UTF-8">
 <title>Document</title>
-8 </head>
-7 <body>
-B
+ </head>
+ <body>
+
 <p>Namaste World!!</p>
-9 </body>
-B </html>
+ </body>
+ </html>
 ```
 ### Output
 ![image](https://github.com/user-attachments/assets/141a388d-5493-4f80-ae58-a0a4dca5fd15)
@@ -104,16 +104,14 @@ B </html>
 ### Code
 
 ```html
-1 <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
-44
 <title>Bold Text Example</title>
 </head>
 <body>
 <p>This text is normal.</p>
-H
-<p><b>This text is bold.</b></p>
+<p><b>This text is bold.</b>
 </body>
 </html>
 ```
@@ -235,12 +233,12 @@ USA
 ### Code:
 ```html
 <html>
-2 <body>
+ <body>
 <h2>University </h2>
 <p>Amrita college of Engineering</p>
 <a href="https://www.amrita.edu">click me for more information</a>
 </body>
-7 </html>
+</html>
 ``
 ### Output
 ![image](https://github.com/user-attachments/assets/02fdb980-4c15-483b-ae03-4139e51ef8e2)
