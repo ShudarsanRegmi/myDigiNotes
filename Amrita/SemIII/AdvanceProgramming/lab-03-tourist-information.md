@@ -1,7 +1,23 @@
 # UID Lab - 3 Tourist Information Webpage
 
-- Submitted by: Shudarsan Regmi
-- Roll no: CH.SC.U4CYS23055
+<div align="center">
+
+![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
+
+# Amrita Vishwa Vidyapeetham
+## Chennai Campus
+337/1A, Vengal Village,  
+Thiruvallur Taluk & District – 601 103,  
+Tamil Nadu, India
+
+---
+
+### Subject: User Interface Design (UID)
+
+**Submitted By:** Shudarsan Regmi  
+**Roll No.:** CH.SC.U4CYS23055
+
+</div>
 
 ```
 • Design a tourist information webpage implementing image hotspot to get useful information
