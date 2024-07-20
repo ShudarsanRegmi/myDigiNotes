@@ -1,4 +1,21 @@
+<div align="center">
 
+![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
+
+# Amrita Vishwa Vidyapeetham
+## Chennai Campus
+337/1A, Vengal Village,  
+Thiruvallur Taluk & District – 601 103,  
+Tamil Nadu, India
+
+---
+
+### Subject: User Interface Design (UID)
+
+**Submitted By:** Shudarsan Regmi  
+**Roll No.:** CH.SC.U4CYS23055
+
+</div>
 
 ## Task 5: The goal is to create a quick short brief webpage using HTML and CSS tags. It’s kind of
 flyer
