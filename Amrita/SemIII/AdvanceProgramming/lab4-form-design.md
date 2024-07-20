@@ -6,8 +6,7 @@
 ## Task 4: Design a form given below. Make sure you are using all form elements. Your form design should
 match with the design mentioned below.
 
-### Output
-![image](https://github.com/user-attachments/assets/adb1732b-da9a-4563-aaa2-193a1a12106a)
+
 
 ### Code
 ```html
@@ -63,3 +62,5 @@ match with the design mentioned below.
 </center>
 </html>
 ```
+### Output
+![image](https://github.com/user-attachments/assets/adb1732b-da9a-4563-aaa2-193a1a12106a)
