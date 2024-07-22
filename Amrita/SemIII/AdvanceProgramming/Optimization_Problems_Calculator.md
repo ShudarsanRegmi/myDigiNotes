@@ -58,6 +58,20 @@ Optimal Solution:
 ```
 
 ```
+Maximize Z = x=12x1+ 16x2
+Subject to 10x1 + 20x2 ≤ 120
+8x1 + 8x2 ≤ 80
+x1 and x2 ≥ 0
+Optimal Solution: x1 = 8, x2 = 2 , z = 128
+
+12x_1 + 16x_2
+10x_1 + 20x_2 <= 120,
+8x_1 + 8x_2 <= 80,
+x_1 >= 0, x_2>=0
+Solution Link: https://www.emathhelp.net/en/calculators/linear-programming/simplex-method-calculator/?z=12x_1+%2B+16x_2&max=on&c=10x_1+%2B+20x_2+%3C%3D+120%2C%0D%0A8x_1+%2B+8x_2+%3C%3D+80%2C%0D%0Ax_1+%3E%3D+0%2C+x_2%3E%3D0&m=m
+```
+
+```
 max: z = 20x1 + 30x2
 2x1 +x2<=10
 3x1+3x2<=20
