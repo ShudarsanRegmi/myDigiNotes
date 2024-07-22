@@ -47,6 +47,26 @@ LPSolve IDE is a valuable tool for those looking to solve linear programming pro
 ### Problem
 ![image](https://github.com/user-attachments/assets/50849c39-51b5-454c-bb5c-97187c470597)
 
+```
+MAX Z = 5x1 + 10x2 + 8x3
+subject to
+3x1 + 5x2 + 2x3 <= 60
+4x1 + 4x2 + 4x3 <= 72
+2x1 + 4x2 + 5x3 <= 100
+and x1,x2,x3 >= 0
+Optimal Solution:
+```
+
+```
+max: z = 20x1 + 30x2
+2x1 +x2<=10
+3x1+3x2<=20
+2x1+4x2<=20
+x1>=0, x2>=0
+Optimal Solution: x1 = 3.34, X2 = 3.34
+```
+
 ### Important Links
 - [Case Studies](https://neos-guide.org/case-studies/)
+- [Google OR Tools CPP Example](https://developers.google.com/optimization/lp/lp_example#c++)
 - 
