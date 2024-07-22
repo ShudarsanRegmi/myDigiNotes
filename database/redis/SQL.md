@@ -1,5 +1,8 @@
 # SQL Note
 
+## Gheu Points
+- On join caluses two NULL value rows are not matched
+
 ## Select Query
 ```sql
 SELECT <COLUMN_NAME> FROM <TABLE> WHERE <CONSTRAINTS>
@@ -93,9 +96,11 @@ Right join = Outer Join + unmatching rows in right column
 
 
 ## Questions given
+
 ```sql
 # Fetch all the employees names, their department names, their managers named and the project they worked on.
 ```
+
 ```sql
 select e.emp_name,d.dept_name,m.manager_name,p.project_name
 from [employee e left join department d on e.dept_id=d.dept_id]
