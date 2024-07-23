@@ -1,9 +1,19 @@
 # Quick Revision for CPP Syntax
 
+## Topics to Learn in C++
+
+
+```cpp
+# Member Initializer LIst
+
+```
+
 ### IO Functions
 ```cpp
 std::cout << "print string" << std::endl;
 ```
+
+
 ### Installing cppman for accessing man pages in Linux
 ```bash
 pip install cppman
@@ -72,4 +82,3 @@ int main() {
 - .\ASE computer lab
 - Amma123
 ```
-
