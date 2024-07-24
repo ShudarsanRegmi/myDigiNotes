@@ -87,6 +87,15 @@ x1 >= 0, x2 >= 0
 Solution: Z = 400 @ x1 = 4 and x2 = 8
 https://www.emathhelp.net/en/calculators/linear-programming/simplex-method-calculator/?z=40x_1+%2B+30x_2&max=on&c=x_1+%2B+x_2+%3C%3D+12%2C%0D%0A2x_1+%2B+1x_2+%3C%3D+16%2C%0D%0Ax_1+%3E%3D+0%2C+x_2%3E%3D0&m=m
 ```
+```
+Maximize: Z = 12x1 + 3x2 + x3
+Subject to: 10x1 + 2x2 + x3 <= 100
+7x1 + 3x2 + 2x3 <= 77
+2x1 + 4x2 + x3 <= 80
+x1 >= 0, x2 >= 0, x3 >= 0
+Solution: Z = 122.625, x1 = 9.125, x2 = 4.375
+https://www.emathhelp.net/en/calculators/linear-programming/simplex-method-calculator/?z=12x_1+%2B+3x_2+%2B+x_3&max=on&c=10x_1+%2B+2x_2+%2B+x_3+%3C%3D+100%0D%0A7x_1+%2B+3x_2+%2B+2x_3+%3C%3D+77%0D%0A2x_1+%2B+4x_2+%2B+x_3+%3C%3D+80%0D%0Ax_1+%3E%3D+0%2C+x_2+%3E%3D+0%2C+x_3+%3E%3D+0&m=m
+```
 
 ### Important Links
 - [Case Studies](https://neos-guide.org/case-studies/)
