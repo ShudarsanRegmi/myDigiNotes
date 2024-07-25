@@ -31,3 +31,11 @@
 
 ## Fake Rest API
 - [Reqres](https://reqres.in/)
+
+### Free css ui components
+- [UI Verse](https://uiverse.io)
+- [CSS Gradient Maker](https://cssgradient.io/)
+- [CSS Buttons](https://cssbuttons.app/)
+- [Fancy Border Radius](https://9elements.github.io/fancy-border-radius/)
+- [Awesome Front End Resource Collection](https://freefrontend.com/)
+
