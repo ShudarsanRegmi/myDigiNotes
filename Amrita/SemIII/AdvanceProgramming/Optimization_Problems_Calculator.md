@@ -97,7 +97,22 @@ Solution: Z = 122.625, x1 = 9.125, x2 = 4.375
 https://www.emathhelp.net/en/calculators/linear-programming/simplex-method-calculator/?z=12x_1+%2B+3x_2+%2B+x_3&max=on&c=10x_1+%2B+2x_2+%2B+x_3+%3C%3D+100%0D%0A7x_1+%2B+3x_2+%2B+2x_3+%3C%3D+77%0D%0A2x_1+%2B+4x_2+%2B+x_3+%3C%3D+80%0D%0Ax_1+%3E%3D+0%2C+x_2+%3E%3D+0%2C+x_3+%3E%3D+0&m=m
 ```
 
+
+```
+Z = 100x1​+1900x2​+2700x3​+3400x4​
+18x1​+28x2​+4x3​+5x4​−2125x5 ​≤ 0,
+−8x1​+2x2​+2x3​+2x4​+5≤0
+−8x1​+2x2​+2x3​+2x4​−5≤0
+x1​−9x2​+x3​+x4​+5≤0
+25x1​+25x2​−75x3​−75x4​+5≤0
+50x1​+70x2​+130x3​+160x4​+2x5​≤15000
+x1​≥0x2​≥0x3​≥0x4​≥0x5​≥0​
+https://www.emathhelp.net/en/calculators/linear-programming/simplex-method-calculator/?z=100x_1+%2B+1900x_2+%2B+2700x_3+%2B+3400x_4&max=on&c=18x_1+%2B+28x_2+%2B+4x_3+%2B+5x_4+-2125x_5+%3C%3D+0%0D%0A-8x_1+%2B+2x_2+%2B+2x_3+%2B+2x_4+%2B+0x_5+%3C%3D+0%0D%0A-8x_1+%2B+2x_2+%2B+2x_3+%2B+2x_4+-+0x_5+%3C%3D+0%0D%0A1x_1+-+9x_2+%2B+1x_3+%2B+1x_4+%2B+0x_5+%3C%3D+0%0D%0A25x_1+%2B+25x_2+-+75x_3+-+75x_4+%2B+0x_5+%3C%3D+0%0D%0A50x_1+%2B+70x_2+%2B+130x_3+%2B+160x_4+%2B+2x_5+%3C%3D+15000%0D%0Ax_1+%3E%3D+0%2C+x_2+%3E%3D+0%2C+x_3+%3E%3D+0%2C+x_4+%3E%3D+0%2C+x_5+%3E%3D+0&m=m
+Optimal Solution:
+```
+![image](https://github.com/user-attachments/assets/ee99876e-c0c9-4c3c-9c67-1878154ba213)
+
+
 ### Important Links
 - [Case Studies](https://neos-guide.org/case-studies/)
 - [Google OR Tools CPP Example](https://developers.google.com/optimization/lp/lp_example#c++)
-- 
