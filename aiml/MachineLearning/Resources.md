@@ -17,5 +17,10 @@
 - [ML Notebooks](https://github.com/dair-ai/ML-Notebooks)
 - [ML Yearning](https://github.com/ajaymache/machine-learning-yearning/tree/master)
 
+## Machine Learning Project Links
+- https://www.geeksforgeeks.org/machine-learning-projects/
+- https://github.com/topics/machine-learning-projects
+
+
 ## References
 - https://medium.com/@Coursesteach/best-free-resources-to-learn-machine-learning-3d49ab970e0f
