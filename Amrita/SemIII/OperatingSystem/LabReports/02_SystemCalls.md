@@ -1,7 +1,24 @@
-# System Calls - Lab-II
+<div align="center">
 
-- CH.SC.U4CYS23055
-- Shudarsan Regmi
+![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
+
+# Amrita Vishwa Vidyapeetham
+## Chennai Campus
+337/1A, Vengal Village,  
+Thiruvallur Taluk & District – 601 103,  
+Tamil Nadu, India
+
+---
+
+### Subject: Operating System Lab
+
+**Submitted By:** Shudarsan Regmi  
+**Roll No.:** CH.SC.U4CYS23055
+
+
+</div>
+
+# System Calls
 
 ## 1. To write program to get PID in UNIX
 ```C
