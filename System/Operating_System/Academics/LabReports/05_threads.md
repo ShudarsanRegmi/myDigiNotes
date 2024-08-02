@@ -1,6 +1,6 @@
 # System Calls to create threads in linux
 
-### Prog-1: Illustrate the use of thread
+### Prog-01: Illustrate the use of thread
 
 ```C
 #include <stdio.h>
@@ -21,6 +21,8 @@ int main() {
 	exit(0);
 }
 ```
+### Input/Output
+![image](https://github.com/user-attachments/assets/3db33cbb-8db0-4b8a-906f-793b2f75d320)
 
 ### Prog-02: Demonstration of Thread Creation, Detachment, and Equality Check in Pthreads
 
@@ -76,11 +78,7 @@ int main() {
 ![image](https://github.com/user-attachments/assets/ed80f83e-cd7e-418b-b4f6-951d7e61512e)
 
 
-
-### Input/Output
-![image](https://github.com/user-attachments/assets/939dfe37-2450-4a2c-b0a8-7a89a026eb6d)
-
-### Prog-02: Write a Program to add two numbers uisng pthread
+### Prog-03: Write a Program to add two numbers uisng pthread
 
 ```C
 #include <stdio.h>
@@ -123,7 +121,7 @@ int main() {
 
 ![image](https://github.com/user-attachments/assets/1d51fe94-b6a6-4e7e-bb1a-8fc6704e6b15)
 
-### Prog-03: Program to illustrate race conditions
+### Prog-04: Program to illustrate race conditions
 
 >A race condition occurs when multiple threads or processes access and modify shared data concurrently, and the final outcome depends on the unpredictable timing of their execution. This can lead to inconsistent or unintended results because the operations are not synchronized. In the provided code, a race condition exists because `thread1` and `thread2` both read and update the shared variable `shared` without any synchronization mechanism, such as mutex locks, to control their access. This means that the threads can interleave in various ways, leading to different and inconsistent final values of `shared`.
 
