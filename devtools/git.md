@@ -79,3 +79,19 @@ git commit --amend
 git config --global --edit
 ```
 
+## Viewing PR locally
+
+```bash
+git fetch origin pull/$ID/head:$BRANCHNAME
+```
+where $ID is the pull request id and $BRANCHNAME is the name of the new branch that you want to create. Once you have created the branch, then simply
+
+```bash
+git checkout $BRANCHNAME
+```
+
+```bash
+# Example
+git fetch origin pull/2/head:pr-x 
+```
+
