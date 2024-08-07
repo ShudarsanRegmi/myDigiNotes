@@ -129,4 +129,148 @@ void MainWindow::switchToPage2() {
 
 ```
 
-## 03 - 
+## 03 - Implementing `prevous page` and `next page` feture
+
+### Implementation 1: With simple logic (but not scalable)
+> Define slots for each button, get the current index and set the index to current index + 1 under mod total pages. Do this for each buttons
+
+**Step 1: Define slots in mainwindow.h**
+
+```cpp
+// mainwindow.h
+private slots:
+    void on_pg1_prev_clicked();
+    void on_pg2_prev_clicked();
+    void on_pg3_prev_clicked();
+```
+
+**Step 2: Write slots for each buttons**
+
+```cpp
+mainwindow.cpp
+void MainWindow::on_pg1_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+}
+
+void MainWindow::on_pg2_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+}
+
+
+void MainWindow::on_pg3_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+}
+
+```
+### Implementation 2: With scalable logic
+> Define one slot and connect each buttons to that slot. the slot will get the current index and set it to current index + 1 under modulo total pages
+
+**Step 1: Define slots in mainwindow.h**
+
+```cpp
+// mainwindow.h
+private slots:
+    void navigate_next();
+```
+
+**Step 2: Write slots for each buttons**
+
+```cpp
+mainwindow.cpp
+void MainWindow::navigate_next()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index+1)%total_widgets);
+}
+```
+
+**Step 3: Connect each slots to click signals**
+
+```cpp
+    connect(ui->pg1_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+    connect(ui->pg2_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+    connect(ui->pg3_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+```
+
+### The overall code  for above two implemntation
+
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QLabel>
+#include <QDebug>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    connect(ui->pg1_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+    connect(ui->pg2_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+    connect(ui->pg3_next, &QPushButton::clicked, this, &MainWindow::navigateNext);
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+// Level 1 Logic to implement previous next feature
+/*
+create slot for eacch previous buttons and for each buttons
+When the button is pressed
+get the current index
+set the current index to current index under modulo total pages...
+*/
+
+void MainWindow::on_pg1_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+
+}
+
+void MainWindow::on_pg2_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+}
+
+
+void MainWindow::on_pg3_prev_clicked()
+{
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_widgets = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index-1+total_widgets)%total_widgets);
+}
+
+/*
+Level: 2
+Define Only one slot to handle nagivation to next and previous
+Here we'll show by previous navigation
+*/
+
+
+void MainWindow::navigateNext() {
+    int cur_index = ui->stackedWidget->currentIndex();
+    int total_pages = ui->stackedWidget->count();
+    ui->stackedWidget->setCurrentIndex((cur_index+1)%total_pages);
+}
+
+```
