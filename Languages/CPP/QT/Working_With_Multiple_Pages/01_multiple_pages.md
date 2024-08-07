@@ -60,6 +60,73 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+```
+## 02 - Creating two pages using QT QWidget directly from the code
 
+![image](https://github.com/user-attachments/assets/79b8eda4-7ff3-44fd-9472-f00293e51775)
+
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QLabel>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    stackedWidget = new QStackedWidget(this);
+    setCentralWidget(stackedWidget);
+
+    page1 = new QWidget();
+    page2 = new QWidget();
+
+    QVBoxLayout *layout1 = new QVBoxLayout(page1);
+    QVBoxLayout *layout2 = new QVBoxLayout(page2);
+
+    // Buttons to switch pages
+    QPushButton *button1 = new QPushButton("Go to page1", page1);
+    QPushButton *button2 = new QPushButton("Go to page2", page2);
+
+
+    QLabel *label1 = new QLabel("This is page 1", page1);
+    QLabel *label2 = new QLabel("This is page 2", page2);
+
+    layout1->addWidget(label1);
+    layout2->addWidget(label2);
+
+    connect(button1, &QPushButton::clicked, this, &MainWindow::switchToPage1);
+    connect(button2, &QPushButton::clicked, this, &MainWindow::switchToPage2);
+
+    layout1->addWidget(button1);
+    layout1->addWidget(button2);
+
+    layout2->addWidget(button1);
+    layout2->addWidget(button1);
+
+    stackedWidget->addWidget(page1);
+    stackedWidget->addWidget(page2);
+
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+
+void MainWindow::switchToPage1() {
+    stackedWidget->setCurrentWidget(page1);
+}
+
+void MainWindow::switchToPage2() {
+    stackedWidget->setCurrentWidget(page2);
+}
 
 ```
+
+## 03 - 
