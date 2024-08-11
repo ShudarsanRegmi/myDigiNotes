@@ -72,3 +72,87 @@ int main() {
     return 0;
 }
 ```
+
+---
+
+### Member Function
+
+**Global funciton as friend function**
+
+```cpp
+// using global functin as friend function
+
+#include <iostream>
+
+class base {
+private:
+    int private_variable;
+
+protected:
+    int protected_member;
+
+public:
+    base() {
+        private_variable = 10;
+        protected_member = 99;
+    }
+
+    friend void global_func_friend_func(base& obj);
+};
+
+
+void global_func_friend_func(base &obj) {
+    std::cout << obj.private_variable << std::endl;
+    std::cout << obj.protected_member << std::endl;
+}
+
+int main() {
+    base Object1;
+    global_func_friend_func(Object1);
+    return 0;
+}
+
+```
+
+**member of another function as friend function**
+
+```cpp
+#include <iostream>
+
+class base; // forward definition needed
+
+class anotherClass {
+public:
+    void memberFunction(base& obj);
+};
+
+// base class for which friend is declared
+class base {
+private:
+    int private_variable;
+
+protected:
+    int protected_variable;
+
+public:
+    base() {
+        private_variable = 10;
+        protected_variable = 20;
+    }
+
+    friend void anotherClass::memberFunction(base& obj);
+};
+
+
+void anotherClass::memberFunction(base& obj) {
+    std::cout << "Private Variable: " << obj.private_variable << std::endl;
+    std::cout << "Protected Variable: " << obj.protected_variable << std::endl;
+}
+
+int main() {
+    base Object1;
+    anotherClass object2;
+    object2.memberFunction(Object1); // object2 can call the functino of object 1 and also can access its protected and private data members
+    return 0;
+}
+```
