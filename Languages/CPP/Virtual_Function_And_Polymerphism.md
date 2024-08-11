@@ -181,3 +181,19 @@ int main() {
 
 ### **Conclusion**
 Virtual functions are a fundamental concept in C++ that enable polymorphism, allowing you to write more flexible and reusable code. They help you achieve dynamic behavior, ensuring that the appropriate function is called based on the object type rather than the pointer type.
+
+
+----
+
+### **Key Differences**
+- **Implementation**: 
+  - Virtual functions can have a definition in the base class.
+  - Pure virtual functions do not have a definition in the base class.
+
+- **Abstract Classes**:
+  - A class with virtual functions can be instantiated unless it has a pure virtual function.
+  - A class with at least one pure virtual function becomes an abstract class and cannot be instantiated.
+
+- **Usage**:
+  - Use virtual functions when you want to allow derived classes the option to override a function, but still provide a default behavior.
+  - Use pure virtual functions when you want to enforce that all derived classes must implement a specific function, effectively making the base class a blueprint (interface) for the derived classes.
