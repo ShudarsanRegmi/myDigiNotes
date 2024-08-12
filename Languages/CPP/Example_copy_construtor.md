@@ -23,7 +23,7 @@ public:
 
     // Copy Constructor: Creates a deep copy
     MyClass(const MyClass& other) {
-        data = new int(*(other.data));
+        data = new int(*(other.data)); // here wer're dereferencing other.data because other.data itself is a pointer to a memory in heap and here in this case we want to get the value at the memory pointed by the pointer, not the address
         cout << "Copy Constructor: Deep copy created, data = " << *data << endl;
     }
 
