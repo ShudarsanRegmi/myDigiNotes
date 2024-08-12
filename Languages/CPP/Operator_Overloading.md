@@ -276,7 +276,55 @@ int main() {
     a[0] = 10; // Calls Array operator[](int)
     a[1] = 20;
     a[2] = 30;
-    
+    #include <iostream>
+using namespace std;
+
+class Data {
+private:
+    int intValue;
+    float floatValue;
+
+public:
+    // Default constructor
+    Data() : intValue(0), floatValue(0.0f) {}
+
+    // Parameterized constructor
+    Data(int i, float f) : intValue(i), floatValue(f) {}
+
+    // Friend function for overloading <<
+    friend ostream& operator<<(ostream& out, const Data& obj);
+
+    // Friend function for overloading >>
+    friend istream& operator>>(istream& in, Data& obj);
+};
+
+// Overloading the << operator
+ostream& operator<<(ostream& out, const Data& obj) {
+    out << "Integer value: " << obj.intValue << ", Float value: " << obj.floatValue;
+    return out;
+}
+
+// Overloading the >> operator
+istream& operator>>(istream& in, Data& obj) {
+    cout << "Enter integer value: ";
+    in >> obj.intValue;
+    cout << "Enter float value: ";
+    in >> obj.floatValue;
+    return in;
+}
+
+int main() {
+    Data dataObj;
+
+    // Using overloaded >> to input data
+    cin >> dataObj;
+
+    // Using overloaded << to output data
+    cout << dataObj << endl;
+
+    return 0;
+}
+
     a.display();
     
     return 0;
@@ -285,6 +333,60 @@ int main() {
 
 **Explanation**:
 - `int& operator[](int index)` provides access to the internal array elements as if using the array indexing syntax.
+
+### Overloading << and >> operator to take object specific input type
+```cpp
+#include <iostream>
+using namespace std;
+
+class Data {
+private:
+    int intValue;
+    float floatValue;
+
+public:
+    // Default constructor
+    Data() : intValue(0), floatValue(0.0f) {}
+
+    // Parameterized constructor
+    Data(int i, float f) : intValue(i), floatValue(f) {}
+
+    // Friend function for overloading <<
+    friend ostream& operator<<(ostream& out, const Data& obj);
+
+    // Friend function for overloading >>
+    friend istream& operator>>(istream& in, Data& obj);
+};
+
+// Overloading the << operator
+ostream& operator<<(ostream& out, const Data& obj) {
+    out << "Integer value: " << obj.intValue << ", Float value: " << obj.floatValue;
+    return out;
+}
+
+// Overloading the >> operator
+istream& operator>>(istream& in, Data& obj) {
+    cout << "Enter integer value: ";
+    in >> obj.intValue;
+    cout << "Enter float value: ";
+    in >> obj.floatValue;
+    return in;
+}
+
+int main() {
+    Data dataObj;
+
+    // Using overloaded >> to input data
+    cin >> dataObj;
+
+    // Using overloaded << to output data
+    cout << dataObj << endl;
+
+    return 0;
+}
+
+```
+
 
 ### **Key Points**
 
