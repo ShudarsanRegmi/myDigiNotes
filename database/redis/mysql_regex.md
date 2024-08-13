@@ -1,4 +1,4 @@
-# Mysql Regex
+![image](https://github.com/user-attachments/assets/8b0a2aa0-1937-465a-be4b-9a4bc0637ef5)# Mysql Regex
 
 Certainly! Here's a concise list of commonly used regular expression components:
 
@@ -52,4 +52,16 @@ Certainly! Here's a concise list of commonly used regular expression components:
 - Email Validation: `^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$`
 - Phone Number: `^\+?[0-9]{1,3}?[-. ]?\(?[0-9]{1,4}?\)?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}$`
 - URL: `^(https?|ftp)://[^\s/$.?#].[^\s]*$`
-- o
+
+### Some Important Regular Expression for exams
+- word doesn't start with vowel `^[^aeiouAEIOU]`;
+- 
+
+
+
+### MY HR Solutions During Exam
+
+Population Census:
+```sql
+select sum(city.population) from city join country on city.countrycode = country.code where country.continent = 'Asia';
+```
