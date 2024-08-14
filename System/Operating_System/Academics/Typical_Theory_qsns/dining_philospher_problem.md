@@ -115,3 +115,107 @@ int main() {
    - Although the above solution prevents deadlock, it doesn't inherently prevent starvation. To address starvation, additional mechanisms (e.g., an "ordering" of fork acquisition or an algorithm ensuring that no philosopher is perpetually blocked) might be needed.
 
 This solution is a basic example and demonstrates the use of semaphores to manage concurrent access to shared resources, ensuring that the philosophers can alternate between thinking and eating without causing deadlock.
+
+
+--- 
+
+### Problem Illustration in Simple
+
+![image](https://github.com/user-attachments/assets/96118e9f-8ce9-4f2b-a34b-c5bdf150a0c9)
+
+
+# Simple C like Pseudo Code
+Certainly! Here’s a C-like pseudo code for solving the Dining Philosophers Problem using semaphores. This version is concise and focuses on core concepts:
+
+### **Initialization**
+
+```c
+int num_philosophers = 5;
+semaphore forks[num_philosophers];  // Forks (semaphores)
+semaphore mutex;  // Mutex for critical section
+
+// Initialize semaphores
+for (int i = 0; i < num_philosophers; i++) {
+    forks[i] = 1;  // Each fork is available
+}
+mutex = 1;  // Mutex for mutual exclusion
+```
+
+### **Philosopher Function**
+
+```c
+void philosopher(int id) {
+    while (true) {
+        // Think
+        // ...
+
+        // Pick up forks
+        wait(mutex);  // Enter critical section
+        wait(forks[id]);           // Pick up left fork
+        wait(forks[(id + 1) % num_philosophers]);  // Pick up right fork
+        signal(mutex);  // Exit critical section
+
+        // Eat
+        // ...
+
+        // Put down forks
+        signal(forks[id]);           // Put down left fork
+        signal(forks[(id + 1) % num_philosophers]);  // Put down right fork
+    }
+}
+```
+
+### **Main Function**
+
+```c
+int main() {
+    for (int i = 0; i < num_philosophers; i++) {
+        create_thread(philosopher, i);  // Create philosopher thread
+    }
+
+    // Wait for threads to complete (in practice, they run indefinitely)
+    wait_for_threads();  
+    return 0;
+}
+```
+
+### **Function Definitions**
+
+```c
+void wait(semaphore s) {
+    // Decrement semaphore value
+    // If value < 0, block until semaphore is available
+}
+
+void signal(semaphore s) {
+    // Increment semaphore value
+    // Wake up a blocked thread if any
+}
+
+void create_thread(void (*func)(int), int arg) {
+    // Create a new thread and run func(arg)
+}
+
+void wait_for_threads() {
+    // Wait for all threads to complete (if needed)
+}
+```
+
+### **Explanation**
+
+- **Initialization**:
+  - `forks[]`: Semaphores for each fork, initialized to 1 (available).
+  - `mutex`: Semaphore for mutual exclusion, initialized to 1.
+
+- **Philosopher Function**:
+  - **Think**: Philosophers think without synchronization.
+  - **Pick Up Forks**: Use `wait(mutex)` to enter the critical section. Use `wait(forks[id])` and `wait(forks[(id + 1) % num_philosophers])` to pick up the forks.
+  - **Eat**: Philosophers eat while holding both forks.
+  - **Put Down Forks**: Use `signal(forks[id])` and `signal(forks[(id + 1) % num_philosophers])` to put down the forks.
+
+- **Main Function**:
+  - Creates threads for each philosopher and starts them.
+
+This C-like pseudo code provides a clear structure for solving the Dining Philosophers Problem using semaphores to manage concurrent access to shared resources.
+
+
