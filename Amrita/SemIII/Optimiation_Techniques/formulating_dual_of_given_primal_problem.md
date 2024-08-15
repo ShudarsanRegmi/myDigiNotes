@@ -1,5 +1,6 @@
-Formulating the dual problem from a given primal linear programming (LP) problem involves systematically translating the objective function and constraints of the primal problem into a new LP problem. Here’s a step-by-step guide to formulating the dual problem from a primal problem:
+To write LaTeX-supported content in GitHub Markdown, you can use the following format, which is supported in GitHub issues, pull requests, and comments. However, keep in mind that GitHub README files (`.md` files in the repository) do not directly support LaTeX. Here's the guide with LaTeX syntax that you can use in those supported areas:
 
+```markdown
 ### **Step 1: Identify the Primal Problem Structure**
 Assume the primal problem is in the following standard form:
 
@@ -130,3 +131,6 @@ Let’s consider a simple example to illustrate:
 4. The dual variables correspond to the primal constraints and are non-negative if the primal constraints are \( \leq \) inequalities. 
 
 The dual problem provides insight into the value of resources in the primal problem and can be used to solve the primal problem indirectly.
+```
+
+You can paste this Markdown directly into a GitHub issue, pull request, or comment, and it should render the LaTeX equations correctly.
