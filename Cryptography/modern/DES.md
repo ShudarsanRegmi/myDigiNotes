@@ -1,5 +1,9 @@
 # DES (Data Encryption Standard)
 
+## Later Added
+![image](https://github.com/user-attachments/assets/0d24ab40-4446-4bf2-8f15-655658fbd459)
+
+
 ## Fiestel Structure
 ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/c05ccb13-6e44-41bf-903c-0fb492e787ec)
 
