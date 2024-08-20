@@ -6,6 +6,11 @@
 - The algorithm described by AES is a symmetric-key algorithm, meaning the same key is used for both encrypting and decrypting the data.
 -  AES is a variant of Rijndael, with a fixed block size of 128 bits, and a key size of 128, 192, or 256 bits.
 
+
+## KeySchedule
+![image](https://github.com/user-attachments/assets/cf113861-b6a3-4eeb-b62b-b2c0ad3b6af7)
+
+
 ## Description of the cipher
 - AES is based on a design principle known as a substitution–permutation network, and is efficient in both software and hardware.
 - AES operates on a 4 × 4 column-major order array of 16 bytes b0, b1, ..., b15 termed the state.
