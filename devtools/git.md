@@ -95,3 +95,29 @@ git checkout $BRANCHNAME
 git fetch origin pull/2/head:pr-x 
 ```
 
+### Going back to main after working in feature branch without commiting in feature branch
+
+```bash
+git stash
+git checkout main
+```
+
+### Going back and continuing in the feature branch
+```bash
+git stash apply
+```
+
+### Handling above scenario with WIP commits
+
+```bash
+# in feature-branch
+git add <file1> <file2>
+git commit -m "WIP: Work title"
+git checkout main
+git checkout feature-branch
+# made some changes
+git add <files>
+git commit -m "WIP2: Work title"
+# Creating file commit  message
+git rebase -i HEAD~number_of_commits
+```
