@@ -55,3 +55,6 @@ select user_id,count(distinct follower_id) as followers_count from Followers gro
 ```
 
 172, 595, 1581, 
+
+Problems given in class: Sat 25th Aug
+1050, 1251, 1280
