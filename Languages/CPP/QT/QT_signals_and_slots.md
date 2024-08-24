@@ -1,4 +1,4 @@
-# This note is about signals and slots in QT
+![image](https://github.com/user-attachments/assets/f710d7c3-2da3-4508-bd10-db44fc6dfc20)# This note is about signals and slots in QT
 
 In Qt, signals and slots are used for communication between objects. Signals are emitted when a particular event occurs, and slots are functions that are called in response to a particular signal. This mechanism allows for a loosely coupled design, making the code more modular and reusable.
 
@@ -16,6 +16,7 @@ In Qt, signals and slots are used for communication between objects. Signals are
    - This is done using the `connect` function, which establishes a connection between a signal and a slot.
    - When the signal is emitted, the connected slot is invoked.
 
+
 ### Syntax of `connect`
 
 The `connect` function has the following general syntax:
@@ -29,6 +30,9 @@ However, in modern Qt (Qt 5 and later), the syntax has been updated to use funct
 ```cpp
 QObject::connect(sender, &SenderClass::signal, receiver, &ReceiverClass::slot);
 ```
+
+![image](https://github.com/user-attachments/assets/f4f5d8e5-c81d-4307-8154-e01645cea856)
+
 
 ### Example with Basic Concepts
 
