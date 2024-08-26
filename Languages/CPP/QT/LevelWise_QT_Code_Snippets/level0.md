@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/9c9a335b-323d-4f8a-a029-961f25971f02)# Level - 0
+# Level - 0
 
 ## Theories
 - QApplication Object
@@ -339,4 +339,5 @@ int main(int argc, char *argv[]) {
     return app.exec();
 }
 ```
+## Output
 ![image](https://github.com/user-attachments/assets/e906b1f6-bdf3-4240-a672-9636af0c4efc)
