@@ -7,6 +7,10 @@ Here's a more complex Qt application for a BMI (Body Mass Index) calculator with
 - `BMICalculator.h`
 - `BMICalculator.cpp`
 
+## Output
+![image](https://github.com/user-attachments/assets/b0be359e-eb15-44ea-a80b-cb343795bb5b)
+
+
 ### `main.cpp`
 ```cpp
 #include <QApplication>
