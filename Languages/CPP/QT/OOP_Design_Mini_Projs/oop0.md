@@ -13,6 +13,10 @@ Here's a simple Qt application with UI components created using the widgets clas
 - `ButtonStyler.h`
 - `ButtonStyler.cpp`
 
+![image](https://github.com/user-attachments/assets/d7b37833-f421-4f9b-9a90-fde534df237b)
+
+
+
 ### `main.cpp`
 ```cpp
 #include <QApplication>
