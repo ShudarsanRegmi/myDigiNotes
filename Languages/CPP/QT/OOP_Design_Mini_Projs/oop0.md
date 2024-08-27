@@ -1,3 +1,9 @@
+
+```
+Cmake Configration for CLion
+"-DCMAKE_PREFIX_PATH=C:\Qt\6.7.2\mingw_64"
+```
+
 Here's a simple Qt application with UI components created using the widgets class, following OOP principles, and separated into `.h` and `.cpp` files. The app will have a main window with a button, and we'll create a separate class for the button's styling.
 
 ### File Structure:
