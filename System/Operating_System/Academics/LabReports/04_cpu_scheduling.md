@@ -172,6 +172,7 @@ int main() {
 ```
 
 ## Output
+
 ```
 C:\Users\Shudarsan\CLionProjects\DSA\cmake-build-debug\DSA.exe
 Enter the number of processes:3
@@ -279,7 +280,7 @@ Average Waiting Time = 12.000000
 Average Turnaround Time = 26.666666
 ```
 
-## Task - 4: 
+## Task - 4: Shortest Job First (Preemptive)
 
 ```c
 #include <stdio.h>
@@ -335,7 +336,7 @@ Average Turnaround Time:26
 ```
 
 
-# Task - 4
+# Task - 4: Priority Scheduling Algorithm
 
 ```cpp
 #include <stdio.h>
