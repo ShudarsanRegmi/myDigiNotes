@@ -1,11 +1,23 @@
-# Operating System Labwork-0
+<div align="center">
 
-## Shell Scripting
+![Amrita Vishwa Vidyapeetham Logo](https://webfiles.amrita.edu/2024/04/WhQq1FiB-amrita-vishwa-vidyapeetham-university-logo-colored-version.svg)
 
-- **Name:** Shudarsan Regmi
-- **Roll No.:** CH.SC.U4CYS23055
+# Amrita Vishwa Vidyapeetham
+## Chennai Campus
+337/1A, Vengal Village,  
+Thiruvallur Taluk & District – 601 103,  
+Tamil Nadu, India
 
 ---
+
+### Subject: User Operating System
+
+**Submitted By:** Shudarsan Regmi  
+**Roll No.:** CH.SC.U4CYS23055
+
+</div>
+
+--
 
 ### 1. Shell Script to Print Name, Department, and Roll No.
 ![Shell Script](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/ecf2e47c-cd09-4c00-b388-e120510bf355)
