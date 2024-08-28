@@ -10,7 +10,7 @@ Tamil Nadu, India
 
 ---
 
-### Subject: User Interface Design (UID)
+### Subject: Operating System
 
 **Submitted By:** Shudarsan Regmi  
 **Roll No.:** CH.SC.U4CYS23055
