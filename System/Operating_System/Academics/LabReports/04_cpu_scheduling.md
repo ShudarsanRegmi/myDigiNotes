@@ -1,5 +1,7 @@
 # CPU Scheduling Algorithms
 
+## Task-1: Round Robbin Algorithm
+
 ```c
 
 #include<stdio.h>
@@ -69,7 +71,8 @@ main()
 
 ```
 
-# Output
+## Output
+
 ```
 C:\Users\Shudarsan\CLionProjects\DSA\cmake-build-debug\DSA.exe
 Enter the no. of processes :3
@@ -100,6 +103,71 @@ The average TurnAround time is : 19.333334
 ## Task - 2: Shortest Job First(SJF)
 
 ```c
+#include <stdio.h>
+
+struct process {
+    int WT, AT, BT, TAT;
+};
+
+struct process a[10];
+
+int main() {
+    int n, temp[10];
+    int count = 0, t = 0, short_P;
+    float total_WT = 0, total_TAT = 0, Avg_WT, Avg_TAT;
+
+    printf("Enter the number of processes: ");
+    scanf("%d", &n);
+
+    printf("Enter the arrival time and burst time of the processes:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Enter the arrival time of process p[%d]: ", (i + 1));
+        scanf("%d", &a[i].AT);
+
+        printf("Enter the burst time of process p[%d]: ", (i + 1));
+        scanf("%d", &a[i].BT);
+
+        temp[i] = a[i].BT;
+    }
+
+    a[9].BT = 10000;  // Initialize a very high burst time for comparison
+
+    for (t = 0; count != n; t++) {
+        short_P = 9;
+
+        for (int i = 0; i < n; i++) {
+            if (a[i].BT < a[short_P].BT && (a[i].AT <= t && a[i].BT > 0)) {
+                short_P = i;
+            }
+        }
+
+        a[short_P].BT -= 1;
+
+        // If any process is completed
+        if (a[short_P].BT == 0) {
+            count++;
+            a[short_P].WT = t + 1 - a[short_P].AT - temp[short_P];
+            a[short_P].TAT = t + 1 - a[short_P].AT;
+
+            total_WT += a[short_P].WT;
+            total_TAT += a[short_P].TAT;
+        }
+    }
+
+    Avg_WT = total_WT / n;
+    Avg_TAT = total_TAT / n;
+
+    // Printing the results
+    printf("\nProcess\t\tWaiting Time\tTurn Around Time\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d\t\t%d\t\t%d\n", i + 1, a[i].WT, a[i].TAT);
+    }
+
+    printf("Average waiting time of the processes: %.2f\n", Avg_WT);
+    printf("Average turn around time of the processes: %.2f\n", Avg_TAT);
+
+    return 0;
+}
 
 ```
 
@@ -123,3 +191,28 @@ Average waiting time of the processes: 11.33
 Average turn around time of the processes: 26.00
 ```
 
+## Task-3: Doing Shorteste Job First(SJF)
+
+```c
+
+```
+
+## Output
+
+```
+C:\Users\Shudarsan\CLionProjects\DSA\cmake-build-debug\DSA.exe
+Enter number of processes:3
+
+Enter Burst Time:
+p1: 16
+p2: 18
+p3: 10
+
+Process  Burst Time     Waiting Time    Turnaround Time
+p3              10               0                      10
+p1              16               10                     26
+p2              18               26                     44
+
+Average Waiting Time = 12.000000
+Average Turnaround Time = 26.666666
+```
