@@ -113,6 +113,16 @@ int main() {
 }
 ```
 
+### Code Compilation
+```bash
+gcc -o barrier_sync barrier.c -pthread
+```
+
+### Output
+
+![image](https://github.com/user-attachments/assets/176358f3-9c36-4cb6-8587-551df298207a)
+
+
 ### Explanation of the Code
 
 1. **Initialization**:
