@@ -62,5 +62,4 @@ MainWindow::~MainWindow()
 ```
 
 ## Output
-
-![image](https://github.com/user-attachments/assets/d73fe9a3-1785-4b98-8822-0d85f6aac290)
+![image](https://github.com/user-attachments/assets/b6f89a8a-f657-4bbd-a08b-cbd9f05960b1)
