@@ -37,3 +37,92 @@ When you tried to pass `this` (which refers to the `MainWindow` itself) as the a
 
 ### Conclusion:
 When working with `QMainWindow`, always remember that layouts must be applied to a widget inside the `QMainWindow`, not directly to the `QMainWindow` itself. The `centralWidget` is a placeholder for this content and allows layouts to manage the arrangement of widgets within it. This structure ensures that the `QMainWindow` remains flexible and consistent with Qt's design philosophy for complex windowed applications.
+
+## Code with mistake
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QString>
+
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow) // this is for
+{
+    ui->setupUi(this); // this is for setting up the ui created from .ui files
+
+    QWidget *window = new QWidget;
+    window->setWindowTitle("title");
+
+
+    QVBoxLayout *layout = new QVBoxLayout(this);
+
+    QPushButton *btn0 = new QPushButton("Click Me 1");
+    QPushButton *btn1 = new QPushButton("Click Me 2");
+    QPushButton *btn2 = new QPushButton("Click Me 3");
+    QPushButton *btn3 = new QPushButton ("Click me 4");
+
+    layout->addWidget(btn0);
+    layout->addWidget(btn1);
+    layout->addWidget(btn2);
+
+
+
+    window->show();
+
+
+
+
+
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+```
+
+
+## Fixed code
+```cpp
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QString>
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow) // Initialize ui object created from .ui file
+{
+    ui->setupUi(this); // Set up the user interface based on the .ui file
+
+    // Create a new QWidget that will serve as the central widget for the main window
+    QWidget *centralWidget = new QWidget(this);
+    setCentralWidget(centralWidget); // Set this widget as the central widget
+
+    // Create a QVBoxLayout and set it to the central widget
+    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
+
+    // Create buttons and add them to the layout
+    QPushButton *btn0 = new QPushButton("Click Me 1");
+    QPushButton *btn1 = new QPushButton("Click Me 2");
+    QPushButton *btn2 = new QPushButton("Click Me 3");
+    QPushButton *btn3 = new QPushButton("Click Me 4");
+
+    layout->addWidget(btn0); // Add buttons to the layout
+    layout->addWidget(btn1);
+    layout->addWidget(btn2);
+    layout->addWidget(btn3);
+
+    // Now the central widget will use the QVBoxLayout
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui; // Clean up the ui object
+}
+```
