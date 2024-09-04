@@ -122,6 +122,45 @@ int main() {
 #include <iostream>
 using namespace std;
 
+class Vector2D {
+private:
+    float x, y;
+
+public:
+    // Constructor
+    Vector2D(float x = 0, float y = 0) : x(x), y(y) {}
+
+    // Overload unary '-' operator
+    Vector2D operator-() const {
+        // Creates and returns a new Vector2D with negated x and y values
+        return Vector2D(-x, -y);
+    }
+
+    // Method to display the vector
+    void display() const {
+        cout << "Vector2D(" << x << ", " << y << ")" << endl;
+    }
+};
+
+int main() {
+    Vector2D v1(3.5, -2.5);
+    
+    // Call the unary '-' operator
+    Vector2D v2 = -v1; // Calls Vector2D operator-() const
+    
+    // Display results
+    cout << "Original vector: ";
+    v1.display();
+    
+    cout << "Negated vector: ";
+    v2.display();
+    
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
 class Complex {
 private:
     float real, imag;
@@ -130,10 +169,10 @@ public:
     // Constructor
     Complex(float r = 0, float i = 0) : real(r), imag(i) {}
 
-    // Friend function to overload '+' operator
-    friend Complex operator+(const Complex& lhs, const Complex& rhs) {
+    // Overload binary '+' operator as a member function
+    Complex operator+(const Complex& obj) const {
         // Creates and returns a new Complex with the sum of the real and imaginary parts
-        return Complex(lhs.real + rhs.real, lhs.imag + rhs.imag);
+        return Complex(real + obj.real, imag + obj.imag);
     }
 
     // Method to display the complex number
@@ -146,8 +185,8 @@ int main() {
     Complex c1(3.5, 2.5);
     Complex c2(1.5, 4.5);
     
-    // Call the non-member binary '+' operator
-    Complex c3 = c1 + c2; // Calls Complex operator+(const Complex&, const Complex&)
+    // Call the binary '+' operator
+    Complex c3 = c1 + c2; // Calls Complex operator+(const Complex&) const
     
     // Display results
     cout << "Complex number 1: ";
@@ -161,6 +200,9 @@ int main() {
     
     return 0;
 }
+
+what's the difference between these two operator overloadingexamples.
+Why is one having parameter and another one without parameter.
 ```
 
 **Explanation**:
