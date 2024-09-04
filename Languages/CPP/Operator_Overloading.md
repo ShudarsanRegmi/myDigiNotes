@@ -81,7 +81,7 @@ public:
     Complex(float r = 0, float i = 0) : real(r), imag(i) {}
 
     // Overload binary '+' operator as a member function
-    Complex operator+(const Complex& obj) const {
+    Complex operator+(const Complex& obj) const { // the parameter represents the second operand
         // Creates and returns a new Complex with the sum of the real and imaginary parts
         return Complex(real + obj.real, imag + obj.imag);
     }
