@@ -156,3 +156,9 @@ QWidget* MainWindow::createSidebar() {
 }
 
 ```
+
+## Output
+
+![image](https://github.com/user-attachments/assets/a676ab1e-99bc-44c0-92a5-e56ad77526a8)
+
+
