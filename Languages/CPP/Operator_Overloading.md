@@ -268,6 +268,57 @@ int main() {
 }
 ```
 
+`operator overloading with friend function`
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real, imag;
+
+public:
+    // Constructor
+    Complex(float r = 0, float i = 0) : real(r), imag(i) {}
+
+    // Declare the friend function to overload the '+' operator
+    friend Complex operator+(const Complex& obj1, const Complex& obj2);
+
+    // Method to display the complex number
+    void display() const {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+// Define the friend function for operator overloading
+Complex operator+(const Complex& obj1, const Complex& obj2) {
+    // Accesses the private members of both objects to add them
+    return Complex(obj1.real + obj2.real, obj1.imag + obj2.imag);
+}
+
+int main() {
+    Complex c1(3.5, 2.5);
+    Complex c2(1.5, 4.5);
+    
+    // Call the overloaded '+' operator (friend function)
+    Complex c3 = c1 + c2; // This calls operator+(c1, c2)
+    
+    // Display results
+    cout << "Complex number 1: ";
+    c1.display();
+    
+    cout << "Complex number 2: ";
+    c2.display();
+    
+    cout << "Sum: ";
+    c3.display();
+    
+    return 0;
+}
+
+```
+
 **Explanation**:
 - `MyClass& operator=(const MyClass& other)` assigns the value of one object to another, ensuring proper resource management to avoid memory leaks and self-assignment issues.
 
