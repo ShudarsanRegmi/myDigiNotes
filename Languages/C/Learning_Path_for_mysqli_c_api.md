@@ -75,5 +75,8 @@ if (!mysql_real_connect(&mysql,"host","user","passwd","database",0,NULL,0))
           mysql_error(&mysql));
 }
 ```
+## Github Repos that provide example codes and reference
+- [connector-c-examples: Could be one of the best refrence for understanding important functions in the C api client library](https://github.com/hholzgra/connector-c-examples)
+
 
 
