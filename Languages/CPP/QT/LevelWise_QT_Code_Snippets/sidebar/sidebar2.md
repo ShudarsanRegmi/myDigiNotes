@@ -157,6 +157,34 @@ QWidget* MainWindow::createSidebar() {
 
 ```
 
+`mainwindow.h`
+
+```cpp
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+#include <QStackedWidget>
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QWidget>
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
+private:
+    QStackedWidget *stackedWidget;
+    QWidget *createSidebar();  // Method to create the sidebar
+};
+#endif // MAINWINDOW_H
+
+```
+
 ## Output
 
 ![image](https://github.com/user-attachments/assets/0657a040-e014-4fce-80b2-e2b8f5ac1e6f)
