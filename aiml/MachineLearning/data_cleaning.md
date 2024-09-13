@@ -184,7 +184,7 @@ print(df)
 ```
 
 **Explanation:**
-- `StandardScaler`: Standardizes data (mean = 0, standard deviation = 1).
+- `StandardScaler`: Standardizes data (mean = 0, standard deviation = 1). or say Standardize features by removing the mean and scaling to unit variance.
 - `MinMaxScaler`: Normalizes data between 0 and 1.
 
 ---
