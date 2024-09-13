@@ -20,6 +20,7 @@
 ## Machine Learning Project Links
 - https://www.geeksforgeeks.org/machine-learning-projects/
 - https://github.com/topics/machine-learning-projects
+- https://medium.datadriveninvestor.com/10-machine-learning-projects-on-classification-with-python-9261add2e8a7
 
 
 ## References
