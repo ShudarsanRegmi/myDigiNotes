@@ -38,7 +38,8 @@ print("\nAfter Dropping Missing Values:")
 print(df_dropped)
 
 # Fill missing values with mean
-df_filled = df.fillna(df.mean())
+#df_filled = df.fillna(df.mean())
+df_filled = df.fillna(0) # fill with 0s
 print("\nAfter Filling Missing Values with Mean:")
 print(df_filled)
 ```
