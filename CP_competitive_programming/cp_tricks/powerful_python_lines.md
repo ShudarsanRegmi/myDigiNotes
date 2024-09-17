@@ -91,3 +91,10 @@ try:
 except breakLooop:
   # code to execute after breakloop
   ```
+
+### Removing a particular index from a string
+
+```python
+s1 = "harilal"
+s1 = [:i]+[i+1:]
+```
