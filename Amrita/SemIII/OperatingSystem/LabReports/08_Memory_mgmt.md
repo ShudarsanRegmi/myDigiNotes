@@ -21,6 +21,7 @@ Tamil Nadu, India
 
 # Memory Management
 
+### Fist Fit
 >Write an algorithm to execute first fit algorithm
 
 ```c
@@ -84,6 +85,8 @@ Block no.       size            process no.             size
 2               10              Not allocated
 3               30              2                       15
 ```
+
+### Best Fit
 
 >Write an algorithm to execute the best fit algorithm
 
@@ -155,4 +158,99 @@ Process_no      Process_size    Block_no        Block_size      Fragment
 1               89              2               100             11
 2               199             1               200             1
 3               201             3               250             49
+```
+
+### Worst Fit
+>Write an algorithm to execute worst fit
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n, n1, i;
+
+    printf("\n\t\t\tMemory Management - Worst Fit\n\n"); 
+    printf("Enter the number of processes: "); 
+    scanf("%d", &n);
+    
+    int process[n];
+    printf("\nEnter the size of processes:\n"); 
+    for(i = 0; i < n; i++) {
+        scanf("%d", &process[i]);
+    }
+    
+    printf("Enter the number of memory blocks: "); 
+    scanf("%d", &n1);
+    
+    int blocks[n1];
+    printf("\nEnter the size of blocks:\n"); 
+    int total = 0;
+    for(i = 0; i < n1; i++) {
+        scanf("%d", &blocks[i]); 
+        total += blocks[i];
+    }
+    
+    int process1[n1]; 
+    int job[n1]; 
+    int frag[n1]; 
+    int check[n1]; 
+    
+    for(i = 0; i < n1; i++) {
+        check[i] = 0;
+        process1[i] = 0; // Initialize process1
+        job[i] = 0;      // Initialize job
+        frag[i] = blocks[i]; // Initialize frag with block sizes
+    }
+    
+    int j, used = 0; 
+    i = 0;
+
+    while(i < n) {
+        int max = -1, j1 = -1; 
+        for(j = 0; j < n1; j++) {
+            if(check[j] == 0 && blocks[j] >= process[i] && blocks[j] > max) {
+                max = blocks[j]; 
+                j1 = j; // Index of the block selected
+            }
+        }
+        
+        // If a suitable block is found
+        if(j1 != -1) {
+            process1[j1] = process[i]; 
+            job[j1] = i + 1; // Process number (1-based)
+            frag[j1] = blocks[j1] - process[i]; 
+            used += process[i]; 
+            check[j1] = 1; // Mark this block as used
+        }
+        
+        i++;
+    }
+    
+    printf("\nblock_size\tprocess_size\tprocess_no\tfragmentation\n"); 
+    for(i = 0; i < n1; i++) {
+        printf("%d\t\t%d\t\t%d\t\t%d\n", blocks[i], process1[i], job[i], frag[i]);
+    }
+
+    return 0; // Return statement added for main function
+}
+
+```
+
+### Output
+```
+
+                        Memory Management - Worst Fit
+
+Enter the number of processes: 2
+
+Enter the size of processes:
+10 20
+Enter the number of memory blocks: 2
+
+Enter the size of blocks:
+10 20
+
+block_size      process_size    process_no      fragmentation
+10              0               0               10
+20              10              1               10
 ```
