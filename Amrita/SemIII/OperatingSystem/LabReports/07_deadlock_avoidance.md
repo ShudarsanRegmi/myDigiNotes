@@ -105,3 +105,9 @@ int main() {
 
 ```
 
+### Output
+```
+sudoerson@Aparichit:~/oslab$ gcc -o out deadlock.c
+sudoerson@Aparichit:~/oslab$ ./out
+The following system is not safe
+```
