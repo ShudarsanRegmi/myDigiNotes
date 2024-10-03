@@ -26,6 +26,8 @@ while cap.isOpened():
     # Process the frame to detect hands
     results = hands.process(frame_rgb)
 
+    
+
     if results.multi_hand_landmarks:
         for hand_landmarks in results.multi_hand_landmarks:
             mp_draw.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
@@ -40,3 +42,5 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 ```
+
+- hands.process will return an object which we will be calling as result. Following are the imporant properties of the result object: 'count', 'index', 'multi_hand_landmarks', 'multi_hand_world_landmarks', 'multi_handedness'
