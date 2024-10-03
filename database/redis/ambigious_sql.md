@@ -2,6 +2,7 @@
 
 >Following are the ambigious topics in SQL
 
+# Comparision with null values
 
 ```sql
 select name from customer where referee_id != 2;
@@ -22,5 +23,14 @@ Customer table:
 | 6  | Mark | 2          |
 +----+------+------------+
 ```
+
+Ans: the SQL condition referee_id != 2 does not consider NULL values. In SQL, any comparison with NULL results in NULL, which is treated as false in the context of a WHERE clause. Therefore, rows where referee_id is NULL will not be included in the results.
+
+```sql
+SELECT name FROM customer WHERE referee_id != 2 OR referee_id IS NULL;
+```
+
+---
+
 
 
