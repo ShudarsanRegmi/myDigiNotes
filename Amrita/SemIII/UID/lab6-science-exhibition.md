@@ -23,7 +23,7 @@ Tamil Nadu, India
 
 ### Competition Details Page
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,7 +138,7 @@ Tamil Nadu, India
 
 ### Registration
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
