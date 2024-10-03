@@ -71,6 +71,7 @@ SELECT Department
 FROM Employees
 GROUP BY Department;
 ```
+- The above is the very first step of a sql query with group by caluse. There will be only one row for each distinct items in the column specified by group by clause, if we want to keep any further columns with group by clause we have to keep them under aggregate functions. 
 
 ## JOIN Statements
 Used to join two tables
@@ -88,6 +89,7 @@ Right join = Outer Join + unmatching rows in right column
 
 
 ### Lab questions
+
 21. select Customer, Order_date, max(purch_amt) from Orders group by customers, Order_date;
 22. select max(Purch_amt) from Orders where  Order_date='2016-8-17' group by Salesman_id having Salesman_id is not null;
 22. select max(Purch_amt) from Orders group by Salesman_id having Order_date=''; ( doubt) 
