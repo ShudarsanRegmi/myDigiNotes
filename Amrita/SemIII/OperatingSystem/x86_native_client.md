@@ -90,33 +90,44 @@ Here's the full content for your PowerPoint presentation on **"Native Client: A 
 ---
 
 
-# PPT-2
+# Final Content 
 
 ### **Slide 1: Title Slide**
 #### **Title**: Native Client: A Sandbox for Portable, Untrusted x86 Native Code
-- **Presented by**: Shudarsan Regmi  
+- **Presented by**: Vedavalli Abishek Shudarsan
 - **Date**: (Add your date)
 
 ---
 
-### **Slide 2: Introduction**
+#### **What is Native Code?**
+- Native code is compiled to run **directly on a computer's CPU**.
+- Offers high **performance** by directly accessing hardware resources (e.g., memory, processors).
+- Common in languages like **C/C++**, used for applications that require intensive computations, such as games, simulations, and video processing.
+
+---
+
+## Slide 2: 
+
+#### **The Challenge of Running Native Code in Web Browsers**
+- **Web applications** typically rely on **interpreted languages** like JavaScript, which can be slower for high-performance tasks.
+- Running native code in browsers introduces **security risks**—untrusted code could exploit system vulnerabilities.
+
+---
+
+## Slide 3:
+
+#### **Native Client (NaCl) Solution**
+- **Native Client (NaCl)** is a **sandboxing technology** that allows **untrusted native code** to run securely in web browsers.
+- Provides both **performance** (native execution speed) and **security** (sandboxing).
+- Ensures **portability**, allowing the same code to run on different platforms (Windows, Linux, macOS) without modification.
+
+
+### **Slide : Introduction**
 #### **What is Native Client (NaCl)?**
 - Native Client, or NaCl, is a **sandboxing technology** developed by Google.
 - It allows **secure execution** of untrusted x86 native code inside a web browser.
 - NaCl ensures **portability** across platforms (Windows, Linux, macOS) while maintaining **performance** close to native applications.
   
-#### **Why is NaCl important?**
-- Modern web apps require high performance (e.g., games, simulations), and NaCl was developed to **address the performance gap** that JavaScript or other web languages can't fulfill efficiently.
-
----
-
-### **Slide 3: Motivation for NaCl**
-#### **Why was Native Client developed?**
-- **Performance**: Web applications, written in languages like JavaScript, were not fast enough for **compute-intensive tasks** like gaming, image processing, or simulations.
-- **Security**: Running native code poses security risks, and a solution was needed to **safely execute untrusted code**.
-- **Portability**: Ensure code written for NaCl could run across different operating systems and platforms without modification.
-
----
 
 ### **Slide 4: NaCl Architecture Overview**
 #### **How does Native Client work?**
