@@ -1,29 +1,4 @@
-You're right! For a more concise version that works well for a slide, here's a simplified version:
 
----
-
-### **Slide 1: Introduction to Native Client (NaCl)**
-
----
-
-#### **What is Native Code?**
-- Runs directly on a computer’s **CPU**.
-- High performance; used in **C/C++** for demanding applications (e.g., games, simulations).
-
----
-
-#### **Challenges in Web Browsers**
-- Web apps need **high performance**, but interpreted languages (like JavaScript) are slower.
-- **Security risks**: Native code can access sensitive system resources.
-
----
-
-#### **Native Client (NaCl)**
-- **Sandboxing** tech for safely running **untrusted native code** in web browsers.
-- Combines **speed** of native execution with **security**.
-- Ensures **portability** across different platforms (Windows, Linux, macOS).
-
----
 
 ### **Memory Protection**
 - The **Operating System (OS)** plays a crucial role in ensuring that Native Client (NaCl) applications don’t have unauthorized access to memory. 
