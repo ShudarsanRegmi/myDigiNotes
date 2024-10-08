@@ -53,46 +53,14 @@ This outline shows how **Native Client (NaCl)** addresses the critical issues of
 
 # Presentation
 
-# Slide: 
-
----
-
-## **Slide 1: Introduction to Native Client (NaCl)**
-
----
-
-#### **What is Native Code?**
-- Native code is compiled to run **directly on a computer's CPU**.
-- Offers high **performance** by directly accessing hardware resources (e.g., memory, processors).
-- Common in languages like **C/C++**, used for applications that require intensive computations, such as games, simulations, and video processing.
-
----
-
-## Slide 2: 
-
-#### **The Challenge of Running Native Code in Web Browsers**
-- **Web applications** typically rely on **interpreted languages** like JavaScript, which can be slower for high-performance tasks.
-- Running native code in browsers introduces **security risks**—untrusted code could exploit system vulnerabilities.
-
----
-
-## Slide 3:
-
-#### **Native Client (NaCl) Solution**
-- **Native Client (NaCl)** is a **sandboxing technology** that allows **untrusted native code** to run securely in web browsers.
-- Provides both **performance** (native execution speed) and **security** (sandboxing).
-- Ensures **portability**, allowing the same code to run on different platforms (Windows, Linux, macOS) without modification.
-
----
-
-Here's the full content for your PowerPoint presentation on **"Native Client: A Sandbox for Portable, Untrusted x86 Native Code"**. You can use this as a script to create your slides.
+# Slides: 
 
 ---
 
 
 # Final Content 
 
-### **Slide 1: Title Slide**
+### **Slide : Title Slide**
 #### **Title**: Native Client: A Sandbox for Portable, Untrusted x86 Native Code
 - **Presented by**: Vedavalli Abishek Shudarsan
 - **Date**: (Add your date)
@@ -106,7 +74,7 @@ Here's the full content for your PowerPoint presentation on **"Native Client: A 
 
 ---
 
-## Slide 2: 
+## Slide: 
 
 #### **The Challenge of Running Native Code in Web Browsers**
 - **Web applications** typically rely on **interpreted languages** like JavaScript, which can be slower for high-performance tasks.
@@ -114,20 +82,13 @@ Here's the full content for your PowerPoint presentation on **"Native Client: A 
 
 ---
 
-## Slide 3:
+## Slide :
 
 #### **Native Client (NaCl) Solution**
 - **Native Client (NaCl)** is a **sandboxing technology** that allows **untrusted native code** to run securely in web browsers.
 - Provides both **performance** (native execution speed) and **security** (sandboxing).
 - Ensures **portability**, allowing the same code to run on different platforms (Windows, Linux, macOS) without modification.
 
-
-### **Slide : Introduction**
-#### **What is Native Client (NaCl)?**
-- Native Client, or NaCl, is a **sandboxing technology** developed by Google.
-- It allows **secure execution** of untrusted x86 native code inside a web browser.
-- NaCl ensures **portability** across platforms (Windows, Linux, macOS) while maintaining **performance** close to native applications.
-  
 
 ### **Slide 4: NaCl Architecture Overview**
 #### **How does Native Client work?**
