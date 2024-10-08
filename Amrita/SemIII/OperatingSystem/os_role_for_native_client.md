@@ -40,3 +40,22 @@
 - This portability feature saves developers time and effort, making NaCl a useful tool for cross-platform development.
 
 ---
+
+# Limitations
+
+Complex Development​
+
+Writing secure native applications requires deep knowledge of C/C++ and security practices.​
+​
+
+WebAssembly Competition​
+
+WebAssembly (Wasm) has become more popular, offering similar benefits with simpler integration.​
+
+​
+
+Deprecation​
+
+Google has moved away from supporting Native Client, focusing on WebAssembly instead.​
+
+​
