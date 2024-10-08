@@ -55,3 +55,155 @@ This outline shows how **Native Client (NaCl)** addresses the critical issues of
 
 # Slide: 
 
+---
+
+## **Slide 1: Introduction to Native Client (NaCl)**
+
+---
+
+#### **What is Native Code?**
+- Native code is compiled to run **directly on a computer's CPU**.
+- Offers high **performance** by directly accessing hardware resources (e.g., memory, processors).
+- Common in languages like **C/C++**, used for applications that require intensive computations, such as games, simulations, and video processing.
+
+---
+
+## Slide 2: 
+
+#### **The Challenge of Running Native Code in Web Browsers**
+- **Web applications** typically rely on **interpreted languages** like JavaScript, which can be slower for high-performance tasks.
+- Running native code in browsers introduces **security risks**—untrusted code could exploit system vulnerabilities.
+
+---
+
+## Slide 3:
+
+#### **Native Client (NaCl) Solution**
+- **Native Client (NaCl)** is a **sandboxing technology** that allows **untrusted native code** to run securely in web browsers.
+- Provides both **performance** (native execution speed) and **security** (sandboxing).
+- Ensures **portability**, allowing the same code to run on different platforms (Windows, Linux, macOS) without modification.
+
+---
+
+Here's the full content for your PowerPoint presentation on **"Native Client: A Sandbox for Portable, Untrusted x86 Native Code"**. You can use this as a script to create your slides.
+
+---
+
+
+# PPT-2
+
+### **Slide 1: Title Slide**
+#### **Title**: Native Client: A Sandbox for Portable, Untrusted x86 Native Code
+- **Presented by**: Shudarsan Regmi  
+- **Date**: (Add your date)
+
+---
+
+### **Slide 2: Introduction**
+#### **What is Native Client (NaCl)?**
+- Native Client, or NaCl, is a **sandboxing technology** developed by Google.
+- It allows **secure execution** of untrusted x86 native code inside a web browser.
+- NaCl ensures **portability** across platforms (Windows, Linux, macOS) while maintaining **performance** close to native applications.
+  
+#### **Why is NaCl important?**
+- Modern web apps require high performance (e.g., games, simulations), and NaCl was developed to **address the performance gap** that JavaScript or other web languages can't fulfill efficiently.
+
+---
+
+### **Slide 3: Motivation for NaCl**
+#### **Why was Native Client developed?**
+- **Performance**: Web applications, written in languages like JavaScript, were not fast enough for **compute-intensive tasks** like gaming, image processing, or simulations.
+- **Security**: Running native code poses security risks, and a solution was needed to **safely execute untrusted code**.
+- **Portability**: Ensure code written for NaCl could run across different operating systems and platforms without modification.
+
+---
+
+### **Slide 4: NaCl Architecture Overview**
+#### **How does Native Client work?**
+1. **Sandboxing**: Native Client creates a sandbox environment to isolate native code from the system, preventing unauthorized access to the operating system or files.
+   
+2. **Validator**: Before execution, the code is passed through a **validator** to ensure it adheres to safety rules (e.g., no unauthorized memory access).
+   
+3. **Instruction Set Architecture (ISA)**: Supports execution on multiple architectures like **x86, ARM**, and **MIPS**. Native Client translates code to work across different platforms while ensuring portability.
+
+4. **Native Client Modules (NaCl Modules)**: Native code is packaged in **NaCl modules**, which are validated and executed in the sandbox environment.
+
+---
+
+### **Slide 5: NaCl Security Model**
+#### **Key Security Features**
+- **Memory Sandboxing**: Ensures the code can’t access memory outside its designated area. This protects the system from malicious or faulty code.
+  
+- **Code Validation**: NaCl enforces strict validation rules before code can be executed. The code must follow certain patterns to avoid dangerous instructions.
+
+- **Controlled System Calls**: Access to the underlying system is restricted, and only **whitelisted system calls** are allowed. This limits potential misuse.
+
+- **Validator Role**: Ensures that no unsafe machine instructions (like privileged instructions or system calls) are allowed in the code.
+
+---
+
+### **Slide 6: Portability of NaCl**
+#### **Cross-Platform Portability**
+- NaCl allows the **same binary** to run across multiple platforms, ensuring that **developers don’t need to rewrite their code** for different operating systems.
+  
+- Uses a combination of **portable executable (PE)** format and **architecture-neutral APIs** to allow code execution on different systems.
+
+- NaCl supports different instruction sets, including **x86, ARM, and MIPS**, ensuring its portability across different hardware.
+
+---
+
+### **Slide 7: Use Cases of NaCl**
+#### **Where is NaCl Used?**
+- **High-Performance Web Applications**: NaCl allows applications that require high computation power, such as games and simulations, to run directly in the browser.
+
+- **Game Development**: Google demonstrated this with the **Quake demo**, where the game was run in a web browser using NaCl for performance similar to native applications.
+
+- **Heavy Computations**: NaCl is suitable for tasks that require intense computation, such as **image processing, data simulations**, and **video editing**.
+
+---
+
+### **Slide 8: Comparison with Other Solutions**
+#### **Native Client vs. WebAssembly (Wasm)**
+- **Performance**: Both NaCl and WebAssembly offer near-native performance, but **WebAssembly** is often seen as faster due to more widespread optimization.
+
+- **Security**: WebAssembly also provides a sandboxing model but is designed to be simpler and easier to implement across all browsers. NaCl relies heavily on code validation for security.
+
+- **Adoption**: WebAssembly is supported by all modern browsers, making it the successor to NaCl, which had limited adoption primarily within **Google Chrome**.
+
+---
+
+### **Slide 9: Limitations of NaCl**
+#### **Challenges and Criticisms**
+- **Browser Support**: NaCl was **only supported by Google Chrome**, limiting its widespread adoption. Other browsers like Firefox and Safari never adopted NaCl.
+
+- **Complexity**: Developing applications using NaCl requires developers to learn and manage NaCl's security and portability features, which can be more complex than alternatives like WebAssembly.
+
+- **Rise of WebAssembly**: With the introduction and wide adoption of **WebAssembly (Wasm)**, NaCl's role became obsolete. Wasm became the preferred choice for **native-like performance in the browser**.
+
+---
+
+### **Slide 10: Conclusion**
+- **Summary**: Native Client (NaCl) was an innovative solution to enable high-performance, secure, and portable native code execution in web browsers. It aimed to bridge the gap between native and web-based applications.
+  
+- **Current Relevance**: While NaCl was crucial in advancing **web performance technologies**, it was ultimately replaced by **WebAssembly**, which achieved broader browser support and simpler implementation.
+
+- **Future of NaCl**: NaCl has largely been **superseded by WebAssembly**, but its influence in shaping secure native code execution in web browsers remains.
+
+---
+
+### **Slide 11: References**
+- **Google’s Native Client Overview Documentation**  
+- **WebAssembly vs. Native Client: Performance and Adoption**  
+- **Research Papers on NaCl’s Sandboxing and Security Mechanisms**  
+
+---
+
+### Additional Tips:
+- Keep each slide concise, use **bullet points** rather than large text blocks.
+- Add **diagrams and visuals** to explain concepts like NaCl architecture, sandboxing, and security models.
+- Include **demo videos or images** of NaCl in action (like the Quake demo) to show practical use cases.
+- Use **speaker notes** or practice explaining each point verbally to make your presentation more interactive.
+
+Let me know if you need help with specific slides or visuals!
+
+
