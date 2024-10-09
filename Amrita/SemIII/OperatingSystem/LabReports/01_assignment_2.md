@@ -11,7 +11,7 @@ Tamil Nadu, India
 ---
 
 ### Subject: Operating System Lab
-### Assignment: 1
+### Assignment: 2
 
 **Submitted By:** Shudarsan Regmi  
 **Roll No.:** CH.SC.U4CYS23055
