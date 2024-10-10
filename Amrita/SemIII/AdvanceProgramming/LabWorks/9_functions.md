@@ -19,7 +19,7 @@ Tamil Nadu, India
 
 ---
 
-# Python Programs Report
+# Lab - 9 Report
 
 ## 1. **Multiple Function Calls with Compulsory Argument**
 
