@@ -87,3 +87,48 @@ int main() {
 }
 
 ```
+
+
+## Sum of Numbers Recursion Examples
+
+```c
+#include <stdio.h>
+
+// Recursive function to calculate the sum of numbers from n to 1
+int sumUpTo(int n, int depth) {
+    // Print the current recursion depth and value of n
+    printf("[Depth %d] Entering sumUpTo with n = %d\n", depth, n);
+
+    // Base case: If n is 0, return 0
+    if (n == 0) {
+        printf("[Depth %d] Base case reached: n = %d, returning 0\n", depth, n);
+        return 0;
+    }
+
+    // Recursive case: n + sum of (n-1), increase depth
+    int sum = n + sumUpTo(n - 1, depth + 1);
+
+    // Print the value of sum as recursion unwinds
+    printf("[Depth %d] Returning sum = %d for n = %d\n", depth, sum, n);
+
+    return sum;
+}
+
+int main() {
+    int num = 5;
+    printf("Calculating sum of numbers from %d to 1...\n", num);
+
+    // Start the recursion with depth 0
+    int result = sumUpTo(num, 0);
+
+    // Print the final result
+    printf("\nSum of numbers from %d to 1 is: %d\n", num, result);
+    return 0;
+}
+
+```
+
+## Some Other Helpful Materials
+
+- [Visualizing Recursion](https://medium.com/swlh/visualizing-recursion-6a81d50d6c41)
+- []()
