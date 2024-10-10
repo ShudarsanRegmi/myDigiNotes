@@ -37,7 +37,9 @@ int main() {
 ```
 
 **Big Doubt in above program:**
-![image](https://github.com/user-attachments/assets/3998faec-9002-4d80-adb3-99bee1b4d8e5)
+
+![image](https://github.com/user-attachments/assets/c9a5fe4e-22a7-4a0a-a701-69d79c40f77d)
+
 
 >Why the last stack frame is not getting destoroyed immediately, when the function hits the return statement. Why still in depth 5? why the depth = 5 statemnt gets printed?
 >Note: for now, I'm leaving, but I still have nuances left in these concepts
