@@ -1,3 +1,46 @@
+
+
+# A Simple Program to Visualize Recursion Depths 
+
+```c
+#include <stdio.h>
+
+// Recursive function to count down from a number
+void countdown(int n, int depth) {
+    // Print the current recursion depth and value of n
+    printf("[Depth %d] Current n = %d\n", depth, n);
+
+    // Base case: Stop recursion when n reaches 0
+    if (n == 0) {
+        printf("[Depth %d] Base case reached: n = %d\n", depth, n);
+        return;
+    }
+
+    // Recursive case: Call countdown with n-1, increasing depth
+    countdown(n - 1, depth + 1);
+
+    // Print when returning from recursion (unwinding)
+    printf("[Depth %d] Returning from recursion, n = %d\n", depth, n);
+}
+
+int main() {
+    int start = 5; // Start countdown from 5
+    printf("Starting countdown from %d...\n", start);
+
+    // Start the recursion with depth 0
+    countdown(start, 0);
+
+    return 0;
+}
+
+
+```
+
+**Big Doubt in above program:**
+![{4C1DC1B7-01B6-4F85-AAE3-BB78391A45A5}](https://github.com/user-attachments/assets/62498c9b-c42a-42e9-ac1a-5f61ab7487b0)
+>Why the last stack frame is not getting destoroyed immediately, when the function hits the return statement. Why still in depth 5? why the depth = 5 statemnt gets printed?
+>Note: for now, I'm leaving, but I still have nuances left in these concepts
+
 # Recursion Concepts More In-depths insights
 
 
