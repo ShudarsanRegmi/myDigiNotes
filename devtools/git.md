@@ -121,3 +121,29 @@ git commit -m "WIP2: Work title"
 # Creating file commit  message
 git rebase -i HEAD~number_of_commits
 ```
+
+### Unstage all tracked files before commit
+
+```bash
+git reset .
+```
+
+>Note: don't add relative path in .ignore. [This stmt is incomplete]
+
+### Renaming a branch from master to main
+
+```bash
+# first checkout to master branch if you haven't already
+git checkout master
+git branch -m main
+```
+
+### Listing all fetches
+```bash
+git fetch
+```
+
+### When you've sth in git and also sth initiated separately in local 
+```bash
+git merge main --allow-unrelated-histories
+```
