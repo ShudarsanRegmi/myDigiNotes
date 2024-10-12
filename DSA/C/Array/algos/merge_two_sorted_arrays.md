@@ -1,7 +1,9 @@
 # Merging two sorted arrays
 
 
-#### Using Merge of merge sort
+## Using Merge of merge sort
+
+#### The one which I crafted
 
 ```c
 #include <stdio.h>
