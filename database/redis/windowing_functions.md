@@ -307,3 +307,70 @@ mysql> select sale_date, sum(amount) over (partition by sale_date order by sale_
 
 ### Key Takeaway:
 - **`ORDER BY` in a window function** defines how the rows are processed within the window frame. When you include `ORDER BY`, functions like `SUM()` behave differently because they respect the order, resulting in cumulative behavior (like a running total). Without `ORDER BY`, they apply the function over all rows at once, leading to a constant result for each row.
+
+
+
+---
+
+### Some Doubts Clearing Question and Answers
+
+### Question:
+In a query using the `NTH_VALUE()` window function like the following:
+
+```sql
+SELECT first_name,
+       last_name,
+       department,
+       salary,
+       NTH_VALUE(salary, 3) OVER (PARTITION BY department ORDER BY salary DESC) AS nth_value
+FROM emp2;
+```
+
+**Why does the `NTH_VALUE()` function return `NULL` for the first and second rows of each department, even when the rank is 3 for some rows?**
+```
+mysql> select * from emp2;
++----+------------+-----------+--------------------------+----------+------------+
+| id | first_name | last_name | department               | salary   | manager_id |
++----+------------+-----------+--------------------------+----------+------------+
+|  1 | Angelika   | Voules    | Marketing                |  5293.74 |          2 |
+|  2 | Rozelle    | Swynley   | Marketing                |  8295.08 |         18 |
+|  3 | Warren     | Willey    | Engineering              |  9126.72 |         19 |
+|  4 | Lynelle    | Whiten    | Management Board         | 10716.15 |       NULL |
+|  5 | Consolata  | Roman     | Legal                    |  8456.06 |          4 |
+|  6 | Hoebart    | Baldock   | Research and Development |  4817.34 |         20 |
+|  7 | Starlene   | Watkiss   | Accounting               |  6541.48 |          4 |
+|  8 | Barde      | Ribbens   | Marketing                |  4852.87 |          2 |
+|  9 | Lorne      | Philipsen | Engineering              |  7235.59 |          3 |
+| 10 | Pedro      | Naldrett  | Research and Development |  5471.62 |         20 |
+| 11 | Brina      | Dillinger | Marketing                |  6512.17 |          2 |
+| 12 | Verile     | Sonley    | Research and Development |  4574.41 |         20 |
+| 13 | Noble      | Geerling  | Research and Development |  8391.18 |         20 |
+| 14 | Garey      | MacAdam   | Accounting               |  3829.88 |          7 |
+| 15 | Theo       | Sorrell   | Engineering              |  6441.67 |          3 |
+| 16 | Erminie    | Gelling   | Research and Development |  8590.70 |         20 |
+| 17 | Loralie    | Koop      | Accounting               |  5248.46 |          7 |
+| 18 | Cal        | Andrey    | Management Board         | 11258.82 |       NULL |
+| 19 | Quincey    | Gamell    | Management Board         | 11366.52 |       NULL |
+| 20 | Janith     | McGiffie  | Research and Development |  7428.83 |         19 |
++----+------------+-----------+--------------------------+----------+------------+
+20 rows in set (0.00 sec)
+
+mysql>  SELECT  first_name,                                                                                                                             ->                 last_name,                                                                                                                       ->                 department,                                                                                                                      ->                 salary,                                                                                                                          ->          NTH_VALUE(salary, 3) OVER (PARTITION BY department ORDER BY salary DESC) as 2th                                                         ->         FROM emp2;                                                                                                                           +------------+-----------+--------------------------+----------+----------+                                                                         | first_name | last_name | department               | salary   | 2th      |                                                                         +------------+-----------+--------------------------+----------+----------+                                                                         | Starlene   | Watkiss   | Accounting               |  6541.48 |     NULL |                                                                         | Loralie    | Koop      | Accounting               |  5248.46 |     NULL |                                                                         | Garey      | MacAdam   | Accounting               |  3829.88 |  3829.88 |                                                                         | Warren     | Willey    | Engineering              |  9126.72 |     NULL |                                                                         | Lorne      | Philipsen | Engineering              |  7235.59 |     NULL |                                                                         | Theo       | Sorrell   | Engineering              |  6441.67 |  6441.67 |                                                                         | Consolata  | Roman     | Legal                    |  8456.06 |     NULL |                                                                         | Quincey    | Gamell    | Management Board         | 11366.52 |     NULL |                                                                         | Cal        | Andrey    | Management Board         | 11258.82 |     NULL |                                                                         | Lynelle    | Whiten    | Management Board         | 10716.15 | 10716.15 |                                                                         | Rozelle    | Swynley   | Marketing                |  8295.08 |     NULL |                                                                         | Brina      | Dillinger | Marketing                |  6512.17 |     NULL |                                                                         | Angelika   | Voules    | Marketing                |  5293.74 |  5293.74 |                                                                         | Barde      | Ribbens   | Marketing                |  4852.87 |  5293.74 |                                                                         | Erminie    | Gelling   | Research and Development |  8590.70 |     NULL |                                                                         | Noble      | Geerling  | Research and Development |  8391.18 |     NULL |                                                                         | Janith     | McGiffie  | Research and Development |  7428.83 |  7428.83 |                                                                         | Pedro      | Naldrett  | Research and Development |  5471.62 |  7428.83 |                                                                         | Hoebart    | Baldock   | Research and Development |  4817.34 |  7428.83 |                                                                         | Verile     | Sonley    | Research and Development |  4574.41 |  7428.83 |                                                                         +------------+-----------+--------------------------+----------+----------+                                                                         20 rows in set (0.00 sec)                                                    
+```
+
+### Answer:
+The behavior of `NTH_VALUE()` depends on how the window frame is defined. The function returns the **n-th value** from the **ordered set of rows** within a window partition, based on the position specified (in this case, the 3rd highest salary in each department).
+
+However, the key to understanding the `NULL` values for the first and second rows lies in how **window frames** work. When you apply `NTH_VALUE(salary, 3)`, the function will return the salary from the **3rd row** of the ordered window, but **only after the window has included at least three rows**. For the first and second rows, the window doesn’t yet include enough rows to retrieve the 3rd value, which is why it returns `NULL`.
+
+- **For the first and second rows** of each department, the window does not yet have a third row to retrieve the 3rd salary, so the result is `NULL`.
+- **For the third and subsequent rows**, the window includes at least three rows, so the function is able to return the salary from the 3rd row.
+
+This shadowed behavior reveals that window functions like `NTH_VALUE()` are sensitive to the number of rows currently included in the window frame. If the frame doesn’t have enough rows (fewer than `n`), the function cannot return a value and results in `NULL`.
+
+### Key Points:
+- **`NTH_VALUE()` returns `NULL`** when there aren’t enough rows in the window frame to satisfy the nth value condition.
+- The first two rows return `NULL` in this case because the window does not yet contain three rows to retrieve the 3rd value.
+- Once the window has enough rows (from the 3rd row onwards), the `NTH_VALUE()` function can retrieve and return the requested value.
+
+- 
