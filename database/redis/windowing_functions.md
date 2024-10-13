@@ -293,3 +293,17 @@ ORDER BY sale_date;
 mysql> select sale_date, sum(amount) over (partition by sale_date) as cum_sum from sales; => gives sum of each partition for each row in a partition
 mysql> select sale_date, sum(amount) over (partition by sale_date order by sale_date, sale_id) as cum_sum from sales; => gives the cum_sum
 ```
+
+**Ans::**
+
+2. **With `ORDER BY` (Second Case)**:
+   - The window function respects the **order** of the rows as defined by `ORDER BY`. Instead of calculating a single total, it calculates a **running total** (cumulative sum) where the sum builds up with each row, considering the rows in the order specified.
+   - The `ORDER BY` clause inside the window function defines the sequence in which rows are processed, which fundamentally changes how the window function operates.
+
+### What you might not have realized:
+- The `ORDER BY` clause inside a window function is not about sorting the entire result set; it’s about determining the **sequence in which the function processes rows**. This changes how the function behaves (e.g., computing a cumulative total instead of an overall total).
+
+- When there’s no `ORDER BY` clause, window functions like `SUM()` operate on the **entire set at once**, and the result is uniform for all rows.
+
+### Key Takeaway:
+- **`ORDER BY` in a window function** defines how the rows are processed within the window frame. When you include `ORDER BY`, functions like `SUM()` behave differently because they respect the order, resulting in cumulative behavior (like a running total). Without `ORDER BY`, they apply the function over all rows at once, leading to a constant result for each row.
