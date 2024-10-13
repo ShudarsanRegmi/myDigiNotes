@@ -76,3 +76,8 @@ NOTE> I'm not entirely clearn with this
 
 ---
 
+### Famous Questions that are important for placements exams and interview
+
+- Create a round robin of teams. Eg. IPL teams (done in class)
+- 
+
