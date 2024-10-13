@@ -284,6 +284,12 @@ ORDER BY sale_date;
 3. **Execute each of the practice queries** to see the results. 
 4. Feel free to modify the queries or add new data to see how the window functions behave under different scenarios.
 
-### Conclusion
 
-By working through these exercises, you'll get hands-on experience with window functions in SQL. If you have any questions about the queries or need further examples, feel free to ask!
+---
+# Doubts 
+
+**Importance of order by in below queries?**
+```
+mysql> select sale_date, sum(amount) over (partition by sale_date) as cum_sum from sales; => gives sum of each partition for each row in a partition
+mysql> select sale_date, sum(amount) over (partition by sale_date order by sale_date, sale_id) as cum_sum from sales; => gives the cum_sum
+```
