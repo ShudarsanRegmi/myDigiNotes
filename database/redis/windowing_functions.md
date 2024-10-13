@@ -355,7 +355,38 @@ mysql> select * from emp2;
 +----+------------+-----------+--------------------------+----------+------------+
 20 rows in set (0.00 sec)
 
-mysql>  SELECT  first_name,                                                                                                                             ->                 last_name,                                                                                                                       ->                 department,                                                                                                                      ->                 salary,                                                                                                                          ->          NTH_VALUE(salary, 3) OVER (PARTITION BY department ORDER BY salary DESC) as 2th                                                         ->         FROM emp2;                                                                                                                           +------------+-----------+--------------------------+----------+----------+                                                                         | first_name | last_name | department               | salary   | 2th      |                                                                         +------------+-----------+--------------------------+----------+----------+                                                                         | Starlene   | Watkiss   | Accounting               |  6541.48 |     NULL |                                                                         | Loralie    | Koop      | Accounting               |  5248.46 |     NULL |                                                                         | Garey      | MacAdam   | Accounting               |  3829.88 |  3829.88 |                                                                         | Warren     | Willey    | Engineering              |  9126.72 |     NULL |                                                                         | Lorne      | Philipsen | Engineering              |  7235.59 |     NULL |                                                                         | Theo       | Sorrell   | Engineering              |  6441.67 |  6441.67 |                                                                         | Consolata  | Roman     | Legal                    |  8456.06 |     NULL |                                                                         | Quincey    | Gamell    | Management Board         | 11366.52 |     NULL |                                                                         | Cal        | Andrey    | Management Board         | 11258.82 |     NULL |                                                                         | Lynelle    | Whiten    | Management Board         | 10716.15 | 10716.15 |                                                                         | Rozelle    | Swynley   | Marketing                |  8295.08 |     NULL |                                                                         | Brina      | Dillinger | Marketing                |  6512.17 |     NULL |                                                                         | Angelika   | Voules    | Marketing                |  5293.74 |  5293.74 |                                                                         | Barde      | Ribbens   | Marketing                |  4852.87 |  5293.74 |                                                                         | Erminie    | Gelling   | Research and Development |  8590.70 |     NULL |                                                                         | Noble      | Geerling  | Research and Development |  8391.18 |     NULL |                                                                         | Janith     | McGiffie  | Research and Development |  7428.83 |  7428.83 |                                                                         | Pedro      | Naldrett  | Research and Development |  5471.62 |  7428.83 |                                                                         | Hoebart    | Baldock   | Research and Development |  4817.34 |  7428.83 |                                                                         | Verile     | Sonley    | Research and Development |  4574.41 |  7428.83 |                                                                         +------------+-----------+--------------------------+----------+----------+                                                                         20 rows in set (0.00 sec)                                                    
+mysql>  SELECT  first_name,
+    ->                 last_name,
+    ->                 department,
+    ->                 salary,
+    ->          NTH_VALUE(salary, 3) OVER (PARTITION BY department ORDER BY salary DESC) as 2th
+    ->         FROM emp2;
++------------+-----------+--------------------------+----------+----------+
+| first_name | last_name | department               | salary   | 2th      |
++------------+-----------+--------------------------+----------+----------+
+| Starlene   | Watkiss   | Accounting               |  6541.48 |     NULL |
+| Loralie    | Koop      | Accounting               |  5248.46 |     NULL |
+| Garey      | MacAdam   | Accounting               |  3829.88 |  3829.88 |
+| Warren     | Willey    | Engineering              |  9126.72 |     NULL |
+| Lorne      | Philipsen | Engineering              |  7235.59 |     NULL |
+| Theo       | Sorrell   | Engineering              |  6441.67 |  6441.67 |
+| Consolata  | Roman     | Legal                    |  8456.06 |     NULL |
+| Quincey    | Gamell    | Management Board         | 11366.52 |     NULL |
+| Cal        | Andrey    | Management Board         | 11258.82 |     NULL |
+| Lynelle    | Whiten    | Management Board         | 10716.15 | 10716.15 |
+| Rozelle    | Swynley   | Marketing                |  8295.08 |     NULL |
+| Brina      | Dillinger | Marketing                |  6512.17 |     NULL |
+| Angelika   | Voules    | Marketing                |  5293.74 |  5293.74 |
+| Barde      | Ribbens   | Marketing                |  4852.87 |  5293.74 |
+| Erminie    | Gelling   | Research and Development |  8590.70 |     NULL |
+| Noble      | Geerling  | Research and Development |  8391.18 |     NULL |
+| Janith     | McGiffie  | Research and Development |  7428.83 |  7428.83 |
+| Pedro      | Naldrett  | Research and Development |  5471.62 |  7428.83 |
+| Hoebart    | Baldock   | Research and Development |  4817.34 |  7428.83 |
+| Verile     | Sonley    | Research and Development |  4574.41 |  7428.83 |
++------------+-----------+--------------------------+----------+----------+
+20 rows in set (0.00 sec)
+                                                
 ```
 
 ### Answer:
