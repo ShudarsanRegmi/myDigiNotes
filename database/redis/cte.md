@@ -169,3 +169,86 @@ mysql> with rank_tbl as (
 +----+------------+-----------+--------------------------+----------+------------+----------+
 5 rows in set (0.00 sec)
 ```
+
+
+--- 
+
+### Recursive CTE Examples
+
+####. Generating sequence upto 10 without using any function
+```
+WITH RECURSIVE num as (
+select 1 as n
+
+union all 
+select n+1 as n from num where n<10
+
+) 
+
+select * from num;
+```
+#####. Output
+```
++------+
+| n    |
++------+
+|    1 |
+|    2 |
+|    3 |
+|    4 |
+|    5 |
+|    6 |
+|    7 |
+|    8 |
+|    9 |
+|   10 |
++------+
+10 rows in set (0.00 sec)
+```
+
+####. Create simple database for understanding manager hierarchy
+
+```sql
+CREATE TABLE emp3 (
+    emp_id INT NOT NULL PRIMARY KEY,
+    emp_name VARCHAR(50) NOT NULL,
+    manager_id INT
+);
+
+INSERT INTO emp3 (emp_id, emp_name, manager_id) VALUES
+(1, 'Madhav', NULL),
+(2, 'Sam', 1),
+(3, 'Tom', 2),
+(4, 'Arjun', NULL),  -- Changed manager_id to NULL since 6 does not exist
+(5, 'Shiva', 4),
+(6, 'Keshav', 1),
+(7, 'Damodar', 5);
+
+```
+
+####. Creating manager hierarchy
+```
+select * from man;
+
+with recursive man as (
+
+select * from emp3 where emp_id = 7 
+
+union all
+
+select emp3.* from emp3 inner join man on emp3.emp_id = man.manager_id
+)
+select * from man;
+```
+#####. Output
+```
++--------+----------+------------+
+| emp_id | emp_name | manager_id |
++--------+----------+------------+
+|      7 | Damodar  |          5 |
+|      5 | Shiva    |          4 |
+|      4 | Arjun    |       NULL |
++--------+----------+------------+
+3 rows in set (0.00 sec)
+```
+
