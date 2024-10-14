@@ -150,3 +150,22 @@ mysql> select first_name, department, avg(salary) over (partition by department)
 20 rows in set (0.00 sec)
 ```
 
+###. Find the highest salary by department
+
+
+```
+mysql> with rank_tbl as (
+    -> select *, rank() over (partition by department order by salary desc) as sal_rank
+    -> from emp2 )
+    -> select * from rank_tbl r where r.sal_rank = 2;
++----+------------+-----------+--------------------------+----------+------------+----------+
+| id | first_name | last_name | department               | salary   | manager_id | sal_rank |
++----+------------+-----------+--------------------------+----------+------------+----------+
+| 17 | Loralie    | Koop      | Accounting               |  5248.46 |          7 |        2 |
+|  9 | Lorne      | Philipsen | Engineering              |  7235.59 |          3 |        2 |
+| 18 | Cal        | Andrey    | Management Board         | 11258.82 |       NULL |        2 |
+| 11 | Brina      | Dillinger | Marketing                |  6512.17 |          2 |        2 |
+| 13 | Noble      | Geerling  | Research and Development |  8391.18 |         20 |        2 |
++----+------------+-----------+--------------------------+----------+------------+----------+
+5 rows in set (0.00 sec)
+```
