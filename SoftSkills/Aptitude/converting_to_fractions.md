@@ -67,3 +67,11 @@ Example: \(x = 0.123232323\ldots\)
 ---
 
 > **Note**: This note uses MathJax formatting, which renders mathematical expressions in LaTeX style.
+>
+
+```math
+SE = \frac{\sigma}{\sqrt{n}}
+```
+
+This sentence uses `$` delimiters to show math inline:  $\sqrt{3x-1}+(1+x)^2$
+
