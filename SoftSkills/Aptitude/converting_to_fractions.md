@@ -14,12 +14,14 @@ Example: $x = 3.\overline{12}$
 
 1. Let $x = 3.\overline{12}$
 2. Multiply both sides by 100:  
-   $$ 100x = 312.\overline{12} $$
-3. Subtract the first equation from the second:  
+   $$
+   100x = 312.\overline{12}
+   $$
+4. Subtract the first equation from the second:  
    $$ 100x - x = 312.\overline{12} - 3.\overline{12} $$
-4. Simplify:  
+5. Simplify:  
    $$ 99x = 309 $$
-5. Solve for $x$:  
+6. Solve for $x$:  
    $$ x = \frac{309}{99} = \frac{103}{33} $$
 
 ---
