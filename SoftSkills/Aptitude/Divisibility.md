@@ -4,8 +4,9 @@
 - for a number to be divisible by 3, the sum of its digit should be divisible by 3
 - for 5, last digit should be 5 or 0
 - for 6, the number should be divisible by 2 and 3
-- for 7,  (digits preceding 1 - 2 * unit_digit) should be multiple of 7 or 0 (recursively)
-- for 13, (digits preceding last digit + 4*last_digit) should be multiple of 13 (recursive)
+- for 7,  (digits preceding last digit(tens digit)  - 2 * unit_digit) should be multiple of 7 or 0 (recursive)
+- for 13, (digits preceding last digit(tens digit) + 4*last_digit) should be multiple of 13 (recursive)
+- for 19, (digits preceding last digit(tens digit) + 2*last_digit) should be multiple of 19 (recursive)
 
 # No. of Divisors = product of (degree+1) of each prime factors
 Eg. = 1728 = (2^6)*3^3 
