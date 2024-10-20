@@ -77,3 +77,5 @@ int main(void) {
     return 0;
 }
 ```
+
+[Path](https://www.youtube.com/shorts/Td-XOrU2id8)
