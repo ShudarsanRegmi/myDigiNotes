@@ -9,4 +9,4 @@
 
 # Technical aspects
 - DATEDIFF() function two find differnce between two dates
-- 
+- coalesce() function to provide substitue values for null values
