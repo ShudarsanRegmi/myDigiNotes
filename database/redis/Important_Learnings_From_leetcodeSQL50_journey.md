@@ -1,4 +1,4 @@
-# Important Learning from LeetCode SQL from journey
+# Important Learning from LeetCode SQL50 journey
 
 - Use Self join with proper conditions to perform operations b/w rows.
 - group by col1, col2 can have multiple columns for col1 but only a single column from col2
