@@ -1,7 +1,7 @@
 # My Doubts in C
 
 
-# Those 4 bytes in the middle for a node in lined list
+# Those 4 bytes in the middle for a node in linked list
 
 ![{2CF44EA1-1FA6-4830-9DE6-D6B7B47C44F5}](https://github.com/user-attachments/assets/7155b074-e659-434a-a6e2-9a35f3858787)
 
