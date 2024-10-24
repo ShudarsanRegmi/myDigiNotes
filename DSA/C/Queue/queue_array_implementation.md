@@ -1,5 +1,11 @@
 # Implementation of Queue Using Array in C
 
+#### While Implementing, keep following things in mind
+- Empty queue cannot be deQueued and full queue cannot be enQueued
+- While enqueue check whether space is there or not
+- While enqueue, front = -1 then front++ and reare++ always
+- While queue, front++ and check front the condition when front>rear, in this case set both front and rear pointer to -1
+
 ```c
 #include <stdio.h>
 
