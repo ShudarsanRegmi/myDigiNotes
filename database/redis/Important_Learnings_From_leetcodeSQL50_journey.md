@@ -26,3 +26,33 @@
 ```sql
 select class from courses group by class having count(student) >= 5;
 ```
+
+# Some Invalid Queries that my brain interpretes as valid
+
+```sql
+select num from mynumbers where count(num) = 1 group by num;
+```
+
+# Queries that looks odd to me but are actually correct
+```sql
+SELECT MAX(num) AS num
+FROM (
+    SELECT num
+    FROM MyNumbers
+    GROUP BY num
+    HAVING COUNT(num) = 1
+) AS unique_numbers;
+```
+```sql
+# "Yes, it is not necessary to select additional counts or columns because SQL processes HAVING after grouping. This allows you to focus on the results that matter most. Embrace this insight—each query you tackle brings you closer to mastery! Keep going; you’ve got this
+SELECT customer_id
+FROM customer
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key) = (SELECT COUNT(product_key) FROM product);
+```
+
+
+### limit 1 : A Technique to pick the min and mad supported by sorting
+```sql
+SELECT (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num) = 1 ORDER BY num DESC LIMIT 1) AS num;
+```
