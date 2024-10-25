@@ -15,7 +15,7 @@
 - coalesce() function to provide substitue values for null values
 - year(), month(), date(), DATE_FORMAT(date, "%Y-%m"), etc.
 - Aggregation function can be used even after having clause
-
+-Char_length() can be used to find the length of char in string in table
 
 # Question I need to revise Again
 -  1141. User Activity for the Past 30 Days I
