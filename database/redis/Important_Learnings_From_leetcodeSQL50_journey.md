@@ -9,6 +9,11 @@
 
 
 # Technical aspects
-- DATEDIFF() function two find differnce between two dates
+- DATEDIFF() function two find differnce between two dates. E.g. DATEDIFF(activity_date, '2019-07-27') < 30
 - coalesce() function to provide substitue values for null values
 - year(), month(), date(), DATE_FORMAT(date, "%Y-%m"), etc.
+
+
+# Question I need to revise Again
+- # 1141. User Activity for the Past 30 Days I
+- 
