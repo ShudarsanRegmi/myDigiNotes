@@ -12,8 +12,17 @@
 - DATEDIFF() function two find differnce between two dates. E.g. DATEDIFF(activity_date, '2019-07-27') < 30
 - coalesce() function to provide substitue values for null values
 - year(), month(), date(), DATE_FORMAT(date, "%Y-%m"), etc.
+- Aggregation function can be used even after having clause
 
 
 # Question I need to revise Again
-- # 1141. User Activity for the Past 30 Days I
-- 
+-  1141. User Activity for the Past 30 Days I
+- 1070. Product Sales Analysis (solved using cte, need to solve using subqueries)
+
+ 
+
+# Some queries to Look again
+
+```sql
+select class from courses group by class having count(student) >= 5;
+```
