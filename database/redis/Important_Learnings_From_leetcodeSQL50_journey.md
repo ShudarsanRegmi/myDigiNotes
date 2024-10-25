@@ -56,3 +56,29 @@ HAVING COUNT(DISTINCT product_key) = (SELECT COUNT(product_key) FROM product);
 ```sql
 SELECT (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num) = 1 ORDER BY num DESC LIMIT 1) AS num;
 ```
+
+### Some Dangerous looking queries encountered
+```sql
+select
+    case
+        when id = (select max(id) from seat) and id % 2 = 1
+            then id
+        when id % 2 = 1
+            then id + 1
+        else id - 1
+        end as id, student from seat order by id;
+```
+
+### Smart Solutions
+
+##### Exchange Seats - Medium
+```sql
+
+SELECT 
+    id,
+    CASE
+        WHEN id % 2 = 0 THEN LAG(student) OVER(ORDER BY id)
+        ELSE COALESCE(LEAD(student) OVER(ORDER BY id), student)
+    END AS student
+FROM Seat
+```
