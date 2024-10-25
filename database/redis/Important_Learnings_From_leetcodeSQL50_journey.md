@@ -142,3 +142,69 @@ SELECT
     END AS student
 FROM Seat
 ```
+
+
+---
+
+## String Functions in mysql
+
+### MySQL String Functions Overview
+
+1. **`CONCAT(str1, str2, ...)`**: Joins multiple strings together.  
+   ```sql
+   SELECT CONCAT('Hello', ' ', 'World'); -- Result: 'Hello World'
+   ```
+
+2. **`LENGTH(str)`**: Returns the length of a string in bytes.
+   ```sql
+   SELECT LENGTH('text'); -- Result: 4
+   ```
+
+3. **`CHAR_LENGTH(str)`**: Returns the number of characters in a string.
+   ```sql
+   SELECT CHAR_LENGTH('text'); -- Result: 4
+   ```
+
+4. **`UPPER(str)` / `LOWER(str)`**: Converts all characters to uppercase or lowercase.
+   ```sql
+   SELECT UPPER('hello'); -- Result: 'HELLO'
+   SELECT LOWER('WORLD'); -- Result: 'world'
+   ```
+
+5. **`SUBSTRING(str, pos, len)`**: Extracts a substring from a specified position for a certain length.
+   ```sql
+   SELECT SUBSTRING('MySQL', 2, 3); -- Result: 'ySQ'
+   ```
+
+6. **`TRIM([LEADING | TRAILING | BOTH] trim_char FROM str)`**: Removes specified characters (default is whitespace) from the start, end, or both sides of a string.
+   ```sql
+   SELECT TRIM(BOTH 'x' FROM 'xxHello Worldxx'); -- Result: 'Hello World'
+   ```
+
+7. **`REPLACE(str, from_str, to_str)`**: Replaces occurrences of `from_str` with `to_str`.
+   ```sql
+   SELECT REPLACE('Hello World', 'World', 'MySQL'); -- Result: 'Hello MySQL'
+   ```
+
+8. **`INSTR(str, substr)`**: Returns the position of the first occurrence of `substr` in `str`.
+   ```sql
+   SELECT INSTR('database', 'base'); -- Result: 5
+   ```
+
+9. **`REVERSE(str)`**: Reverses the characters in a string.
+   ```sql
+   SELECT REVERSE('hello'); -- Result: 'olleh'
+   ```
+
+10. **`LPAD(str, len, padstr)` / `RPAD(str, len, padstr)`**: Pads a string on the left or right to a specified length with a padding string.
+    ```sql
+    SELECT LPAD('MySQL', 8, '*'); -- Result: '***MySQL'
+    SELECT RPAD('SQL', 5, 'x'); -- Result: 'SQLxx'
+    ```
+
+11. **`FORMAT(number, decimals)`**: Formats a number as a string with commas for thousands.
+    ```sql
+    SELECT FORMAT(12345.678, 2); -- Result: '12,345.68'
+    ```
+
+These functions allow flexible manipulation, formatting, and analysis of string data in MySQL.
