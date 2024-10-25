@@ -4,6 +4,8 @@
 - group by col1, col2 can have multiple columns for col1 but only a single column from col2
 - Check for null cases too in the cases when the value can be optional such as bonus less than 1000, etc.
 - We can modify the column in our way and group by based on the modified column (Transaction-I)
+- When using GROUP BY, including a non-aggregated column that has the same values within a group won't cause an error, but it can lead to ambiguity. For clarity and best practice, either aggregate the column or include it in the GROUP BY clause.
+- When using UNION with individual ORDER BY clauses and LIMIT within each SELECT statement, it's necessary to wrap each SELECT part in parentheses. This way, the LIMIT and ORDER BY apply only to the respective SELECT queries and not to the final UNION result.
 
 
 
@@ -19,7 +21,6 @@
 -  1141. User Activity for the Past 30 Days I
 - 1070. Product Sales Analysis (solved using cte, need to solve using subqueries)
 
- 
 
 # Some queries to Look again
 
@@ -31,6 +32,10 @@ select class from courses group by class having count(student) >= 5;
 
 ```sql
 select num from mynumbers where count(num) = 1 group by num;
+```
+
+```sql
+select user_id, count(user_id) as cnt from movierating group by user_id having user_id = max(cnt);
 ```
 
 # Queries that looks odd to me but are actually correct
@@ -67,6 +72,61 @@ select
             then id + 1
         else id - 1
         end as id, student from seat order by id;
+```
+
+```
+(
+SELECT name AS results
+FROM movierating t1
+LEFT JOIN users t2 ON t1.user_id = t2.user_id 
+GROUP BY t1.user_id 
+ORDER BY COUNT(t1.user_id) DESC, name 
+LIMIT 1
+)
+UNION ALL
+(
+SELECT title AS results
+FROM movierating t1
+JOIN movies t2 ON t1.movie_id = t2.movie_id 
+WHERE YEAR(created_at) = '2020' AND MONTH(created_at) = '02' 
+GROUP BY t1.movie_id 
+ORDER BY AVG(rating) DESC, title 
+LIMIT 1
+);
+``
+
+```sql
+(
+    select
+        Users.name as results
+    from 
+        MovieRating left join Users
+    on 
+        MovieRating.user_id = Users.user_id 
+    group by
+        Users.user_id
+    order by
+        count(MovieRating.movie_id) desc, 
+        Users.name
+    limit 1
+) 
+union all
+(
+    select 
+        Movies.title as results
+    from 
+        MovieRating  left join Movies 
+    on
+        MovieRating.movie_id = Movies.movie_id
+    where 
+        MovieRating.created_at like '2020-02%'
+    group by
+        MovieRating.movie_id
+    order by
+        avg(MovieRating.rating) desc, 
+        Movies.title 
+    limit 1
+)
 ```
 
 ### Smart Solutions
