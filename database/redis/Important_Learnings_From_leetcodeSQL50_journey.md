@@ -15,6 +15,7 @@
 - coalesce() function to provide substitue values for null values
 - year(), month(), date(), DATE_FORMAT(date, "%Y-%m"), etc.
 - Aggregation function can be used even after having clause
+- GROUP_CONCAT(column SEPARATOR order by column ',') for comma separated values between rows of aggregated columns
 
 
 # Question I need to revise Again
@@ -27,6 +28,37 @@
 ```sql
 select class from courses group by class having count(student) >= 5;
 ```
+
+##### Bringing the grouped columns in a single column
+```sql
+
+SELECT 
+    sell_date, 
+    COUNT(distinct product) AS num_sold, 
+    GROUP_CONCAT(distinct product order by product SEPARATOR ',') AS products 
+FROM 
+    activities 
+GROUP BY 
+    sell_date 
+ORDER BY 
+    sell_date, product;
+```
+
+##### Dangerous uses of subquery
+```sql
+SELECT 
+    e1.employee_id,
+    e1.department_id
+FROM employee e1
+WHERE e1.primary_flag = 'Y'
+OR 
+    e1.primary_flag = 'N' AND NOT EXISTS (
+        SELECT 
+			1 
+        FROM employee e2
+        WHERE e2.employee_id = e1.employee_id AND e2.primary_flag = 'Y');
+```
+
 
 # Some Invalid Queries that my brain interpretes as valid
 
