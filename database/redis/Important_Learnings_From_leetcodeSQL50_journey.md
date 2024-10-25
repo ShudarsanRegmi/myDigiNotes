@@ -143,6 +143,27 @@ SELECT
 FROM Seat
 ```
 
+```
+SELECT *
+FROM Patients
+WHERE LOCATE('DIAB1', conditions) = 1
+   OR LOCATE(' DIAB1', conditions) != 0;
+```
+
+##### Delete duplicate emails
+```
+DELETE p1 FROM Person p1,
+    Person p2
+WHERE
+    p1.Email = p2.Email AND p1.Id > p2.Id
+```
+
+### Second Highest Salary or else null
+```sql
+SELECT MAX(salary) AS SecondHighestSalary 
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee);
+```
 
 ---
 
@@ -208,3 +229,7 @@ FROM Seat
     ```
 
 These functions allow flexible manipulation, formatting, and analysis of string data in MySQL.
+
+
+## Material to refer
+- [Sovle nth ranking problem in 5 ways](https://leetcode.com/problems/second-highest-salary/solutions/1168444/summary-five-ways-to-solve-the-top-n-nth-problems/?envType=study-plan-v2&envId=top-sql-50)
