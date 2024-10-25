@@ -74,7 +74,7 @@ select
         end as id, student from seat order by id;
 ```
 
-```
+```sql
 (
 SELECT name AS results
 FROM movierating t1
@@ -93,7 +93,7 @@ GROUP BY t1.movie_id
 ORDER BY AVG(rating) DESC, title 
 LIMIT 1
 );
-``
+```
 
 ```sql
 (
@@ -163,6 +163,11 @@ WHERE
 SELECT MAX(salary) AS SecondHighestSalary 
 FROM Employee
 WHERE salary < (SELECT MAX(salary) FROM Employee);
+```
+### Crafted by me
+
+```sql
+select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee);
 ```
 
 ---
