@@ -8,6 +8,7 @@
 - When using UNION with individual ORDER BY clauses and LIMIT within each SELECT statement, it's necessary to wrap each SELECT part in parentheses. This way, the LIMIT and ORDER BY apply only to the respective SELECT queries and not to the final UNION result.
 - The query you provided has an issue due to the use of the cumwtm alias in the WHERE clause. In SQL, you cannot reference an alias defined in the SELECT clause in the same level of the query where it's defined.
 - Remember: Use WHERE to filter raw data before aggregation (no aliases), and use HAVING to filter aggregated results where you can reference aliases.
+- Incorrect Aggregation: You can't use an aggregate function like MIN() directly in a CASE statement without a subquery or Common Table Expression (CTE).
 
 
 
@@ -116,6 +117,15 @@ SELECT *, IF(x+y>z and y+z>x and z+x>y, "Yes", "No") as triangle FROM Triangle
 
 
 # Some Invalid Queries that my brain interpretes as valid
+
+```sql
+with cte as(
+select *, 
+rank() over (partition by customer_id order by order_date) as rk
+from delivery where rk = 1;
+)
+select * from cte;
+```
 
 ```sql
 # alias won't work for windowing function
