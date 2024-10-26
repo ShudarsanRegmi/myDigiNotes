@@ -6,6 +6,8 @@
 - We can modify the column in our way and group by based on the modified column (Transaction-I)
 - When using GROUP BY, including a non-aggregated column that has the same values within a group won't cause an error, but it can lead to ambiguity. For clarity and best practice, either aggregate the column or include it in the GROUP BY clause.
 - When using UNION with individual ORDER BY clauses and LIMIT within each SELECT statement, it's necessary to wrap each SELECT part in parentheses. This way, the LIMIT and ORDER BY apply only to the respective SELECT queries and not to the final UNION result.
+- The query you provided has an issue due to the use of the cumwtm alias in the WHERE clause. In SQL, you cannot reference an alias defined in the SELECT clause in the same level of the query where it's defined.
+- Remember: Use WHERE to filter raw data before aggregation (no aliases), and use HAVING to filter aggregated results where you can reference aliases.
 
 
 
@@ -104,6 +106,15 @@ SELECT *, IF(x+y>z and y+z>x and z+x>y, "Yes", "No") as triangle FROM Triangle
 
 ```sql
 select num from mynumbers where count(num) = 1 group by num;
+```
+
+```sql
+# ERROR 3594 (HY000): You cannot use the alias 'cumwt' of an expression containing a window function in this context.'
+select *, sum(weight) over(order by turn) as cumwtm from queue where cumwtm <= 1000;
+```
+
+```sql
+ select *, sum(weight) over(order by turn) as cumwtm from queue group by person_id having cumwtm <=1000;
 ```
 
 ```sql
@@ -230,7 +241,7 @@ WHERE
     p1.Email = p2.Email AND p1.Id > p2.Id
 ```
 
-### Second Highest Salary or else null
+#### Second Highest Salary or else null
 ```sql
 SELECT MAX(salary) AS SecondHighestSalary 
 FROM Employee
@@ -240,6 +251,25 @@ WHERE salary < (SELECT MAX(salary) FROM Employee);
 
 ```sql
 select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee);
+```
+
+# Bus Boarding problem: Last Person to fit the bus
+
+```sql
+# Bus Boarding max weight
+SELECT 
+    q1.person_name
+FROM Queue q1 JOIN Queue q2 ON q1.turn >= q2.turn
+GROUP BY q1.turn
+HAVING SUM(q2.weight) <= 1000
+ORDER BY SUM(q2.weight) DESC
+LIMIT 1
+
+# Using subquery
+SELECT person_name from (SELECT person_name,turn,
+sum(weight) over (order by turn) AS cum FROM queue) p1
+where cum<=1000 order by turn DESC limit 1;
+
 ```
 
 ## Questions that I need to look again
