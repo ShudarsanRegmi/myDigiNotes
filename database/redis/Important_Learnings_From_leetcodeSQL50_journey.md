@@ -31,6 +31,19 @@
 select class from courses group by class having count(student) >= 5;
 ```
 
+##### Using windowing funciton to find the moving average of past 7 days
+```sql
+# Write your MySQL query statement below
+SELECT visited_on, amount, ROUND(amount/7, 2) average_amount
+FROM (
+    SELECT DISTINCT visited_on, 
+    SUM(amount) OVER(ORDER BY visited_on RANGE BETWEEN INTERVAL 6 DAY   PRECEDING AND CURRENT ROW) amount, 
+    MIN(visited_on) OVER() 1st_date 
+    FROM Customer
+) t
+WHERE visited_on>= 1st_date+6;
+```
+
 ##### Bringing the grouped columns in a single column
 ```sql
 
@@ -248,6 +261,29 @@ FROM Employee
 WHERE salary < (SELECT MAX(salary) FROM Employee);
 ```
 ### Crafted by me
+
+```sql
+# friends count (finding the total in both columns)
+SELECT 
+    uid as id,
+    (SELECT COUNT(*) FROM RequestAccepted WHERE requester_id = ids.uid) +
+    (SELECT COUNT(*) FROM RequestAccepted WHERE accepter_id = ids.uid) AS num
+FROM (
+    SELECT 
+        requester_id AS uid 
+    FROM 
+        RequestAccepted 
+    UNION 
+    SELECT 
+        accepter_id AS uid 
+    FROM 
+        RequestAccepted
+) AS ids
+GROUP BY uid
+ORDER BY num DESC
+LIMIT 1;
+
+```
 
 ```sql
 select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee);
