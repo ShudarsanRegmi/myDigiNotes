@@ -118,6 +118,11 @@ SELECT *, IF(x+y>z and y+z>x and z+x>y, "Yes", "No") as triangle FROM Triangle
 # Some Invalid Queries that my brain interpretes as valid
 
 ```sql
+# alias won't work for windowing function
+mysql> SELECT  *,  concat(lat,lon) as geo, count(geo) over (partition by geo) as pidc from insurance;
+ERROR 1054 (42S22): Unknown column 'geo' in 'field list'
+```
+```sql
 select num from mynumbers where count(num) = 1 group by num;
 ```
 
@@ -135,6 +140,7 @@ select user_id, count(user_id) as cnt from movierating group by user_id having u
 ```
 
 # Queries that looks odd to me but are actually correct
+
 ```sql
 SELECT MAX(num) AS num
 FROM (
@@ -341,6 +347,40 @@ LIMIT 1
 SELECT person_name from (SELECT person_name,turn,
 sum(weight) over (order by turn) AS cum FROM queue) p1
 where cum<=1000 order by turn DESC limit 1;
+
+```
+## Dangerous Queries crated by me
+
+### Subqueries hell
+```sql
+
+SELECT round(SUM(tiv_2016),2) as tiv_2016
+FROM insurance i 
+WHERE i.pid IN (
+    SELECT l3dt.pid 
+    FROM (
+        SELECT dt2.pid 
+        FROM (
+            SELECT t1.pid, 
+                   (SELECT COUNT(*) 
+                    FROM insurance AS t2 
+                    WHERE t1.lat = t2.lat AND t1.lon = t2.lon) AS matche 
+            FROM insurance AS t1
+        ) AS dt2 
+        WHERE dt2.matche = 1
+    ) AS l3dt 
+    WHERE l3dt.pid IN (
+        SELECT dt.pid 
+        FROM (
+            SELECT t1.pid, 
+                   (SELECT COUNT(*) 
+                    FROM insurance t2 
+                    WHERE t1.tiv_2015 = t2.tiv_2015) AS tiv_count 
+            FROM insurance t1
+        ) AS dt 
+        WHERE dt.tiv_count != 1
+    )
+);
 
 ```
 
