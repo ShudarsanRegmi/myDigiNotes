@@ -253,6 +253,42 @@ WHERE salary < (SELECT MAX(salary) FROM Employee);
 select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee);
 ```
 
+```sql
+# Count Salary Categories
+SELECT 'Low Salary' AS category, COUNT(income) AS accounts_count
+FROM accounts
+WHERE income < 20000
+
+UNION ALL
+
+SELECT 'Average Salary' AS category, COUNT(income) AS accounts_coun
+FROM accounts
+WHERE income >= 20000 AND income <= 50000
+
+UNION ALL
+
+SELECT 'High Salary' AS category, COUNT(income) AS accounts_counts
+FROM accounts
+WHERE income > 50000;
+```
+
+```
+# Moving average
+SELECT DISTINCT 
+    dt.visited_on,
+    (SELECT SUM(amount) 
+     FROM customer 
+     WHERE visited_on BETWEEN DATE_SUB(dt.visited_on, INTERVAL 6 DAY) AND dt.visited_on) AS amount,
+    (SELECT ROUND(SUM(amount) / 7, 2) 
+     FROM customer 
+     WHERE visited_on BETWEEN DATE_SUB(dt.visited_on, INTERVAL 6 DAY) AND dt.visited_on) AS average_amount
+FROM 
+    (SELECT DISTINCT visited_on FROM customer) AS dt 
+WHERE 
+    dt.visited_on >= (SELECT MIN(visited_on) FROM customer) + INTERVAL 6 DAY;
+
+```
+
 # Bus Boarding problem: Last Person to fit the bus
 
 ```sql
