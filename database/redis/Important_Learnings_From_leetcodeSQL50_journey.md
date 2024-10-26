@@ -46,6 +46,7 @@ ORDER BY
 
 ##### Dangerous uses of subquery
 ```sql
+# Primary department for each employee
 SELECT 
     e1.employee_id,
     e1.department_id
@@ -57,6 +58,45 @@ OR
 			1 
         FROM employee e2
         WHERE e2.employee_id = e1.employee_id AND e2.primary_flag = 'Y');
+```
+##### Use of ROW_NUMBER() windowing function
+```sql
+SELECT 
+    a.employee_id,
+    a.department_id
+FROM (
+    SELECT 
+        e.employee_id,
+        e.department_id,
+        ROW_NUMBER() OVER (PARTITION BY employee_id ORDER BY primary_flag) AS rn
+    FROM employee e
+) a 
+WHERE a.rn = 1;
+```
+
+```sql
+SELECT 
+    e1.employee_id,
+    (
+        CASE
+            WHEN e2.primary_flag IS NULL THEN e1.department_id
+            WHEN e2.primary_flag IS NOT NULL AND e2.primary_flag = 'Y' THEN e2.department_id
+        END
+    ) AS department_id
+FROM employee e1
+LEFT JOIN (
+    SELECT 
+        * 
+    FROM employee
+    WHERE primary_flag = 'Y'
+) AS e2 
+ON e1.employee_id = e2.employee_id
+GROUP BY e1.employee_id;
+```
+
+```
+# I don't know about this IF Syntax
+SELECT *, IF(x+y>z and y+z>x and z+x>y, "Yes", "No") as triangle FROM Triangle
 ```
 
 
@@ -201,6 +241,19 @@ WHERE salary < (SELECT MAX(salary) FROM Employee);
 ```sql
 select max(salary) as SecondHighestSalary from employee where salary < (select max(salary) from employee);
 ```
+
+## Questions that I need to look again
+```sql
+select distinct product_id, 10 as price from Products where product_id not in(select distinct product_id from Products where change_date <='2019-08-16' )
+union 
+select product_id, new_price as price from Products where (product_id,change_date) in (select product_id , max(change_date) as date from Products where change_date <='2019-08-16' group by product_id);
+```
+
+
+## Cases That I need to learn to handle
+- choosing a row of one column based on some data in another column
+
+
 
 ---
 
