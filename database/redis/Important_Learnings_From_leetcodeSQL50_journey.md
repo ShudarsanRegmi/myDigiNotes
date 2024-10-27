@@ -18,7 +18,7 @@
 - coalesce() function to provide substitue values for null values
 - year(), month(), date(), DATE_FORMAT(date, "%Y-%m"), etc.
 - Aggregation function can be used even after having clause
-- GROUP_CONCAT(column SEPARATOR order by column ',') for comma separated values between rows of aggregated columns
+- GROUP_CONCAT(column SEPARATOR order by column ',') for comma separated values between rows of aggregated columns, STRING_AGG(column_name, ',') for sql server, postgres
 
 
 # Question I need to revise Again
