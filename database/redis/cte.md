@@ -252,3 +252,6 @@ select * from man;
 3 rows in set (0.00 sec)
 ```
 
+## Resources
+- [Collection of advanced question](https://learnsql.com/blog/cte-practice-exercises/)
+
