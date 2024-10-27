@@ -74,10 +74,34 @@ These queries do **not generate all possible ordered pairs**, but instead filter
 
 NOTE> I'm not entirely clearn with this
 
+
+### Famous IPL Round Robin Question
+
+```sql
+WITH TeamPairs AS (
+
+SELECT t1.id AS Team1ID, t2.id AS Team2ID
+
+FROM TEAM t1
+
+CROSS JOIN TEAM t2
+
+WHERE t1.id < t2.id
+
+)
+
+SELECT
+
+(SELECT Team_Name FROM TEAM WHERE id = Team1ID) AS Team1,
+
+(SELECT Team_Name FROM TEAM WHERE id = Team2ID) AS Team2
+
+FROM TeamPairs;
+```
 ---
 
 ### Famous Questions that are important for placements exams and interview
 
 - Create a round robin of teams. Eg. IPL teams (done in class)
-- 
+  
 
