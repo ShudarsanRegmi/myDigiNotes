@@ -12,9 +12,9 @@ Public Key = (p, g, y)
 ---
 
 Encryption:
-Step 1: Select a random Integer `k`
-Step 2: c1 = y^k mod p
-Step 3: c2 = M.y^k mod p ( M  = message )
+- Step 1: Select a random Integer `k`
+- Step 2: c1 = y^k mod p
+- Step 3: c2 = M.y^k mod p ( M  = message )
 
 Cipher Text = (c1, c2)
 
