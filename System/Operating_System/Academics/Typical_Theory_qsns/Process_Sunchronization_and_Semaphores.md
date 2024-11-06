@@ -1,4 +1,3 @@
-Certainly! Here's a more concise and structured version of the provided content:
 
 ---
 
@@ -42,4 +41,3 @@ A **semaphore** is a synchronization mechanism that can signal threads waiting o
 
 ---
 
-This version retains the essential concepts and examples while ensuring clarity and brevity.
