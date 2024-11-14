@@ -89,3 +89,30 @@ package "External Services" {
 @enduml
 ```
 ![Img](https://www.plantuml.com/plantuml/png/bP9DZzD038Rl-HNMdefGwO4R1xJTVl0Xkef8OGzL3cvYqi1qPXaxgoB4VyUJ7T910L5o6xz-xSTshbdGItSqsJrMNx0Xk5gObgp0E_n67gPmIoTvzfbXxPqLilKLVCz0lzsyamFaQYaVtqlamzwXh-FxrabRKHeffAlxqYrB3Cqbr4HR4Moz4f2FmaTrsmPoPqoCh8dglQR4dZ-oC_8yVtFcTJK5tgUmEjrxOeORJHk1goNM_S3gsw3LIaUbIvI5GURPunn9UDsQv9cE488f_cnWxfKKUOc2UsGQk3VEDcvvevHdB8Q5pa-LjCwcJ9GAwRh_96nGoBTenbA2FjPM3sGbzVpElpe9UOi62l8FeV40_cfHm0pcTmKKps7IBwiGvzNrP5YWftxs3J5Z4-uyoJi-G9ZXKrjXQCU_ij_URM4IRgOyKLD9MNR_-5DBc4vVmkwYdwE45_1wkytXFNtjY8Mpotonnz-kMVvVcT5Io-nQrUveVW80)
+
+### Mermaid
+
+```mermaid
+flowchart TD
+    subgraph ClientLayer ["Next.js App"]
+        E1["Auth Page"]
+        E2["Dashboard (Role-based)"]
+        E3["Noticeboard"]
+        E4["Student List"]
+        E5["Material Cards"]
+        E6["Attendance Tracker"]
+        E7["Voting Poll"]
+        E8["Feedback Page"]
+    end
+
+    subgraph DashboardViews ["Dashboard - Role-based Views"]
+        F1["Student View"]
+        F2["CR View"]
+        F3["Class Admin View"]
+        F4["Admin View"]
+        F5["Super Admin View"]
+    end
+
+    E2 -->|Access based on role| DashboardViews
+
+```
