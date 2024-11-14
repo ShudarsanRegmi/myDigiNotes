@@ -94,6 +94,48 @@ package "External Services" {
 
 ```mermaid
 flowchart TD
+    subgraph ClientLayer ["Client Layer - Next.js Frontend"]
+        A1["Auth Page"]
+        A2["Dashboard"]
+        A3["Noticeboard"]
+        A4["Student List"]
+        A5["Attendance Tracker"]
+        A6["Voting Poll"]
+        A7["Feedback Page"]
+    end
+
+    subgraph APILayer ["API Layer - Node.js + Express Backend"]
+        B1["Auth API"]
+        B2["User Management API"]
+        B3["Class/Notice API"]
+        B4["File API"]
+        B5["Attendance API"]
+        B6["Voting/Feedback API"]
+    end
+
+    subgraph DatabaseLayer ["Database Layer - MongoDB"]
+        C1["Users Collection"]
+        C2["Classes Collection"]
+        C3["Notices Collection"]
+        C4["Materials Collection"]
+        C5["Attendance Collection"]
+        C6["Events Collection"]
+    end
+
+    subgraph ExternalServices ["External Services"]
+        D1["GCS / AWS S3 (File Storage)"]
+        D2["Firebase Messaging (Push Notifications)"]
+        D3["JWT (Authentication)"]
+    end
+
+    ClientLayer -->|HTTP Requests| APILayer
+    APILayer --> DatabaseLayer
+    APILayer --> ExternalServices
+
+```
+
+```mermaid
+flowchart TD
     subgraph ClientLayer ["Next.js App"]
         E1["Auth Page"]
         E2["Dashboard (Role-based)"]
@@ -116,3 +158,4 @@ flowchart TD
     E2 -->|Access based on role| DashboardViews
 
 ```
+
