@@ -33,7 +33,7 @@
 If the API doesn’t support pagination, you need to fetch all data initially and then paginate locally.
 
 #### Pseudo-Code:
-```jsx
+```
 1. Define state variables:
    - `allData`: Array to store all fetched items.
    - `visibleData`: Array to store currently visible items.
@@ -61,7 +61,7 @@ If the API doesn’t support pagination, you need to fetch all data initially an
 6. Display a loading spinner if `loading` is `true`.
 
 7. Stop observing and display "No more items" if `visibleData.length >= allData.length`.
-
+```
 ---
 
 ### Shared React Component Structure:
@@ -155,3 +155,5 @@ const InfiniteScrollComponent = ({ fetchUrl, isPaginated = false }) => {
 };
 
 export default InfiniteScrollComponent;
+
+```
