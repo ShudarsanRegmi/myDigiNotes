@@ -58,3 +58,44 @@ int main() {
     return 0;
 }
 ```
+
+## Simple DFS
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Function to perform DFS and print all vertices
+void dfs(vector<vector<bool>> &Graph, int src, vector<bool> &visited) {
+    visited[src] = true;
+    cout << src << " "; // Print the current vertex
+
+    for (int i = 0; i < Graph.size(); i++) {
+        if (Graph[src][i] && !visited[i]) {
+            dfs(Graph, i, visited); // Recursive call for unvisited neighbors
+        }
+    }
+}
+
+int main() {
+    int n = 4; // Number of vertices
+    vector<vector<int>> edges = {{2, 1}, {2, 3}, {2, 0}, {0, 3}};
+    vector<vector<bool>> Graph(n, vector<bool>(n, false));
+
+    // Create an adjacency matrix
+    for (const auto &edge : edges) {
+        int src = edge[0], dst = edge[1];
+        Graph[src][dst] = true;
+        Graph[dst][src] = true;
+    }
+
+    vector<bool> visited(n, false);
+
+    cout << "DFS Traversal starting from vertex 0:" << endl;
+    dfs(Graph, 0, visited); // Perform DFS starting from vertex 0
+
+    return 0;
+}
+
+```
