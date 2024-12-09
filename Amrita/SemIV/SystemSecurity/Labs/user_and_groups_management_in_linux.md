@@ -101,6 +101,16 @@ Linux provides a variety of commands for managing users and groups. Below are th
 
 ---
 
+#### **5. List users associated with a particular group**
+- **Command:** `getent group <groupname>`
+- **Example:**  
+  ```bash
+  getent group sudo
+  ```
+Displays all users which belogs to `sudo` group
+
+---
+
 ### **Password Management**
 
 #### **1. Change Password**
