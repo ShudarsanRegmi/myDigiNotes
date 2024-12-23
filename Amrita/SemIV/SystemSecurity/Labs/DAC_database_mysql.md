@@ -1,4 +1,6 @@
-![image](https://github.com/user-attachments/assets/9921d444-33a2-4524-807d-f36ba46a8d39)![image](https://github.com/user-attachments/assets/e56b43fa-882d-4273-8316-f9d6b46e9d6e)# Discretionay Access Control in Database : mysql
+# Discretionay Access Control in Database : mysql
+
+![image](https://github.com/user-attachments/assets/9921d444-33a2-4524-807d-f36ba46a8d39)![image](https://github.com/user-attachments/assets/e56b43fa-882d-4273-8316-f9d6b46e9d6e)
 
 
 ### Login as root user
