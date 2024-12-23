@@ -147,3 +147,8 @@ git fetch
 ```bash
 git merge main --allow-unrelated-histories
 ```
+
+### Testing a Flask APP
+```bash
+FLASK_APP=app.py FLASK_ENV=development flask run --host=0.0.0.0 --port=5001
+```
