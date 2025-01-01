@@ -27,7 +27,7 @@ select current_user();
 
 ```mysql
 create user 'user'@'host" identified by <password>;
-create user myuser@localhost identified by
+create user myuser@localhost identified by  userpass;
 ```
 ![image](https://github.com/user-attachments/assets/66de659a-7f68-43ac-88b9-09734ae31fbd)
 
@@ -50,9 +50,9 @@ create database myuser_db;
 ## Showing Grants for the current user
 ![image](https://github.com/user-attachments/assets/a7289463-25e6-4575-a221-4f68838a5840)
 
-```
-GRANT USAGE:
-This means that the user myuser has the USAGE privilege. The USAGE privilege essentially means "no specific privileges" or "no special rights." It is typically granted to users with no further privileges, meaning they can't perform any actions unless additional permissions (like SELECT, INSERT, etc.) are granted explicitly.
-```
+**Grant Usage**
+>This means that the user myuser has the USAGE privilege. The USAGE privilege essentially means "no specific privileges" or "no special rights." It is typically granted to users with no further privileges, meaning they can't perform any actions unless additional permissions (like SELECT, INSERT, etc.) are granted explicitly.
+# Hello
+
 
 
