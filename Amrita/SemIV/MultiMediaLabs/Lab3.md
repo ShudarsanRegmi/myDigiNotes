@@ -119,5 +119,74 @@ title('Decreased Contrast (×0.5)');  % Title for the third subplot
 ![image](https://github.com/user-attachments/assets/cb65ca9c-0360-41a1-8dc0-9697888fae71)
 
 
+## Changing the contrast of an image
+
+```matlab
+% Define the file path to the image
+ffp = 'C:\Users\STUDENT\Desktop\Shud\pandas.jpg';  % Path to the image
+img = imread(ffp);  % Read the image
+
+% Convert the image to grayscale
+img_gray = rgb2gray(img);  % Convert the color image to grayscale
+
+% Generate the negative of the grayscale image using vectorized operation
+img_gray_neg = 255 - img_gray;  % Subtract every pixel from 255 to get the negative
+
+% Create a figure for displaying the images
+figure;
+
+% Display the original color image
+subplot(1, 3, 1);  % First subplot
+imshow(img);
+title('Original Image');
+
+% Display the grayscale image
+subplot(1, 3, 2);  % Second subplot
+imshow(img_gray);
+title('Grayscale Image');
+
+% Display the negative of the grayscale image
+subplot(1, 3, 3);  % Third subplot
+imshow(img_gray_neg);
+title('Negative Image');
+```
+
+**method - II : Vectorized**
+
+```matlab
+% Define the file path to the image
+ffp = 'C:\Users\STUDENT\Desktop\Shud\pandas.jpg';  % Path to the image
+img = imread(ffp);  % Read the image
+
+% Convert the image to grayscale
+img_gray = rgb2gray(img);  % Convert the color image to grayscale
+
+% Generate the negative of the grayscale image using vectorized operation
+img_gray_neg = 255 - img_gray;  % Subtract every pixel from 255 to get the negative
+
+% Create a figure for displaying the images
+figure;
+
+% Display the original color image
+subplot(1, 3, 1);  % First subplot
+imshow(img);
+title('Original Image');
+
+% Display the grayscale image
+subplot(1, 3, 2);  % Second subplot
+imshow(img_gray);
+title('Grayscale Image');
+
+% Display the negative of the grayscale image
+subplot(1, 3, 3);  % Third subplot
+imshow(img_gray_neg);
+title('Negative Image (Vectorized)');
+```
+## Output
+![image](https://github.com/user-attachments/assets/e283e6ae-9120-4fcd-ac46-1c7f11ee47e8)
+
+
+## Retriving Original Image from a gray scale image
+
 
 
