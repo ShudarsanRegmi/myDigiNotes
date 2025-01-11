@@ -152,3 +152,8 @@ git merge main --allow-unrelated-histories
 ```bash
 FLASK_APP=app.py FLASK_ENV=development flask run --host=0.0.0.0 --port=5001
 ```
+
+### Uncommit - Revert your last commit
+```bash
+git reset --soft HEAD~1
+```
