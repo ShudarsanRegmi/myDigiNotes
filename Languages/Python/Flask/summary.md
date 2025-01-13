@@ -95,6 +95,11 @@ def template(name=None):
     return render_template('homepage.html', name=name or "User")
 ```
 
+## Other Important Topics To Cover
+- ORM SQL Alchemy
+- Flask Login for Session Management
+- Flask form for Dealing With forms
+- Working With Clould flare app
 
 
 
