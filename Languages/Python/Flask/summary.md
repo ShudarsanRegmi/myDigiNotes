@@ -14,6 +14,15 @@ my-flask-app
    └── students.py
 ```
 
+## Important imports
+```python
+from flask import Flask
+from flask import jsonify
+from flask import make_response
+from flask import request
+from flask import render_template
+```
+
 ## Creating a basic flask application
 
 ```python
@@ -85,7 +94,6 @@ def request_handling():
 def template(name=None):
     return render_template('homepage.html', name=name or "User")
 ```
-
 
 
 
