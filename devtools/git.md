@@ -157,3 +157,7 @@ FLASK_APP=app.py FLASK_ENV=development flask run --host=0.0.0.0 --port=5001
 ```bash
 git reset --soft HEAD~1
 ```
+### Check for mege conflict before actually merging
+```bash
+git merge merge_team2_2 --no-commit --no-ff
+```
