@@ -79,3 +79,10 @@ p arr
 ```
 watch <variable>
 ```
+
+### Changing the window split size
+```
+winheight src <absolute val>
+winheight src 15
+```
+
