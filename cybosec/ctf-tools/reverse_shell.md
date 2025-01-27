@@ -1,5 +1,7 @@
 # Reverse Shell Tools and Scripts for CTFs
 
+- [Reverse Shell Scripts Generator](https://github.com/t0thkr1s/revshellgen?tab=readme-ov-file)
+
 ### Netcat reverse shell
 
 **On taget machine**
