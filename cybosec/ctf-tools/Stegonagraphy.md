@@ -5,4 +5,17 @@
 
 
 # Audio Steganography
-- [Stegonaut](https://www.stegonaut.com/)
+- [Stegonaut](https://www.stegonaut.com/) -> Extract message from an audio file
+
+## Brute forcing stegno
+- [Stegseek](https://github.com/RickdeJager/stegseek?tab=readme-ov-file)
+
+
+```bash
+stegseek --crack image.jpg wordlsit.txt
+```
+ >Stegseek can also be used to detect and extract any unencrypted (meta) data from a steghide image. This exploits the fact that the random number generator used in steghide only has 2^32 possible seeds, which can be bruteforced in a matter of minutes.
+
+```bash
+stegseek --seed [stegofile.jpg]
+```
