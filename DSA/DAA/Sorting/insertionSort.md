@@ -1,14 +1,13 @@
 # Insertion Sort
 
 ```algorithm
-loop i : [1, n]
-  loop j : [i, 0]
+// corrected in midsem dsa
+loop i : [0, n-1]
+  loop j : [i, 0) ;  j--
     if arr[j-1] < arr[j]:
       break
     swap arr[j-1], arr[j]
 ```
-
-```algorithm
 
 ```algorithm
 loop i : [1, n]
