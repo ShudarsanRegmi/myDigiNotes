@@ -1467,3 +1467,66 @@ surveycom.amrita.edu.:8443
 amselb-799089873.ap-south-1.elb.amazonaws.com.:443
 43.204.57.221:443
 ```
+
+---
+
+## Fetching SPM AND DMARC records from mail servers
+
+### Fetching The SPF Records
+
+#### Fetching SPK record using dig
+```bash
+dig TXT amrita.edu +short
+```
+>Above we've fetched TXT records, which will have information about SPF records
+**Grepping the specfic spf record**
+```bash
+dig TXT example.com +short | grep "v=spf1"
+```
+**Using nslookup tool**
+```bash
+nslookup -type=TXT example.com
+```
+
+```
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+amrita.edu	text = "MS=ms48957933"
+amrita.edu	text = "google-site-verification=A8whEmErlQs8pAAj5IfozkzELgbx6owO40YUAynCj7A"
+amrita.edu	text = "google-site-verification=NohHy1s7gfNZSge8hcuhsNeSpy3nDOczn9noXPSfH8Y"
+amrita.edu	text = "apple-domain-verification=FSyq3qG4dwnUXFKW"
+amrita.edu	text = "v=spf1 ip4:168.245.10.139/32 include:spf.protection.outlook.com  include:zcsend.in include:_spf.google.com ~all"
+amrita.edu	text = "\194\160" "\194\160" "google-site-verification=tg-bJK2fo2szfXudVouWu_d6xsknYiwqxpAtQKeVGgw"
+```
+
+### Fetching the DMARC records
+
+#### Using dig tool
+```bash
+dig TXT _dmarc.example.com +short
+```
+
+##### Output
+```
+"v=DMARC1;p=quarantine;sp=none;rua=mailto:dmarc@amrita.edu;ruf=mailto:dmarc@amrita.edu;rf=afrf;pct=100;ri=86400"
+```
+
+#### Using nslookup
+```bash
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+_dmarc.amrita.edu	text = "v=DMARC1;p=quarantine;sp=none;rua=mailto:dmarc@amrita.edu;ruf=mailto:dmarc@amrita.edu;rf=afrf;pct=100;ri=86400"
+
+Authoritative answers can be found from:
+```
+
+#### DMARC record check using dmarcian
+![image](https://github.com/user-attachments/assets/760ec826-6c8e-41ae-b05c-684907edb2f6)
+
+#### DMARc info obtained from MX-Toolbox
+![image](https://github.com/user-attachments/assets/c7f42aca-539d-44b9-b629-39ec6ef52ec9)
+
