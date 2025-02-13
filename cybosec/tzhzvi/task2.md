@@ -840,7 +840,10 @@ http://web-blr.amrita.edu [200] [AUMS Login Page]
 
 ### Using dig on list of subdomains
 ```bash
-
+cat subdomains.txt | xargs -I{} dig +short {}
+```
+#### Output
+```
 ;; communications error to 8.8.8.8#53: timed out
 ;; communications error to 8.8.8.8#53: timed out
 103.10.27.3
@@ -1132,7 +1135,12 @@ atod-g2.tm-4.office.com.
 40.99.71.216
 ```
 
-### Using dnsx tool
+### Using dig tool
+
+```bash
+cat subdomains.txt | xargs -I{} dig +short {}
+```
+
 ```
 111.93.99.174
 52.84.12.8
@@ -1371,6 +1379,7 @@ atod-g2.tm-4.office.com.
 ### Getting with proper mapping using dnsx and aux
 ```bash
 cat subdomains.txt | dnsx -a -resp | awk '{print $1, "->", $NF}'
+cat subdomains.txt | dnsx -a -resp # this too gave mapping when tried later
 ```
 
 ### Output
@@ -1383,4 +1392,78 @@ aee.amrita.edu -> [3.109.161.58]
 aee.amrita.edu -> [13.127.48.139]
 aeestaging.amrita.edu -> [18.161.229.21]
 aheadonlinefiles.amrita.edu -> [103.10.27.42]
+```
+
+
+## Port Scanning
+
+### Using naabu 
+
+```bash
+61.12.92.66:443
+180.235.122.221:80
+75.2.112.164:80
+75.2.112.164:80
+103.10.27.21:443
+ctf.cb.amrita.edu.:443
+103.10.27.21:443
+117.239.140.30:443
+103.10.27.21:8081
+ctf.cb.amrita.edu.:8081
+103.10.27.21:8081
+136.233.45.116:80
+136.233.45.116:80
+35.213.181.61:995
+35.213.181.61:995
+103.10.27.21:80
+ctf.cb.amrita.edu.:80
+103.10.27.21:80
+61.12.92.70:80
+210.212.205.30:443
+136.233.45.114:443
+40.100.137.248:80
+35.213.147.113:443
+prodvpc-web-lb6-141531396.ap-south-1.elb.amazonaws.com.:80
+3.108.47.12:80
+103.10.27.41:443
+103.10.24.222:443
+103.10.24.222:443
+103.10.27.8:443
+103.10.27.8:443
+chennai.amrita.edu.:443
+35.213.147.113:587
+210.212.205.29:80
+103.10.24.252:80
+103.10.27.53:80
+103.10.27.53:80
+35.213.147.113:110
+103.10.24.252:443
+136.233.45.115:80
+3.111.88.252:80
+160.153.0.37:8443
+alumni.amrita.edu.:8443
+160.153.0.37:8443
+103.10.27.42:443
+103.10.27.42:443
+103.10.27.57:443
+103.10.24.204:8443
+103.10.24.204:8443
+surveycom.amrita.edu.:8443
+35.154.13.57:443
+103.10.24.210:80
+103.10.24.249:80
+103.10.27.49:80
+103.10.24.205:995
+103.10.27.42:80
+103.10.27.42:80
+123.63.2.21:80
+13.228.96.213:443
+13.228.96.213:110
+103.10.24.205:465
+103.96.100.9:443
+103.96.100.9:443
+76.223.83.62:80
+76.223.83.62:80
+amselb-799089873.ap-south-1.elb.amazonaws.com.:443
+43.204.57.221:443
 ```
