@@ -55,3 +55,25 @@ timeout /t 1 /nobreak >nul
 goto loop
 ```
 
+---
+
+**Parsing V2 on server**
+```cmd
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/endpoint', methods=['POST'])
+def receive_clipboard():
+    data = request.get_json()
+    if data and 'text' in data:
+        clipboard_text = data['text']
+        clipboard_text = clipboard_text.replace("\\n", "\n")  # Convert back to actual newlines
+        print("Received clipboard content:\n", clipboard_text)
+        return jsonify({"status": "success"}), 200
+    return jsonify({"error": "Invalid data"}), 400
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
