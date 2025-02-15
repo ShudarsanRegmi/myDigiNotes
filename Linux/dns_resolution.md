@@ -52,6 +52,12 @@ dig google.com
 dig @8.8.8.8 google.com # querying a specific dns server
 ```
 
+### Using nslookup 
+```bash
+nslookup google.com
+nslookup google.com 8.8.8.8 # mentioning the specific dns erver
+```
+
 
 ### Making the resolv.conf not to change
 ```bash
@@ -75,3 +81,39 @@ sudo systemctl restart systemd-resolved
 ```bash
 sudo systemd-resolve --flush-caches
 ```
+
+## Other miscellaneous commands to expore dns ervers
+
+### confirming if the server is dns server
+
+```bash
+nslookup ch.amrita.edu 172.19.18.2
+host google.com 172.19.18.2
+```
+
+### Viewing dns server logs
+
+```bash
+journalctl -u systemd-resolved --follow  # If using systemd-resolved
+```
+
+## Making myself believe that stub server 127.0.0.53:53 actually exists
+
+### Making tcpdup listen on port 53
+```bash
+sudo tcpdump -i lo -n port 53
+```
+### Making dns queries using nslookup
+```bash
+nslookup google.com
+```
+![image](https://github.com/user-attachments/assets/3eef1211-59ce-4f38-9c28-1396c91625d6)
+
+### Watching live dns statistics using resolvectl
+```bash
+watch resolvectl statistics
+```
+
+![image](https://github.com/user-attachments/assets/de7e7dc9-7e1b-43c0-bb4a-ddb12f9792a3)
+
+
