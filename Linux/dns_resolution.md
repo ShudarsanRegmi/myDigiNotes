@@ -116,4 +116,23 @@ watch resolvectl statistics
 
 ![image](https://github.com/user-attachments/assets/de7e7dc9-7e1b-43c0-bb4a-ddb12f9792a3)
 
+## More interesting things from resolvectl
+
+### Show active dns for the given interface
+```bash
+resolvectl dns wlp2s0
+```
+
+### Shows current dns search domains
+```bash
+resolvectl domain wlp2s0
+```
+
+### Flushing dns caches
+```bash
+sudo resolvectl flush-caches
+```
+
+>systemd-resolved stores DNS cache in memory (RAM), meaning it is not written to disk. The cache is volatile and disappears when systemd-resolved restarts.
+
 
