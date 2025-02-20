@@ -46,3 +46,69 @@ class Second {
   }
 }
 ```
+
+## Inheritance and the use of super keyword in Java
+```java
+public class Animal {
+    public String category;
+    public int age;
+    public int height;
+    public int weight;
+
+    public Animal(String category, int age, int height, int weight) {
+        this.category = category;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
+    }
+
+    public void makeSound() {
+        System.out.println("Making Sound");
+    }
+
+    public static void main(String[] args) {
+        Cat cat1 = new Cat("animal", 5, 2, 2, "gray", "cute");
+        cat1.makeSound();
+    }
+}
+
+
+class Cat extends Animal {
+    public String color;
+
+    private String appearance;
+
+    public Cat(String category, int age, int height, int weight, String color, String appearance) {
+        super(category, age, height, weight);
+        this.color = color;
+        this.appearance = appearance;
+    }
+
+    public String getAppearance() {
+        return this.appearance;
+    }
+    public void setAppearance(String appearance) {
+        this.appearance = appearance;
+    }
+    @Override
+    public void makeSound() {
+        System.out.println("Meow..");
+    }
+}
+
+class Dog extends Animal {
+    public String color;
+    private String appearance;
+
+    public Dog(String category, int age, int height, int weight, String color, String appearance) {
+        super(category, age, height, weight);
+        this.color = color;
+        this.appearance = appearance;
+    }
+    @Override
+    public void makeSound() {
+        System.out.println("Bhow Bhow..");
+    }
+}
+```
+
