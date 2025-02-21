@@ -1,6 +1,5 @@
 # Exploring the TCP/IP swiss army knife
 
-
 ## Setting up the listener
 ```bash
 netcat -nvlp 8080
@@ -35,3 +34,26 @@ mysql -h 127.0.0.1 -u someuser -p
 ```
 
 ![image](https://github.com/user-attachments/assets/eb5f0120-dbbd-4367-bce1-6551445dae97)
+
+### Making netcat as HTTP server and manually writing HTTP responses
+
+**Setting up the http server**
+```bash
+netcat -nvlp 8080
+```
+**Sending HTTP request using curl**
+```bash
+curl -v localhost:8080
+```
+**Manually writing HTTP response**
+```
+HTTP/1.1 200 OK
+Content-Length: 13
+type: text/plain
+
+Hello, World!
+```
+
+![image](https://github.com/user-attachments/assets/77129986-f170-40fa-91cc-38ec8f0c8db1)
+
+
