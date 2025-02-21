@@ -69,3 +69,28 @@ int myInt = (int) myDouble; // Manual casting: double to int ; going to lower da
 ```
 
 
+## Taking Input
+```java
+import java.util.Scanner;
+
+public class Inputt {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter username");
+        String username = sc.nextLine();
+
+        System.out.println("Enter password");
+        String password = sc.nextLine();
+
+        System.out.println("Your username is: " + username + " and password is: " + password);
+
+
+        System.out.println("Your age is: " + sc.nextInt());
+        System.out.println("Your Height is: " + sc.nextFloat());
+    }
+}
+```
+
+
+
