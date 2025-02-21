@@ -84,3 +84,25 @@ netcat localhost 4000 > copiedFile.txt
 
 ![image](https://github.com/user-attachments/assets/6aed78a1-8472-488e-8af3-f781856c783e)
 
+
+## Illustrating gzip compression
+
+![image](https://github.com/user-attachments/assets/d608b5f2-c353-48dd-81ed-42f1054358b7)
+
+## Sending Data with gzip compressed
+
+**Server**
+```bash
+nc -l -p 1234 | gunzip
+nc -l -p 1234 | xxd # display bytes direclty
+```
+
+**Client**
+```bash
+python3 -c 'print("A"*1000)' | gzip -c | nc -q 0 localhost 1234
+```
+
+![image](https://github.com/user-attachments/assets/ad875a7c-3440-493e-be71-fecc44cc0c0b)
+
+![image](https://github.com/user-attachments/assets/d8cd72e7-b054-4d11-85b2-dac4876e7e1c)
+
