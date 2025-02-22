@@ -1,5 +1,21 @@
 # Exploring the TCP/IP swiss army knife
 
+```
+Setting up the Listener
+Sending requests to the listener using different protocols(ssh, mysql, http)
+Making netcat as a HTTP server and manually crating HTTP response
+Setting up bidirectional tcp communication
+File Transfer Using netcat
+Illustrating gzip compression
+Sending data with gzip compressed
+Manually writing a HTTP request to a server (google.com)
+Banner Grabbing
+Creating a reverse shell
+Port Forwarding
+Setting up SSH tunnel in between
+Port Scanning
+```
+
 ## Setting up the listener
 ```bash
 netcat -nvlp 8080
