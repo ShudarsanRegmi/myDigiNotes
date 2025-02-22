@@ -325,4 +325,23 @@ curl -v loclhost:8080
 
 ![image](https://github.com/user-attachments/assets/fde17763-cf29-4633-bd7a-3caebf51051b)
 
+# Port Scanning using nmap
+**Scanning a single port**
+```bash
+nc -zv localhost 80
+```
+![image](https://github.com/user-attachments/assets/7ce885e6-a54e-407b-8444-6fe07123dab1)
+
+**Scanning range of IPs**
+```bash
+nc -zv localhost 1-100
+```
+![image](https://github.com/user-attachments/assets/5ec7889a-dc9e-4b48-9af9-88fd3db7e45d)
+
+**Scanning using UDP**
+```bash
+nc -zv 127.0.0.53 53
+```
+![image](https://github.com/user-attachments/assets/c7d52220-bc46-4ccf-8cfb-5f6f536f90e6)
+
 
