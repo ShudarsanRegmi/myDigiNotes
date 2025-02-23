@@ -16,6 +16,95 @@ finance_project/
 │── Makefile
 ```
 
+### Codes
+
+**main.c**
+```c
+#include <stdio.h>
+#include "finance.h"
+
+
+int main() {
+    double p = 1000.0, r = 5.0;
+    int t = 3;
+
+    printf("Simple Interest: %2.f \n", simple_interest(p, t, r));
+    printf("Compound Interest: %2.f \n", compound_interest(p, t, r));
+
+    return 0;
+}
+```
+**finance.h**
+```c
+#ifndef FINANCE_H
+#define FINANCE_H
+
+double simple_interest(double principal, int time, double rate);
+double compound_interest(double principal, int time, double rate);
+
+#endif
+```
+**finance.c**
+```c
+#include "finance.h"
+#include <math.h>
+
+double simple_interest(double principal, int time, double rate) {
+    return principal * time * rate;
+}
+
+double compound_interest(double principal, int time, double rate) {
+    return principal * pow(1 + rate, time) - principal;
+}
+
+```
+```Makefile
+# Compiler
+CC = gcc
+
+# Directories
+SRC_DIR = src
+INCLUDE_DIR = include
+LIB_DIR = lib
+
+# Source and Object Files
+SRC_FILES = $(SRC_DIR)/finance.c
+OBJ_FILES = $(SRC_DIR)/finance.o
+
+# Static Library Name
+LIB_NAME = libfinance.a
+
+# Executable Name
+TARGET = finance_app
+
+# Compiler and Linker Flags
+CFLAGS = -I$(INCLUDE_DIR)
+LDFLAGS = -L$(LIB_DIR) -lfinance -lm 
+
+# Default target
+all: $(TARGET)
+
+# Build the Static Library
+$(LIB_DIR)/$(LIB_NAME): $(OBJ_FILES)
+	ar rcs $@ $^
+
+# Compile Object Files
+$(SRC_DIR)/finance.o: $(SRC_DIR)/finance.c $(INCLUDE_DIR)/finance.h
+	$(CC) -c $< -o $@ $(CFLAGS)
+
+# Build the Executable
+$(TARGET): main.c $(LIB_DIR)/$(LIB_NAME)
+	$(CC) main.c -o $(TARGET) $(CFLAGS) $(LDFLAGS)
+
+# Force re-linking every time
+# .PHONY: all clean
+
+# Clean up generated files
+clean:
+	rm -f $(SRC_DIR)/*.o $(LIB_DIR)/*.a $(TARGET)
+
+```
+
 ### Compiling the library
 ```bash
 gcc -c src/finance.c -o src/finance.o -Iinclude
