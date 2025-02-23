@@ -150,5 +150,28 @@ REVOKE SELECT ON AmritaChennai.CYSStudents FROM 'rst'@'localhost';
 
 ---
 
+## Roles in mysql
+
+![image](https://github.com/user-attachments/assets/779aed80-d47f-4ed3-90c2-d22ef85994b8)
+
+```bash
+create role reader;
+```
+
+```bash
+grant select on *.* to reader;
+```
+
+```bash
+show grants for reader;
+```
+
+```bash
+grant reader to 'user1'@'localhost';
+```
+
+```bash
+ revoke reader from 'user1'@'localhost';
+```
 
 
