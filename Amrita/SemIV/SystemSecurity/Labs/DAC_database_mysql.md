@@ -74,8 +74,8 @@ command for this and demonstrate.
 Suppose that “abc” decides to revoke the SELECT privilege on the “CYSStudents”
 table from “rst”. Write the command for this and demonstrate.
 
+![image](https://github.com/user-attachments/assets/39b8ca83-904a-40ab-98d4-2eefb72f2776)
 
-Here are the commands and explanations for the tasks:
 
 ---
 
