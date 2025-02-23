@@ -18,6 +18,11 @@ finance_project/
 
 ### Codes
 
+![image](https://github.com/user-attachments/assets/4aad0593-aa1a-430a-9022-1501960bc639)
+
+![image](https://github.com/user-attachments/assets/025fc450-84da-4298-94d8-2ae8ae2cbaa0)
+
+
 **main.c**
 ```c
 #include <stdio.h>
