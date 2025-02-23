@@ -27,7 +27,7 @@ project/
 │── helper.c
 │── helper.h
 
-```2
+```
 
 
 ```make
@@ -53,4 +53,6 @@ $(TARGET) : $(OBJ)
 clean:
 	rm -f $(TARGET) $(OBJ)
 ```
+
+
 
