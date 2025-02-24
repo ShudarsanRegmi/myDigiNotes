@@ -1,0 +1,10 @@
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/row_level_security.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/user_and_groups_management_in_linux.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/special_permissions_suid_sgid_sticky.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/user_and_groups_management_in_linux.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/creatingStaticLibraries.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/creatingDynamicLibraries.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/DAC_database_mysql.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/DACII.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/BuildTools_Make.md
+https://raw.githubusercontent.com/ShudarsanRegmi/myDigiNotes/refs/heads/main/Amrita/SemIV/SystemSecurity/Labs/01.md
