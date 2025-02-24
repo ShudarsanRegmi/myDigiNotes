@@ -72,6 +72,21 @@ DELIMITER ;
 DELIMITER ;
 ```
 
+```sql
+
+DELIMITER //
+CREATE TRIGGER before_update_books
+BEFORE UPDATE ON books
+FOR EACH ROW
+BEGIN
+    IF OLD.owner != CURRENT_USER() THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Unauthorized update!';
+    END IF;
+END;
+//
+DELIMITER ;
+```
+
 ---
 
 ## **🔍 Step 6: Create a View for Row-Level Security**
