@@ -28,7 +28,8 @@ class Solution {
             
             // if it is ( push
             else if (c== '(') st.push(c);
-            
+
+            // if it is ) pop and append until ) (pop ) too)
             else if (c == ')') {
                 while(st.top() != '(') {
                     result += st.top();
@@ -36,7 +37,7 @@ class Solution {
                 }
                 st.pop();
             }
-            
+            // this should be a valid operand, if c has less precedence then pop and append until current char has the highest precedence
             else {
                 while(!st.empty() && prec(c) <= prec(st.top())) {
                     result += st.top();
