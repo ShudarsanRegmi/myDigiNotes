@@ -1,7 +1,8 @@
 # Merge Sort
 
 
-```cpp
+## C cide
+```c
 // Merge sort in C++
 #include <iostream>
 #include <vector>
@@ -83,5 +84,75 @@ int main() {
   cout << "Sorted array: \n";
   printArray(arr, size);
   return 0;
+}
+```
+
+## C++ Code
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void merge(vector<int> &arr, int l, int m, int r) {
+    int n1 = m-l+1;
+    int n2 = r-m; // 0 1 2 3 4 5
+
+    vector<int> L(n1), R(n2);
+
+    // fill the left and right array
+    for (int i=0; i<n1; i++) {
+        L[i] = arr[l+i];
+    }
+    for (int i=0; i<n2; i++) {
+        R[i] = arr[m+1+i];
+    }
+
+    int i=0, j=0, k=l;
+    while (i<n1 && j<n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i<n1) {
+        arr[k] = L[i];
+        i++; k++;
+    }
+    while (j<n2) {
+        arr[k] = R[j];
+        j++; k++;
+    }
+}
+
+void mergeSort(vector<int> &arr, int l, int r) {
+    if (l<r) {
+        int m = l + (r-l)/2;
+        mergeSort(arr, l, m);
+        mergeSort(arr, m+1, r);
+        merge(arr, l, m, r);
+    }
+}
+
+void printArray(vector<int> &arr) {
+    for (int i : arr) {
+        cout << i << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    vector<int> arr = {5,4,3,2,1};
+    cout << "Input Array is: " << endl;
+    printArray(arr);
+    mergeSort(arr, 0, arr.size()-1);
+    cout << "After Sorting: " << endl;
+    printArray(arr);
+    return 0;
 }
 ```
