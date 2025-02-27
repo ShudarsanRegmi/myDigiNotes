@@ -211,3 +211,57 @@ int main() {
 }
 //  workong on gdb, giving sigsegv in clion
 ```
+
+## Postfix to infix
+
+**Algorithm**
+```
+Algorithm 
+1.While there are input symbol left 
+…1.1 Read the next symbol from the input. 
+2.If the symbol is an operand 
+…2.1 Push it onto the stack. 
+3.Otherwise, 
+…3.1 the symbol is an operator. 
+…3.2 Pop the top 2 values from the stack. 
+…3.3 Put the operator, with the values as arguments and form a string. 
+…3.4 Push the resulted string back to stack. 
+4.If there is only one value in the stack 
+…4.1 That value in the stack is the desired infix string. 
+Below is the implementation of above approach:
+```
+
+```cpp
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+bool isOperand(char c) {return ((c >= 'a' && c<='z') || (c >= 'A' && c<='Z') || (c >= '0' && c<='9'));}
+
+string postfixToInfix(string inp) {
+    stack<string> st;
+    for (char c : inp) {
+        if (isOperand(c)) {
+            st.push(string(1, c));
+        }else {
+            // it is an operator
+            string op1 = st.top();
+            st.pop();
+            string op2 = st.top();
+            st.pop();
+            st.push("(" + op2 + c + op1 + ")");
+        }
+    }
+    return st.top();
+}
+
+int main() {
+    string postfix = "ab*c+";
+    string infix = postfixToInfix(postfix);
+    cout << infix << endl;
+}
+```
+
+
