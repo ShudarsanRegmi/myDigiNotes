@@ -1,7 +1,4 @@
-# The use of Similies and Metaphors in Valimit Ramayana
-
-
-
+# The role of simile and metaphor in Valmiki Ramayana. How does poetic imagery shape the epic's imact?
 
 ## What are simili and metmaphor
 
