@@ -385,6 +385,77 @@ int main() {
 ## Postfix to Prefix
 
 ```cpp
+Read the Postfix expression from left to right
+If the symbol is an operand, then push it onto the Stack
+If the symbol is an operator, then pop two operands from the Stack 
+Create a string by concatenating the two operands and the operator before them. 
+string = operator + operand2 + operand1 
+And push the resultant string back to Stack
+Repeat the above steps until end of Postfix expression.
+```
+
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+// Function to check if a character is an operator
+bool isOperator(char ch) {
+    return (ch == '+' || ch == '-' || ch == '*' || ch == '/');
+}
+
+// Function to convert a postfix expression to a prefix expression
+string postfixToPrefix(const string& postfix) {
+    stack<string> st;
+    int length = postfix.size();
+
+    // Traverse the postfix expression from left to right
+    for (int i = 0; i < length; i++) {
+        char ch = postfix[i];
+
+        // If the current character is an operator
+        if (isOperator(ch)) {
+            if (st.size() < 2) {
+                cerr << "Error: Invalid postfix expression!" << endl;
+                return "";
+            }
+            // Pop two operands from the stack
+            string op2 = st.top(); st.pop();
+            string op1 = st.top(); st.pop();
+
+            // Concatenate in the order: operator operand1 operand2
+            string prefix = ch + op1 + op2;
+
+            // Push the resulting string back onto the stack
+            st.push(prefix);
+        } 
+        // If the current character is an operand
+        else {
+            // Push the operand as a string onto the stack
+            st.push(string(1, ch));
+        }
+    }
+
+    // If the stack does not contain exactly one element, the expression was invalid
+    if (st.size() != 1) {
+        cerr << "Error: Invalid postfix expression!" << endl;
+        return "";
+    }
+
+    // Return the final prefix expression
+    return st.top();
+}
+
+// Driver function
+int main() {
+    string postfixExpr = "ABC/-AK/L-*";
+
+    cout << "Postfix Expression  : " << postfixExpr << endl;
+    cout << "Converted Prefix    : " << postfixToPrefix(postfixExpr) << endl;
+
+    return 0;
+}
 
 ```
 
