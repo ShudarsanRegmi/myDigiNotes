@@ -23,6 +23,69 @@ Both enhance descriptions by making them more vivid and imaginative.
 
 ---
 
+## Prompt 
+Here are some simple **simile** and **metaphor** examples in **Sanskrit** with **English translations**:  
+
+---
+
+### **🔹 Similes (उपमा - Upamā)**
+(Similes use comparison words like **"iva" (इव), "yathā" (यथा), "sadrśaḥ" (सदृशः), "tulyaḥ" (तुल्यः)**)  
+
+1️⃣ **बालः कुमुद इव हसति।**  
+   (*Bālaḥ kumuda iva hasati.*)  
+   **"The child smiles like a lotus."**  
+
+2️⃣ **सिंह इव सः पराक्रमी।**  
+   (*Siṁha iva saḥ parākrāmī.*)  
+   **"He is brave like a lion."**  
+
+3️⃣ **गुरोः वाणी मधु यथा।**  
+   (*Guroḥ vāṇī madhu yathā.*)  
+   **"The teacher’s speech is as sweet as honey."**  
+
+4️⃣ **विद्या दीपः सदृशी।**  
+   (*Vidyā dīpaḥ sadṛśī.*)  
+   **"Knowledge is like a lamp."**  
+
+5️⃣ **वायुः अश्व इव धावति।**  
+   (*Vāyuḥ aśva iva dhāvati.*)  
+   **"The wind runs like a horse."**  
+
+---
+
+### **🔹 Metaphors (रूपक - Rūpaka)**  
+(Metaphors **do not** use comparison words and directly equate one thing to another.)  
+
+1️⃣ **बालः कुमुदम्।**  
+   (*Bālaḥ kumudam.*)  
+   **"The child is a lotus."**  
+
+2️⃣ **सः सिंहः।**  
+   (*Saḥ siṁhaḥ.*)  
+   **"He is a lion."** *(Brave and strong like a lion, but stated directly.)*  
+
+3️⃣ **गुरोः वाणी मधु।**  
+   (*Guroḥ vāṇī madhu.*)  
+   **"The teacher’s speech is honey."** *(Not just *like* honey, but directly equated to it.)*  
+
+4️⃣ **विद्या दीपः।**  
+   (*Vidyā dīpaḥ.*)  
+   **"Knowledge is a lamp."** *(It illuminates just like a lamp, but metaphorically.)*  
+
+5️⃣ **वायुः अश्वः।**  
+   (*Vāyuḥ aśvaḥ.*)  
+   **"The wind is a horse."** *(Moving swiftly like a horse, but stated directly.)*  
+
+---
+
+### **💡 Summary:**  
+- **Similes** use comparison words (**like, as**) → "सिंह इव" (*like a lion*).  
+- **Metaphors** equate directly (**is**) → "सः सिंहः" (*He is a lion*).  
+
+Would you like more examples or any specific category (e.g., nature, emotions, etc.)? 😊
+
+---
+
 **Prompt 2**
 
 >Explain the significance of poetic imagery in Valmiki Ramayana, focusing on similes and metaphors. How do they enhance the storytelling?" 
