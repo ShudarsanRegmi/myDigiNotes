@@ -110,3 +110,51 @@ Here are some key **similes and metaphors** from the *Valmiki Ramayana*, along w
 
 ### **Conclusion**  
 These **similes and metaphors** in the *Valmiki Ramayana* make the storytelling **more vivid, emotional, and relatable**. They help readers visualize **characters, emotions, and events** with depth, making the epic an unforgettable literary masterpiece.
+
+---
+## Prompt : 4
+> Which of the followings are metaphors? How can we distinguish simile and metaphor in sanskrit?
+
+To distinguish between **similes** and **metaphors** in Sanskrit, let's first look at their characteristics:  
+
+### **1. How to Identify a Simile (उपमा - Upamā)**  
+- Uses **comparison words** like **"iva" (इव), "yathā" (यथा), "tulya" (तुल्य), "sama" (सम)"**  
+- Clearly states that one thing is *like* another.  
+
+### **2. How to Identify a Metaphor (रूपक - Rūpaka)**  
+- Does **not** use comparison words.  
+- Instead of saying one thing is *like* another, it **directly equates** them.  
+
+---
+
+### **Which of the following are metaphors?**  
+
+1️⃣ **सिंह इव रामः।** (*Simha iva Rāmaḥ*) → **Simile**  
+   - "Rama is like a lion." (Uses "iva" इव)  
+
+2️⃣ **रामः सिंहः।** (*Rāmaḥ Siṁhaḥ*) → **Metaphor**  
+   - "Rama is a lion." (No comparison word, direct equation)  
+
+3️⃣ **शशिनं निपुणं दृष्ट्वा सीता शोकं उपागमत्।** (*Śaśinaṁ nipuṇaṁ dṛṣṭvā Sītā śokaṁ upāgamat.*)  
+   - **Simile** (Sita's beauty is compared to the moon)  
+
+4️⃣ **दीप्तेनाग्निना कालः सर्वभूतानि भक्षणे।** (*Dīptenāgninā kālaḥ sarva-bhūtāni bhakṣaṇe.*)  
+   - **Metaphor** (Ravana's anger is not *like* fire, it *is* fire)  
+
+5️⃣ **समुद्र इव गम्भीरः स तु शोकम् उपागतः।** (*Samudra iva gambhīraḥ sa tu śokam upāgataḥ.*)  
+   - **Simile** (Uses "iva" इव, comparing grief to an ocean)  
+
+6️⃣ **गिरिशृंगं यथा गत्वा पुनः पृष्ठे निवर्तते।** (*Giriśṛṅgaṁ yathā gatvā punaḥ pṛṣṭhe nivartate.*)  
+   - **Simile** (Uses "yathā" यथा, comparison to a mountain)  
+
+7️⃣ **महागिरेरिव शिखराणि दश विक्रान्ताः।** (*Mahāgireriva śikharāṇi daśa vikrāntāḥ.*)  
+   - **Simile** (Uses "iva" इव, comparison to mountain peaks)  
+
+8️⃣ **रुधिरार्द्रं महार्णवम्।** (*Rudhirārdraṁ mahārṇavam.*)  
+   - **Metaphor** (The battlefield *is* an ocean of blood, no comparison word)  
+
+---
+
+### **Key Takeaway**  
+If you see **"iva" (like), "yathā" (as), "tulya" (similar), "sama" (same as),** it is a **simile**.  
+If there is **no comparison word and one thing is directly stated to be another**, it is a **metaphor**.
