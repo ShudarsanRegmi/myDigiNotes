@@ -125,3 +125,89 @@ int main() {
 }
 ```
 
+## Infix to prefix
+```cpp
+#include <iostream>
+#include <stack>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int prec(char c) {
+    if (c == '^') {
+        return 3;
+    } else if (c == '/' || c == '*') {
+        return 2;
+    } else if (c == '+' || c == '-') {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+string infToPost(string inp) {
+    string result;
+    stack<char> st;
+
+    for (char c : inp) {
+        // if the char is an operand, append to result
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) {
+            result += c;
+        }
+        // if it is '(', push it to stack
+        else if (c == '(') {
+            st.push(c);
+        }
+        // if it is ')', pop and append until '(' is found
+        else if (c == ')') {
+            while (!st.empty() && st.top() != '(') {
+                result += st.top();
+                st.pop();
+            }
+            st.pop(); // pop the '('
+        }
+        else { // it must be an operator
+            // pop operators from the stack with higher or equal precedence
+            while (!st.empty() && prec(c) <= prec(st.top())) {
+                result += st.top();
+                st.pop();
+            }
+            st.push(c);
+        }
+    }
+
+    // Pop all the remaining operators from the stack
+    while (!st.empty()) {
+        result += st.top();
+        st.pop();
+    }
+    return result;
+}
+
+string infixToPrefix(string inp) {
+    // Reverse the input expression
+    reverse(inp.begin(), inp.end());
+
+    // Change '(' to ')' and ')' to '('
+    for (int i = 0; i < inp.size(); i++) {
+        if (inp[i] == '(') inp[i] = ')';
+        else if (inp[i] == ')') inp[i] = '(';
+    }
+
+    // Call infixToPost to convert the reversed infix expression to postfix
+    string prefix = infToPost(inp);
+
+    // Reverse the resulting postfix expression to get the prefix expression
+    reverse(prefix.begin(), prefix.end());
+
+    return prefix;
+}
+
+int main() {
+    string inp = "(a-b/c)*(a/k-l)";
+    string prefix = infixToPrefix(inp);
+    cout << prefix << endl;
+}
+//  workong on gdb, giving sigsegv in clion
+```
