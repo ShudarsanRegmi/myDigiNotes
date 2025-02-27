@@ -264,4 +264,47 @@ int main() {
 }
 ```
 
+## Prefix to infix
+
+**almost similar to above except**
+```
+need to read from right to left
+op1 operator op2
+```
+
+```cpp
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+bool isOperand(char c) {return ((c >= 'a' && c<='z') || (c >= 'A' && c<='Z') || (c >= '0' && c<='9'));}
+
+string prefixToInfix(string inp) {
+    stack<string> st;
+    char c;
+    for (int i=inp.size()-1; i>=0; i--) {
+        c = inp[i];
+        if (isOperand(c)) {
+            st.push(string(1, c));
+        }else {
+            // it is an operator
+            string op1 = st.top();
+            st.pop();
+            string op2 = st.top();
+            st.pop();
+            st.push("(" + op1 + c + op2 + ")");
+        }
+    }
+    return st.top();
+}
+
+int main() {
+    string prefix = "*+AB-CD";
+    string infix = prefixToInfix(prefix);
+    cout << infix << endl;
+}
+```
+
 
