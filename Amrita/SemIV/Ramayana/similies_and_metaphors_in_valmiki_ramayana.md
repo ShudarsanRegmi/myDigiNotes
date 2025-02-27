@@ -1,6 +1,8 @@
 # The use of Similies and Metaphors in Valimit Ramayana
 
 
+
+
 ## What are simili and metmaphor
 
 **Prompt 1**
@@ -221,3 +223,14 @@ To distinguish between **similes** and **metaphors** in Sanskrit, let's first lo
 ### **Key Takeaway**  
 If you see **"iva" (like), "yathā" (as), "tulya" (similar), "sama" (same as),** it is a **simile**.  
 If there is **no comparison word and one thing is directly stated to be another**, it is a **metaphor**.
+
+
+--- 
+
+# Using Custom GPTs and image generation models
+> Create an image of hanumana meeting sita
+![image](https://github.com/user-attachments/assets/50fa0e1e-02cf-443f-9536-27ce69968f51)
+
+> Use one of the best similies above to generate an image. which descibes the emotional depths due to the effect of similie. 
+![image](https://github.com/user-attachments/assets/0b588293-8569-4208-9378-5d67a301bd2d)
+
