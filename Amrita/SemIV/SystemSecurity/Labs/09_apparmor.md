@@ -15,3 +15,9 @@ Creating bash script
 ![image](https://github.com/user-attachments/assets/670f540a-06d1-4ad6-8e2f-179e917b1ad9)
 
 
+### Changing the path of the script
+![image](https://github.com/user-attachments/assets/7a5a747a-a758-49c2-bb13-fb5cc446ae4e)
+
+### It was blocked
+![image](https://github.com/user-attachments/assets/b1ee53bc-2ba7-429e-b74c-ab4bafa8ef5c)
+
