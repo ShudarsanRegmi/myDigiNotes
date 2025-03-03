@@ -29,6 +29,10 @@ CREATE DATABASE rls_practice;
 USE rls_practice;
 ```
 
+**Output**
+![image](https://github.com/user-attachments/assets/020f7082-78ba-42fc-9bb6-6ec4d5d588d0)
+
+
 ---
 
 ## **📖 Step 3: Create the `books` Table**
@@ -41,6 +45,8 @@ CREATE TABLE books (
     owner VARCHAR(50) NOT NULL
 );
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/4c3ec69b-ada0-4c41-8b05-5306e04341ed)
 
 ---
 
@@ -51,6 +57,8 @@ We will create **two users (`user1` and `user2`)**.
 CREATE USER 'user1'@'localhost' IDENTIFIED BY 'password1';
 CREATE USER 'user2'@'localhost' IDENTIFIED BY 'password2';
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/9f5e167d-9917-46c7-b80c-eae4e1b679d6)
 
 ---
 
@@ -72,6 +80,9 @@ DELIMITER ;
 DELIMITER ;
 ```
 
+**Output**
+![image](https://github.com/user-attachments/assets/efb8ab97-1c2d-40d0-9563-ed3866250e65)
+
 ```sql
 
 DELIMITER //
@@ -86,6 +97,8 @@ END;
 //
 DELIMITER ;
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/1f83910e-0923-4487-ad43-416019145985)
 
 ---
 
@@ -96,6 +109,8 @@ Since users should **only see their own books**, we create a **view** that filte
 CREATE VIEW user_books AS
 SELECT id, title, author FROM books WHERE owner = SESSION_USER();
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/c4c38383-1dde-4716-a607-bf634b05fd4f)
 
 ---
 
@@ -111,12 +126,16 @@ REVOKE ALL PRIVILEGES ON books FROM 'user2'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON user_books TO 'user1'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON user_books TO 'user2'@'localhost';
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/0706b063-b427-4f1d-bf46-eabe6a5e86af)
 
 3. **Allow inserting books** (users can insert, but ownership is handled by the trigger).
 ```sql
 GRANT INSERT ON books TO 'user1'@'localhost';
 GRANT INSERT ON books TO 'user2'@'localhost';
 ```
+**Output**
+![image](https://github.com/user-attachments/assets/d5fa2a52-3298-47ef-81f3-7efbd78b9685)
 
 ---
 
