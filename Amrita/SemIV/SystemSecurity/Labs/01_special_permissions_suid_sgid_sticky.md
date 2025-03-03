@@ -32,6 +32,9 @@ Output:
 ```
 -rwsr-xr-x 1 root root 54256 Feb  5  2024 /usr/bin/passwd
 ```
+![image](https://github.com/user-attachments/assets/079a7a32-39ba-473d-a017-a7add4156160)
+
+
 - The **`s`** in `rwsr-xr-x` means the SUID bit is set.
 - The file is owned by **root**, but any user can execute it with **root privileges**.
 - This allows non-root users to change their passwords, even though password files are system-protected.
@@ -50,6 +53,8 @@ To remove it:
 ```bash
 chmod u-s myscript.sh
 ```
+![image](https://github.com/user-attachments/assets/45fe346b-1cdc-47e1-906e-cc4a7236f6bb)
+
 
 ### **Security Concerns**
 - SUID can be a **security risk** if applied to insecure binaries.
@@ -59,6 +64,7 @@ To find all SUID files on your system:
 ```bash
 find / -perm -4000 -type f 2>/dev/null
 ```
+![image](https://github.com/user-attachments/assets/90e82068-1cc1-419e-833e-4e03e3fc4b80)
 
 ---
 
@@ -88,10 +94,13 @@ Example:
 ```bash
 chmod g+s myscript.sh
 ```
+![image](https://github.com/user-attachments/assets/399aa636-e4ff-4531-a9bf-cf2966924d9c)
+
 To remove it:
 ```bash
 chmod g-s myscript.sh
 ```
+![image](https://github.com/user-attachments/assets/7f0b3d36-f029-4bde-b5bf-32cae3332d8f)
 
 ### **SGID on Directories**
 When SGID is set on a directory, **all new files created inside will inherit the directory's group**, rather than the creator's default group.
@@ -145,6 +154,8 @@ To remove it:
 ```bash
 chmod -t /public
 ```
+![image](https://github.com/user-attachments/assets/d4a84a8d-589c-4fae-bf86-54eba4c21ad5)
+
 
 ### **Finding Directories with Sticky Bit**
 ```bash
