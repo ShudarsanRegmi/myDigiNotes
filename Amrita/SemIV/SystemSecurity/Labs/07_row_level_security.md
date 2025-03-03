@@ -1,4 +1,4 @@
-Here is a **comprehensive tutorial** on implementing **Row-Level Security (RLS) in MySQL** from scratch. 🚀  
+# Row Level Security in mysql
 
 ---
 
