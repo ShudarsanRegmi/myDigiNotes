@@ -43,3 +43,25 @@
 ![image](https://github.com/user-attachments/assets/17284c4c-176f-4787-9e8e-0ae5f76741ed)
 
 ## Q3
+![image](https://github.com/user-attachments/assets/174263ed-8474-456e-b829-12aaf95df32c)
+
+# Lab 1-4
+![image](https://github.com/user-attachments/assets/6a3bb5aa-8697-42b1-8cac-e8219e46624c)
+
+## Q1
+![image](https://github.com/user-attachments/assets/810d254a-075f-4265-a174-81ab4d90f3e6)
+
+## Q2
+![image](https://github.com/user-attachments/assets/36ef1fa4-3f86-4b27-8f41-166a6f4c4681)
+
+## Q3
+![image](https://github.com/user-attachments/assets/df811570-34e5-478e-9f9a-8083d40a3ad9)
+
+## Q4
+![image](https://github.com/user-attachments/assets/12f4f421-a65d-4370-937a-c8470b6a4423)
+
+## Q5
+![image](https://github.com/user-attachments/assets/e93fc32d-ad49-472e-a13d-e02992ca29f2)
+
+
+
