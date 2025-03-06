@@ -72,9 +72,14 @@ BaseException
            └── UserWarning
 ```
 
+## SyntaxError
+```python
+1var = 2
+1=2
+111
+```
 
-
-## TypError
+### TypError
 ```python
 x = 'a'
 y = 5
@@ -84,6 +89,12 @@ print(x+y)
 ## ValueError
 ```python
 a = int('+')
+```
+## UnboundLocalError
+```python
+def unbound_error():
+    print(x)  # ❌ UnboundLocalError: x referenced before assignment
+    x = 10
 ```
 
 ## IndexError
@@ -97,6 +108,7 @@ y = x[10]
 dic = {'name':'ram', 'age':10}
 print(dic['height'])
 ```
+
 ## AttributeError
 >Occurs when trying to access invalid attribute of an object
 ```python
@@ -111,6 +123,10 @@ h1 = Human(10, 23, "falano")
 print(h1.name)
 print(h1.width)
 
+```
+```python
+x = 5
+x.upper()
 ```
 
 ## ImportError
@@ -142,6 +158,41 @@ def func():
 func()
 
 ```
+
+## MemoryError
+```python
+big_list = [1] * (10**10)  # Allocates a list of 10 billion elements
+```
+```python
+data = []
+while True:
+    data.append("A" * 10**6)  # Add 1MB of data in each iteration
+```
+
+## UnicodeError
+```python
+b'\x80'.decode("utf-8")  # ❌ UnicodeDecodeError
+```
+
+## UniCodeEncodeError
+```python
+'🤣'.encode('ascii')
+```
+
+## Overflow error
+```python
+import math
+x = math.exp(1000)  # ❌ OverflowError: math range error
+```
+
+
+## Lookup Error
+```python
+ b'xa1234'.decode('utf-i')
+```
+
+
+
 
 
 
