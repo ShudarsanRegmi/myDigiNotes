@@ -63,4 +63,36 @@ Motifs, or recurring symbols, also help emphasize a theme. For example, the use 
 In short, the visual elements reinforce the central ideas of the story, helping to communicate complex themes without the need for explicit dialogue."
 
 
+---
 
+# Disadvantages of Visual story telling 
+To make **Slide 10: Disadvantages of Visual Storytelling** more specific and impactful, we should **relate each point to visual techniques** used in media, films, advertisements, and digital storytelling. Here's how:  
+
+---
+
+### **Slide 10: Disadvantages of Visual Storytelling**  
+
+📌 **Can Be Manipulative – Used for Propaganda**  
+- **Selective imagery & editing** can distort reality.  
+- Example: **Political campaigns & war propaganda** use emotionally charged images to sway opinions.  
+- **Visual Cue:** A side-by-side comparison of the same event portrayed differently by different media outlets.  
+
+📌 **Distortion of Facts – Myths vs. Truth**  
+- **Dramatization & visual exaggeration** can misrepresent reality.  
+- Example: Movies based on "true events" often **alter facts** for entertainment (e.g., "The Social Network" fictionalizing Zuckerberg’s story).  
+- **Visual Cue:** A famous movie scene vs. the real historical event it depicts.  
+
+📌 **Over-Reliance on Emotion – Can Overshadow Logic**  
+- **Cinematic techniques like music, slow-motion, and close-ups** can manipulate emotions beyond facts.  
+- Example: Advertisements using **tear-jerking visuals** to sell products rather than logic-based benefits.  
+- **Visual Cue:** A tearful child in a charity ad vs. factual statistics about the cause.  
+
+📌 **Subjectivity – Different Interpretations**  
+- **Visual ambiguity & symbolism** lead to varying understandings.  
+- Example: Films like **"Inception" (spinning top scene)** or **"2001: A Space Odyssey"** leave viewers debating their true meaning.  
+- **Visual Cue:** A famous ambiguous movie scene or an optical illusion where people see different things.  
+
+🖼 **Visual:**  
+A **balance scale** with one side showing "Emotional Impact" (heart, tearful face, dramatic imagery) and the other showing "Facts & Objectivity" (graphs, documents, raw footage).  
+
+---
