@@ -29,6 +29,30 @@ for i in range(2, n):
         print(i, end=' ')
 ```
 
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n=200;
+    vector<bool> vec(n+1, true);
+    for (int i=2; i*i<=n; i++) {
+        if(vec[i]) {
+            for(int j=i*i; j<=n; j+=i) {
+                vec[j] = false;
+            }
+        }
+    }
+    
+    for (int i=2; i<=n; i++) {
+        if(vec[i]) cout << i << " ";
+    }
+    return 0;
+}
+```
+
 ### Check for Strong Number
 >A number is strong if the sum of the factorial of its digit is equal to the number itself
 
