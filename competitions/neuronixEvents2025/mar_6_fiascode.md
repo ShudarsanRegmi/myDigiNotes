@@ -3,6 +3,8 @@
 
 ## Preevent Mindsets
 
+![image](https://github.com/user-attachments/assets/9c95fb9e-31d0-46b6-af08-a9b8dd779bed)
+
 
 
 ## First round experience
@@ -17,7 +19,7 @@
 
 ## Round 2 : Experience
 
-The code was in mind but not in hands. It took a lot of trial and errors to get our solution. We could have solved the problems much faster if there was a good practice. The competition was missed out from hands due to a not sitting concious. We could have tried removing try except block. It was so silly mistake that it just kept us away from the ranks. 
+The code was in mind but not in hands. It took a lot of trial and errors to get our solution. We could have solved the problems much faster if there was a good practice. The competition was missed out from hands due to a not sitting concious(oversight on an easy question). We could have tried removing try except block. It was so silly mistake that it just kept us away from the ranks. 
 
 ## Key Learnings
 - Try to solve easy questions earlier in order to get advantage in situations of tie and gain confidence. 
