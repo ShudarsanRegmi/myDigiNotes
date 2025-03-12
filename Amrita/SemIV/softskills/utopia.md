@@ -147,4 +147,17 @@ A truly **ideal society keeps evolving**.
 ✅ Your speech is **structured, confident, and engaging**.  
 ✅ You’re prepared for **questions and discussions**.  
 
-Would you like any refinements or additional points? 🚀
+---
+
+## Slide: Law & Justice in a Utopian Society
+
+**Content:**
+```
+🔹 Fairness & Equality – Laws apply equally to all, ensuring no discrimination.
+🔹 Restorative Justice – Focus on rehabilitation and reconciliation rather than punishment.
+🔹 Transparency & Trust – Legal processes are open, accountable, and corruption-free.
+🔹 Prevention Over Punishment – Strong social systems reduce crime before it happens.
+🔹 Technology & Ethics – AI and data-driven justice ensure unbiased decisions.
+🔹 Community Involvement – Citizens actively shape laws and justice through democratic participation.
+
+```
