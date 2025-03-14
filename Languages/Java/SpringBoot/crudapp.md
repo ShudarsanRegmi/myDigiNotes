@@ -13,8 +13,38 @@ spring.jpa.show-sql=true
 
 **Directory Structure**
 ![image](https://github.com/user-attachments/assets/4721064e-6342-4c60-80f9-7ff9c17ef117)
+![image](https://github.com/user-attachments/assets/0da2d2fd-0814-47ed-8902-34cda6177ef0)
 
-![Uploading image.png…]()
+
+```
+.
+├── java
+│   └── com
+│       └── shud
+│           └── crudapp
+│               ├── ApiController.java
+│               ├── controller
+│               │   └── StudentController.java
+│               ├── CrudappApplication.java
+│               ├── model
+│               │   └── Student.java
+│               ├── PagesController.java
+│               ├── repository
+│               │   └── StudentRepository.java
+│               └── service
+│                   └── StudentService.java
+└── resources
+    ├── application.properties
+    ├── static
+    └── templates
+        ├── index.html
+        ├── student-form.html
+        └── students.html
+
+11 directories, 11 files
+
+```
+
 
 
 
@@ -97,6 +127,10 @@ public class Student {
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+```
+
+```java
+
 package com.shud.crudapp.repository;
 
 import com.shud.crudapp.model.Student;
