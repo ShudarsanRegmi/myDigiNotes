@@ -49,3 +49,50 @@ public class HelloController {
         return response;
     }
 ```
+
+## Basics of using thyemleaf templates
+
+By default, Thymeleaf will look for HTML files inside the `src/main/resources/templates/` folder.
+
+In order to add thyemleaf if not already in meaven project them following should be added under dependencies tag in `pom.xml`
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+```
+
+
+### Creating the fist thyemleaf page
+![image](https://github.com/user-attachments/assets/1a0a462a-1735-44d6-99e4-d1f34f930c38)
+
+**Create the class and controller**
+```java
+package com.shud.libapp3;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HomeController {
+    @GetMapping("/home")
+    public String home() {
+        return "home"; // refers to home.html under  resources/templates/home.html
+    }
+}
+
+```
+
+**A basic thyemleaf template**
+```java
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Test</title>
+</head>
+<body>
+<h1>Hello, Thymeleaf is Working!</h1>
+</body>
+</html>
+```
