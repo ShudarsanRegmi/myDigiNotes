@@ -308,5 +308,57 @@ public class PagesController {
 </html>
 ```
 
+---
+
+## Adding new functionality of updating user
+
+
+### Adding the controller
+`StudentController.java`
+```java
+@GetMapping("/edit/{id}")
+public String showEditForm(@PathVariable Long id, Model model) {
+    Student student = studentService.getStudentById(id);
+    model.addAttribute("student", student);
+    return "student-form";
+}
+```
+
+### Updating the logic on student-form.html
+`student-form.html`
+
+```java
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h2 th:text="${student.id} ? 'Edit Student' : 'Add Student'"></h2>
+    <form th:action="@{/students/save}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}">  <!-- Hidden field for updating -->
+        
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required>
+        
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+```
+
+### Adding column for edit in the listing table
+
+`students.html`
+
+```html
+<td>
+    <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+    <a th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a>
+</td>
+```
 
 
