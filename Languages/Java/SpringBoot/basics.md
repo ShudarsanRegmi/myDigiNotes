@@ -5,6 +5,26 @@
 ![image](https://github.com/user-attachments/assets/fbe70029-9b28-4575-ae27-68291de1783b)
 
 
+**The Main Entry point remains same**
+
+```java
+package com.shud.restapi2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Restapi2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Restapi2Application.class, args);
+    }
+
+}
+```
+![image](https://github.com/user-attachments/assets/b0a7d777-811e-4e2e-ba49-aa87cc480573)
+
+
 ## To Create a simple endpoint
 
 ```java
