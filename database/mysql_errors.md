@@ -5,6 +5,7 @@
 
 
 **/etc/mysql/mysql.conf.d/mysqld.cnf**
+
 ![image](https://github.com/user-attachments/assets/07498935-04ed-4e5d-96e6-b34dee776192)
 
 ```
