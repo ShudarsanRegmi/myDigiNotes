@@ -64,5 +64,58 @@ Based on everything we’ve enumerated above, we would guess that the executable
 
 ---
 
+## Lab - 1-2
+
+![image](https://github.com/user-attachments/assets/887ea115-33d7-4669-8b9d-8c87154797a7)
+
+### Questions
+
+#### 1. Upload the Lab01-02.exe file to http://www.VirusTotal.com/. Does it match any existing antivirus definitions?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/6eabb091-762e-4925-ae71-4946afd84755)
+
+> Yes, 60/73 vendors detects this file as malware
+
+---
+
+#### 2. Are there any indications that this file is packed or obfuscated? If so, what are these indicators? If the file is packed, unpack it if possible.
+
+#### Answer
+![image](https://github.com/user-attachments/assets/42179fbd-e899-4acd-891d-5e0ed09cb459)
+
+> The file is not having standard sections like .text, .rdata, etc. Also sections like upx0, upx1, upx2, shows that the executable has been packed with UPX
+
+**Unpacking it using upx tool**
+![image](https://github.com/user-attachments/assets/1a3f5f99-c25a-4952-b889-e8260a15ff6b)
+```
+upx -d /path/to/packedfile -o unpackedfile.exe
+```
+
+---
+
+
+#### 3. Do any imports hint at this program’s functionality? If so, which imports are they and what do they tell you?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/502f4d24-ea49-4f4d-9611-77ee083d1d9f)
+
+> InternetOpenA, InternetOpenUrlA connects to the internet and CreateServiceA creates a service
+> It could be creating a process which will then be connecting to the internet. 
+
+---
+
+#### 4. What host- or network-based indicators could be used to identify this malware on infected machines?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/37ec20f8-19b9-4c85-a6e4-978a0f2e36d4)
+
+> Looking at the strings of this file shows 2 interesting elements, ‘malservice’ and ‘http://www.malwareanalysisbook.com’.
+> Based on this we can assume that searching hosts for the scheduled service called ‘malservice’ and looking at any hosts connectiong to ‘http://www.malwareanalysisbook.com’ would serve as reliable host and network indicators.
+
+---
+
+
+
 
 
