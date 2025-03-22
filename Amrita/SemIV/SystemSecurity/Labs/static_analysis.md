@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d6a21f2a-9fe6-4f14-bd2d-aa3458e61928)# Static Analysis
+# Static Analysis
 
 ## Lab - 1-1
 
@@ -141,13 +141,16 @@ upx -d /path/to/packedfile -o unpackedfile.exe
  
 ---
 
-#### 1. Upload the files to http://www.VirusTotal.com/ and view the reports. Does either file match any existing antivirus signatures?
+#### 3. Do any imports hint at this program’s functionality? If so, which imports are they and what do they tell you?
 
 #### Answer
-![image](https://github.com/user-attachments/assets/cd33447c-f9d5-4fa9-a4bc-9311009e8140)
+> can be answered deobfuscation
+---
 
+#### 4. What host- or network-based indicators could be used to identify this malware on infected machines?
 
-> At this point of time we can see only two functions being imported which is more coomon in packed file. For further information we've to unpack it.
+#### Answer
+> can be answered deobfuscation
  
 ---
 
