@@ -1,4 +1,4 @@
-# Static Analysis
+![image](https://github.com/user-attachments/assets/d6a21f2a-9fe6-4f14-bd2d-aa3458e61928)# Static Analysis
 
 ## Lab - 1-1
 
@@ -115,7 +115,117 @@ upx -d /path/to/packedfile -o unpackedfile.exe
 
 ---
 
+## Lab 1-3
+
+### Questions
+
+#### 1. Upload the Lab01-03.exe file to http://www.VirusTotal.com/. Does it match any existing antivirus definitions?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/2e67ee15-7700-492a-b001-0e79ff8e0eba)
+
+
+> Yes, 67/73 vendors flagged the .exe as malware
+ 
+---
+
+#### 2. Are there any indications that this file is packed or obfuscated? If so, what are these indicators? If the file is packed, unpack it if possible.
+
+#### Answer
+![image](https://github.com/user-attachments/assets/e016f891-4671-4726-b5db-09c88809e247)
+> PEStudio shows that the file has virtual size of 0x3000 but the raw size of 0x000. This is an indiciation of that the file might have been packed of obfuscated.
+
+![image](https://github.com/user-attachments/assets/4373f725-4b0b-4f33-bd6c-b3e9e563b4d1)
+
+> We can confirm it by using PEID tool which shows that the file is packed with FSG -> dulex/xt.  
+ 
+---
+
+#### 1. Upload the files to http://www.VirusTotal.com/ and view the reports. Does either file match any existing antivirus signatures?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/cd33447c-f9d5-4fa9-a4bc-9311009e8140)
+
+
+> At this point of time we can see only two functions being imported which is more coomon in packed file. For further information we've to unpack it.
+ 
+---
+
+
+## Lab 1-4
+
+### Questions
+
+![image](https://github.com/user-attachments/assets/c07608b7-b837-44be-9460-f48fa8885aa7)
+
+#### 1. Upload the files to http://www.VirusTotal.com/ and view the reports. Does either file match any existing antivirus signatures?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/c56b10c6-1227-433f-975b-98ce19e63411)
+
+
+> Yes, 63/72 vendors flagged .exe as malware
+ 
+---
+
+#### 2. Are there any indications that this file is packed or obfuscated? If so, what are these indicators? If the file is packed, unpack it if possible.
+
+#### Answer
+![image](https://github.com/user-attachments/assets/0b155687-fe4c-4e85-8004-8aaa13258ac9)
+
+
+> The file has cleary defined sections and headers. Also it has proper import table. This shows that the program is not packed or obfuscated.
+ 
+---
+
+
+#### 3. When was this program compiled?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/db338dd8-38a9-422a-b8c6-a0545b7d7725)
 
 
 
+> The compiled time as shown is: Aug 2019. But this might been faked too. 
+ 
+---
 
+
+#### 4. Do any imports hint about program functionality
+
+#### Answer
+![image](https://github.com/user-attachments/assets/86492ebf-54f7-4175-b2a8-6c277603872a)
+
+
+
+> The files has imports for file operations but the imports like FindResourceA, LoadResourceA, winexec make it suspicious. Further imporing .exe from ResourceHacker makes it more suspicious. 
+
+ ![image](https://github.com/user-attachments/assets/4d8376ab-f945-4a5d-9554-8d4f239a5b88)
+
+ > The imports from Advapi32 indicate that this is attempting to modify or change the token assigned to the execution of this process, presumably to elevate privileges or give extended access rights.
+---
+
+
+#### 5. What host- or network-based indicators could be used to identify this malware on infected machines?
+
+#### Answer
+> Unexpectedly, the malware doesn't seem to have made any imports for network functions.
+
+![image](https://github.com/user-attachments/assets/b25c9bbc-528e-4e64-ae4a-e5d5f9f47f00)
+> But this resource is suspicous.
+
+> If we  open the resource in resource hacker, we can find the executable. which was attached as a resource.
+
+![image](https://github.com/user-attachments/assets/0b1a1eb0-7353-4d71-9098-5830ecc07fef)
+
+> Also, the string tools also provides some network or host based indicuator
+---
+
+
+#### 6. This file has one resource in the resource section. Use Resource Hacker to examine that resource, and then use it to extract the resource. What can you learn from the resource?
+
+#### Answer
+![image](https://github.com/user-attachments/assets/59d84612-8a82-4e34-9e36-b9fdc6660795)
+
+> The main executable had no imports for networking functions. All networking operations was being done by the attached resource. Also, the url in the strings suggests that the attached resource was downloading another malware for further exploitation.  
+---
