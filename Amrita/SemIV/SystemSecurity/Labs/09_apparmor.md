@@ -17,7 +17,10 @@ Creating bash script
 
 ### Changing the path of the script
 ![image](https://github.com/user-attachments/assets/7a5a747a-a758-49c2-bb13-fb5cc446ae4e)
+ntries from /var/log/syslog.
 
 ### It was blocked
 ![image](https://github.com/user-attachments/assets/b1ee53bc-2ba7-429e-b74c-ab4bafa8ef5c)
 
+## Conclusion:
+Apparmor can be used to impose mandator access control to an applicaton or program.
