@@ -109,7 +109,7 @@ CREATE USER 'abc'@'localhost' IDENTIFIED BY 'abc_password';
 
 ### **Step 4: Grant All Privileges to User `abc`**
 ```sql
-GRANT ALL PRIVILEGES ON AmritaChennai.* TO 'abc'@'localhost';
+GRANT ALL PRIVILEGES ON AmritaChennai.* TO 'abc'@'localhost' WITH GRANT OPTION;
 ```
 
 ---
