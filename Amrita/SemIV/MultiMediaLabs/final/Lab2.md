@@ -139,10 +139,10 @@ title("Channels combined of different image")
 ```
 
 ### Output
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/d09aa233-bcc8-47f0-9098-30f9cab41c8d)
 
 ### Result
-
+> RGB channels of same and different images were combined using matlab
 
 
 
