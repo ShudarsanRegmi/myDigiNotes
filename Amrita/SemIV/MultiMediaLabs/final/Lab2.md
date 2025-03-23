@@ -144,5 +144,43 @@ title("Channels combined of different image")
 ### Result
 > RGB channels of same and different images were combined using matlab
 
+## Experiment - 7
 
+### AIM : To combine the top half of one image with the bottom half of another image and display the original images along with the combined image using MATLAB.
 
+### Code
+```matlab
+clc; close all; clear all;
+img1 = imread('./resources/same_size/img1.jpg');
+img2 = imread('./resources/same_size/img2.jpg');
+
+h1 = size(img1, 1);
+w1 = size(img1, 2);
+
+h2 = size(img2, 1);
+w2 = size(img2, 2);
+
+p1 = img1(1:h1/2, 1:w1, :); % top half of first image
+p2 = img2(h2/2:end, 1:w2, :); % bottom half of the second image
+
+final = [p1;p2];
+
+figure(1);
+subplot(1,3,1);
+imshow(p1);
+title("Top half of hte first image")
+
+subplot(1,3,2);
+imshow(p2);
+title('Bottom half of the second image');
+
+subplot(1,3,3);
+imshow(final);
+title('Merged');
+```
+
+### Output
+![image](https://github.com/user-attachments/assets/d03ad773-8240-44e7-a7fa-0f04d86ee1ae)
+
+### Result
+> Top half of the first image and bottom half of the second image was merged using matlab
