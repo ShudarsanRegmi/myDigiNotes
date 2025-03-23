@@ -22,5 +22,13 @@ ntries from /var/log/syslog.
 ### It was blocked
 ![image](https://github.com/user-attachments/assets/b1ee53bc-2ba7-429e-b74c-ab4bafa8ef5c)
 
+
+## Updating blocke access with `apparmor-logprof`
+![image](https://github.com/user-attachments/assets/a283be92-10f4-4f9f-b3d4-9467a1e2eeea)
+
+![image](https://github.com/user-attachments/assets/616bc1a1-741c-415f-82f0-a5010d2a8aad)
+
+> `aa-logprof` is used to analyze system logs and automatically suggest AppArmor profile updates based on denied access attempts
+
 ## Conclusion:
 Apparmor can be used to impose mandator access control to an applicaton or program.
