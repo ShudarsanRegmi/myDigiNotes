@@ -75,7 +75,8 @@ title('Downsampled Grayscale Image');
 ```
 
 ### Output
-![image](https://github.com/user-attachments/assets/234e0c8d-ec9f-4bc1-96cc-f8380cf78bfe)
+![image](https://github.com/user-attachments/assets/e3041d72-37fc-4b26-b06d-a8b7f1eec6de)
+
 
 
 ### Result
