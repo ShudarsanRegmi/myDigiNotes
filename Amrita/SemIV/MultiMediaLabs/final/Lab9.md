@@ -141,6 +141,9 @@ imshow(imresize(BW5, 40, "nearest"));
 title("Closed Image");
 
 ```
+**Structuring Elements** <br>
+![image](https://github.com/user-attachments/assets/49b6e42d-b485-4840-8e6f-df9c59aae1db)
+
 
 ### Output
 ![image](https://github.com/user-attachments/assets/1b04625f-e09d-4ffc-946a-b1935cef9449)
