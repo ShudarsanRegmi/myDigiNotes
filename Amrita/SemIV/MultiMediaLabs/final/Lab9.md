@@ -89,6 +89,9 @@ title("Processed for Weighted 5×5 Image");
 ### Output
 ![image](https://github.com/user-attachments/assets/0e572ef3-c8b3-4c3d-b80a-f714ae5480c7)
 
+![image](https://github.com/user-attachments/assets/0508662a-0df6-4408-911e-d6d3a7d91d17)
+
+
 ### Result
 
 --- 
