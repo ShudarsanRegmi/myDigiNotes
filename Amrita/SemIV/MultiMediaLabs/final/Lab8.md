@@ -70,6 +70,7 @@ y = imread("./resources/histogram/brightgray.jpg");
 z = imread("./resources/histogram/lowcontrast.ppm");
 a = imread("./resources/histogram/highcontrast.jpg");
 
+% Figure 1 for Images
 figure(1)
 
 % Dark Gray Image
@@ -112,10 +113,52 @@ a_eq = histeq(a);
 imshow(a_eq);
 title('Equalized High Contrast');
 
+% Figure 2 for Histograms
+figure(2)
+
+% Dark Gray Image Histogram
+subplot(4,2,1);
+imhist(x);
+title('Histogram - Dark Gray');
+
+subplot(4,2,2);
+imhist(x_eq);
+title('Histogram - Equalized Dark Gray');
+
+% Bright Gray Image Histogram
+subplot(4,2,3);
+imhist(y);
+title('Histogram - Bright Gray');
+
+subplot(4,2,4);
+imhist(y_eq);
+title('Histogram - Equalized Bright Gray');
+
+% Low Contrast Image Histogram
+subplot(4,2,5);
+imhist(z);
+title('Histogram - Low Contrast');
+
+subplot(4,2,6);
+imhist(z_eq);
+title('Histogram - Equalized Low Contrast');
+
+% High Contrast Image Histogram
+subplot(4,2,7);
+imhist(a);
+title('Histogram - High Contrast');
+
+subplot(4,2,8);
+imhist(a_eq);
+title('Histogram - Equalized High Contrast');
+
+
 ```
 
 ### Output
 ![image](https://github.com/user-attachments/assets/bbc1a739-297a-41cd-8d77-f60561ac2682)
+
+![image](https://github.com/user-attachments/assets/24a74e48-1275-418c-94b9-f27f254e59f6)
 
 ### Result
 > Histogram Equalization was applied to images of different characteristics
