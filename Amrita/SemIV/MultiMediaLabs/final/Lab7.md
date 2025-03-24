@@ -36,6 +36,40 @@ title('Gray Slice at 64 Levels');
 ### Output
 ![image](https://github.com/user-attachments/assets/05aa62a6-8307-42b2-8247-68edb6278143)
 
+### Code
+```matlab
+% Read the Pikachu image
+img = rgb2gray(imread('./resources/size_spec/pikachu.jpeg'));
+
+% Display original grayscale image
+figure;
+subplot(2,2,1);
+imshow(img);
+title('Original Grayscale Pikachu');
+
+% Apply gray-level slicing using grayslice
+slice_256 = grayslice(img, 256);
+slice_128 = grayslice(img, 128);
+slice_64  = grayslice(img, 64);
+
+% Display sliced images
+subplot(2,2,2);
+imshow(slice_256);
+title('Gray Slice at 256 Levels');
+
+subplot(2,2,3);
+imshow(slice_128);
+title('Gray Slice at 128 Levels');
+
+subplot(2,2,4);
+imshow(slice_64);
+title('Gray Slice at 64 Levels');
+
+```
+### Output
+
+![image](https://github.com/user-attachments/assets/043f737f-7e45-494e-be23-d93a37b1d0d1)
+
 ### Result
 > Gray level slicing was performed for the given input image
 --- 
