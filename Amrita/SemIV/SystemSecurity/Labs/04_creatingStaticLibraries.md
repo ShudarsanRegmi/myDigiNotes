@@ -1,5 +1,8 @@
 # Creating Static Libraries in C
 
+![image](https://github.com/user-attachments/assets/03ff3b7b-29c4-495b-b62e-16849cdfc128)
+
+
 ## What is a Static Library?
 
 A static library is a collection of object files (.o) bundled together in a single archive (.a) that can be linked into executables. Unlike dynamic libraries (.so or .dll), static libraries are copied into the final binary, making them self-contained.
