@@ -48,30 +48,30 @@ title('Downsampled Grayscale Image');
 ```matlab
 clc; close all; clear all;
 img = imread('./resources/size_spec/pikachu.jpeg');
+imggray=rgb2gray(img);;
 
-sf = 7;
+% down sampling
+sf=4;
+img_dg=imggray(1:sf:end,1:sf:end);
 
-dsimg = img(1:sf:end, 1:sf:end, :);
-
-gimg = rgb2gray(img);
-dsgimg = gimg(1:sf:end, 1:sf:end);
+% upsampling
+img_up = imresize(imggray, [512, 512], 'nearest');
 
 figure(1);
-subplot(2,2,1);
-imshow(img);
-title('Original Image');
+subplot(1,4,1)
+imshow(img)
+title("original image");
 
-subplot(2,2,2);
-imshow(dsimg);
-title('Downsampled Original Image');
+subplot(1,4,2)
+imshow(imggray)
+title("gray image");
 
-subplot(2,2,3);
-imshow(gimg);
-title('Gray image');
-
-subplot(2,2,4);
-imshow(dsgimg);
-title('Downsampled Grayscale Image');
+subplot(1,4,3)
+imshow(img_dg)
+title("Downsampled image");
+subplot(1,4,4);
+imshow(img_up);
+title("Upsampled image");
 ```
 
 ### Output
