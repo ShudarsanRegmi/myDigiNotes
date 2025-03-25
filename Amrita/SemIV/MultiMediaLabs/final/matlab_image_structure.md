@@ -41,6 +41,24 @@ title('10×10 Binary Image');
 
 ### Creating a color image by using numerical values
 
+**Simple image** <br>
+
+```matlab
+r = [1,1,1,0,0,0 0,0,0];
+g = [0,0,0,1,1,1,0,0,0];
+b = [0,0,0,0,0,0,1,1,1];
+
+
+im = cat(3, r,g,b);
+
+
+imshow(imresize(im,40,"nearest")); % Interpolation
+```
+**Output** <br>
+
+![image](https://github.com/user-attachments/assets/5941c3f3-ba67-4de5-b07a-26797ca98280)
+
+
 ```matlab
 % Define a 5×5 RGB image
 img = cat(3, ...
