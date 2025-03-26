@@ -99,3 +99,33 @@ int main() {
 }
 
 ```
+
+## GFG submission
+```cpp
+class Solution {
+  public:
+  
+    void dfs(int curr, vector<bool> &visited, vector<int> &ans, vector<vector<int>> &adj) {
+        // traverse its adjacency
+        visited[curr] = true;
+        ans.push_back(curr);
+        for (int i : adj[curr]) {
+            if(!visited[i]) {
+                // visit it and mark as visisted
+               
+                dfs(i, visited, ans, adj);
+            }
+        }
+    }
+    // Function to return a list containing the DFS traversal of the graph.
+    vector<int> dfsOfGraph(vector<vector<int>>& adj) {
+        vector<bool> visited(adj.size(), false);
+        vector<int> ans;
+        dfs(0, visited, ans, adj);
+        return ans;
+        
+    }
+};
+// had to fix minor error with the help of chatgpt. I had kept first two lines inside the loop
+// done for final lab examp preperation
+```
