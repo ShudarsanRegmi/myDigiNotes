@@ -31,6 +31,8 @@ loop i : [1, n]
     }
 ```
 
+![image](https://github.com/user-attachments/assets/402b47e9-3682-4f9e-a348-aa696935b75f)
+
 ## Code to prove which of the logic gives stability
 ```cpp
 #include <iostream>
