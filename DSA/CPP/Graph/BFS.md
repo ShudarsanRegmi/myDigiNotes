@@ -1,6 +1,5 @@
 # BFS
 
-
 ```cpp
 #include <iostream>
 #include <vector>
@@ -49,3 +48,34 @@ int main() {
 }
 
 ```
+## GFG Submission
+```cpp
+class Solution {
+  public:
+    // Function to return Breadth First Traversal of given graph.
+    vector<int> bfsOfGraph(vector<vector<int>> &adj) {
+        queue<int> Q;
+        vector<bool> visited(adj.size(), false);
+        vector<int> ans;
+        Q.push(0);
+        visited[0] = true;
+        int t;
+        while(!Q.empty()) {
+            // traverse teh adj. of front element
+            t = Q.front();
+            for (int i : adj[t]) {
+                // push the unvisited neighbors 
+                if(!visited[i]) {
+                    Q.push(i);
+                    visited[i] = true;
+                }
+            }
+            ans.push_back(t);
+            Q.pop();
+        }
+        return ans;
+    }
+};
+// could solve without external help. done for dsa lab exam prep. 
+```
+
