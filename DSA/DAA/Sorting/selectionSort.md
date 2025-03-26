@@ -38,6 +38,8 @@ void selectionSort(vector<int> &arr) {
             swap(arr[i], arr[si]);
         }
     }
+// Revised on DSA Midsem Exam
+// Revised again on dsa endsem lab exam : Wednesday 26 March 2025 06:58:28 PM IST
 ```
 
 ![image](https://github.com/user-attachments/assets/bb363739-2e3b-46a9-9886-c63380c47b04)
