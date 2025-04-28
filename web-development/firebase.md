@@ -20,3 +20,9 @@
 - Fill the client id and secret to create github signin for your firebase app
 
 ![image](https://github.com/user-attachments/assets/4c81fd3a-530c-4dd5-b4bf-20fd3999ed46)
+
+
+## Workflow
+
+![image](https://github.com/user-attachments/assets/5d99bed9-bc41-4611-8094-604e91f19327)
+
