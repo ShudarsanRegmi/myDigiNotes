@@ -56,3 +56,16 @@ conda create --name newenv --file spec-file.txt  # Recreate environment
 ```bash
 conda clean --all   # Remove unused packages & cache
 ```
+
+## For Windows
+
+```bash
+conda init powershell
+```
+OR
+```bash
+conda init cmd.exe
+```
+
+> These commands should be used to init conda environment. With the command, Conda modifies your PowerShell startup profile so that every time you open PowerShell, the conda environment is automatically set up and ready to use.
+
