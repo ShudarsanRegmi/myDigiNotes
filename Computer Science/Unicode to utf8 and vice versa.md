@@ -134,4 +134,124 @@ print(chr(codepoint).encode('utf-8'))  # b'\xf0\x9f\x98\x84'
 
 ---
 
-Let me know if you want me to generate a **step-by-step worksheet or quiz** with codepoints for you to practice manual conversions. That'll burn this into your brain real nice.
+
+Let’s gooo — now you're asking for the reverse process:
+
+---
+
+### 💬 Rephrased:
+
+> How do I decode a UTF-8 byte sequence back into its original Unicode code point?
+
+This is the other half of the story — just as important as encoding. Let’s build a clear method you can follow, then apply it with some hands-on examples.
+
+---
+
+## 🧠 Step-by-Step: Decoding UTF-8 Bytes → Unicode Code Point
+
+### ✦ Step 1: Identify the number of bytes
+
+Look at the **first byte** in binary:
+
+| Leading Bits | Byte Count | Meaning                 |
+| ------------ | ---------- | ----------------------- |
+| `0xxxxxxx`   | 1 byte     | ASCII (U+0000 – U+007F) |
+| `110xxxxx`   | 2 bytes    | U+0080 – U+07FF         |
+| `1110xxxx`   | 3 bytes    | U+0800 – U+FFFF         |
+| `11110xxx`   | 4 bytes    | U+10000 – U+10FFFF      |
+
+All continuation bytes (after the first one) **start with `10xxxxxx`**.
+
+---
+
+### ✦ Step 2: Remove prefix bits to get raw payload
+
+You **remove the prefix bits** from each byte and then **concatenate all remaining bits** to reconstruct the Unicode code point.
+
+---
+
+### ✦ Step 3: Convert final binary into hex → that's your Unicode code point.
+
+---
+
+## ✅ Example 1: Decode `C3 A9`
+
+This is the UTF-8 encoding for `é`
+
+### Step 1: Convert to binary
+
+* `C3` = `11000011`
+* `A9` = `10101001`
+
+### Step 2: Remove prefixes
+
+* From `11000011`: remove `110` → `00011`
+* From `10101001`: remove `10` → `101001`
+
+Now concatenate:
+
+```
+00011 101001 → 00011101001
+```
+
+This is **11 bits**: binary `00011101001` → decimal `233` → hex `0x00E9`
+
+✅ So: `C3 A9` = `U+00E9` = `é`
+
+---
+
+## ✅ Example 2: Decode `F0 9F 98 84`
+
+This is the UTF-8 encoding for `😄`
+
+### Step 1: Convert to binary
+
+| Byte | Binary     |
+| ---- | ---------- |
+| F0   | `11110000` |
+| 9F   | `10011111` |
+| 98   | `10011000` |
+| 84   | `10000100` |
+
+### Step 2: Remove prefixes
+
+* `F0`: remove `11110` → `000`
+* `9F`: remove `10` → `011111`
+* `98`: remove `10` → `011000`
+* `84`: remove `10` → `000100`
+
+Now concatenate:
+
+```
+000 011111 011000 000100 → 00011111011000000100
+```
+
+This is a **21-bit binary number** → `0001 1111 0110 0000 0100`
+
+Convert to hex:
+
+* Binary: `00011111011000000100`
+* Decimal: 128516
+* Hex: `0x1F604`
+
+✅ So: `F0 9F 98 84` = `U+1F604` = 😄
+
+---
+
+## 🧠 Common Mistakes to Avoid:
+
+* Don’t count total byte length as bit length — only use the payload bits.
+* Always strip off prefix bits: `110`, `1110`, `11110`, and `10`.
+* Don’t convert each byte to hex and concatenate — that **won’t work**.
+
+---
+
+## 🔁 Summary: Reverse UTF-8 Decoding Steps
+
+1. Read bytes → Convert to binary
+2. Identify byte count from first byte
+3. Remove UTF-8 prefix bits (`110`, `10`, etc.)
+4. Concatenate payload bits
+5. Convert full binary to hex → that's your code point
+
+---
