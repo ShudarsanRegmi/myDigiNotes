@@ -11,7 +11,7 @@
 
 **Usage Dashboard**
 - https://console.cloud.google.com/apis/api/generativelanguage.googleapis.com/metrics?project=pariapp-9bb3f
-
+- https://aistudio.google.com/usage?project=pariapp-9bb3f
 
 
 **API QuickStart**
