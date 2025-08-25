@@ -161,3 +161,50 @@ git reset --soft HEAD~1
 ```bash
 git merge merge_team2_2 --no-commit --no-ff
 ```
+
+
+---
+
+Here’s a precise way to handle Git tags and push them.
+
+### Rephrased version of your question for clarity:
+
+*"What are the Git commands to create a new tag and push it to a remote repository?"*
+
+---
+
+### Tags Mgmt Commands
+
+1. **Create a lightweight tag** (just a pointer to a commit):
+
+```bash
+git tag v1.0.0
+```
+
+2. **Create an annotated tag** (recommended, includes message, author, date):
+
+```bash
+git tag -a v1.0.0 -m "Release version 1.0.0"
+```
+
+3. **View all tags**
+
+```bash
+git tag
+```
+
+4. **Push a specific tag**
+
+```bash
+git push origin v1.0.0
+```
+
+5. **Push all tags at once**
+
+```bash
+git push origin --tags
+```
+
+---
+
+
