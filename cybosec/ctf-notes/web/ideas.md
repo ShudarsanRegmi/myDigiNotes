@@ -1,0 +1,7 @@
+- client side
+- puppeter xss
+- sqli
+- php file upload..
+- SSTI
+- JWT Vulns
+- 
