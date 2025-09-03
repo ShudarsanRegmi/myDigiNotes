@@ -3,5 +3,6 @@
 - sqli
 - php file upload..
 - SSTI
+- SSRF
 - JWT Vulns
 - 
