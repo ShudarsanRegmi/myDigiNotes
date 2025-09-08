@@ -47,3 +47,9 @@ podman run --rm -p 8080:8080 registry.lab.example.com/rhel9/httpd-24
 ```bash
 podman run --rm -d  -p 8080:8080 registry.lab.example.com/rhel9/httpd-24
 ```
+
+**Spawning a shell**
+```bash
+podman run -it <image> /bin/bash
+docker exec -it <container> /bin/bash
+```
