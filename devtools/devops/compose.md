@@ -1,12 +1,14 @@
 ## Docker Compose
 
 
-`docker compose up --build -d`
-`docker compose ps`
-`docker compose logs -f`
-`docker compose down`
-`docker compose logs main-app`
+- `docker compose up --build -d`
+- `docker compose ps`
+- `docker compose logs -f`
+- `docker compose down`
+- `docker compose logs main-app`
 
+**Develop with the container**
+- `docker compose watch`
 
 ### Compose file example
 
