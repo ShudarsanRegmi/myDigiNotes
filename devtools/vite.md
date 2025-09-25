@@ -7,7 +7,7 @@ npm run dev -- --host
 
 ### Using environment variables in vite
 
-- Vite automatically loads environment variables from .env files.
+- Vite automatically loads environment variables from .env files. (no need to load any extra package like dotenv)
 - These variables are exposed to your frontend code only if they are prefixed with VITE_.
 - Example: VITE_API_URL=https://example.com.
 
@@ -26,6 +26,6 @@ console.log(import.meta.env.VITE_API_URL);
 
 **Other built-in variables Vite provides:**
 
-`import.meta.env.MODE → current mode (development, production, etc.)`
-`import.meta.env.DEV → true in dev mode`
-`import.meta.env.PROD → true in prod mode`
+- `import.meta.env.MODE → current mode (development, production, etc.)`
+- `import.meta.env.DEV → true in dev mode`
+- `import.meta.env.PROD → true in prod mode`
