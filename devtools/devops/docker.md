@@ -24,3 +24,24 @@ sudo usermod -aG docker $USER # for running without sudo
 **Remove an image**
 `docker rmi <image_id>`
 
+
+## Running container
+
+**Run container with image name**
+`docker run --name conname -p sysport:conport image_name` 
+
+**Run container in backround**
+`docker run -d --name conname -p sysprot:conport image_name` 
+
+
+## Pushing an image to docker hub
+
+`docker login`
+> Generte Pat from settings and put acess token
+
+`docker tag localtag user/reponame:v1`
+`docker push user/reponame:v1`
+
+
+`docker pull user/reponame:v1`
+
