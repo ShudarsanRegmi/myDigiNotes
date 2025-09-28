@@ -133,5 +133,13 @@ loginctl enable-linger
 ```
 
 
+## Cleanup
+```bash
+podman system df            # check how much space podman is using
+podman image prune -a       # remove unused images
+podman container prune      # remove stopped containers
+podman volume prune         # remove unused volumes
+podman system reset --force # (⚠️ if safe, clears *all* podman data)
+```
 
 
