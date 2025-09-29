@@ -143,3 +143,16 @@ podman system reset --force # (⚠️ if safe, clears *all* podman data)
 ```
 
 
+## Investigate the container by overriding the entry point
+```bash
+podman run -it --entrypoint /bin/bash backend:v15
+```
+
+## Investigate the file system of the failed container
+
+```bash
+podman run -it --name debug-container --entrypoint /bin/bash backend:v15
+podman mount <container_id> # returns the path to host fs where container fs is mounted
+podman umount <container_id> # unmount the container fs
+```
+
