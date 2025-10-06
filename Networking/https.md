@@ -29,6 +29,9 @@ TARGET=example.com; SPORT=56001; OUT=curl.pcap; sudo tcpdump -i any -w "$OUT" "t
 TARGET=example.com; SPORT=56000; OUT=curl.pcap; sudo tcpdump -i any -w "$OUT" "tcp and port $SPORT" & TPID=$!; sleep 0.2; curl --local-port "$SPORT" -v "http://$TARGET"; sleep 0.5; sudo kill "$TPID" || true; echo "saved: $OUT"
 ```
 
+<img width="1961" height="248" alt="image" src="https://github.com/user-attachments/assets/c53fdec9-4f7b-40b5-94f6-bce1de797d86" />
+
+
 **TLS Client Hello**
 <img width="971" height="751" alt="image" src="https://github.com/user-attachments/assets/f33fb528-e250-4495-abfd-98021d3fe3e6" />
 
@@ -163,5 +166,27 @@ Transport Layer Security
 - But in TLS 1.3, this announcement is meaningless — encryption already started after the Server Hello and key exchange.
 - It's just here to avoid confusing any legacy systems.
 
+### Doing the capture ans saving the tls secrets
+```bash
+TARGET=example.com; SPORT=56000; OUT=curl.pcap; KEYFILE="$PWD/sslkeys.log"; sudo tcpdump -i any -w "$OUT" "tcp and (port $SPORT or port 443)" & TPID=$!; sleep 0.2; SSLKEYLOGFILE="$KEYFILE" curl --local-port "$SPORT" -v "https://$TARGET"; sleep 0.5; sudo kill "$TPID" >/dev/null 2>&1 || true; echo "saved: $OUT"; if [ -s "$KEYFILE" ]; then echo "keys: $KEYFILE"; else echo "warning: $KEYFILE is empty — curl may not support key logging or the client didn't write keys"; fi
+```
 
+### Decrypting tls packets by capturing tls session keys
+
+**Secret Key File**
+```
+aparichit@SUSHANKYA:~/rough/https$ cat sslkeys.log 
+SERVER_HANDSHAKE_TRAFFIC_SECRET 3d9972646e67c2b6b39c859b4ba96786aaf2c6f3c755d578d36583c0fb0d2624 b482bcd5eb966f54530c2d78d524e7db7492e7e02f038a6e221e00a71f53eb92e5682b0dd7450fafab548024b8ad454e
+EXPORTER_SECRET 3d9972646e67c2b6b39c859b4ba96786aaf2c6f3c755d578d36583c0fb0d2624 91a529e72d1f256aaf69e1343a6eb848cc17ebdf32d21eedcea1f8bfb7e02f470cd1b120b836892ba226a4672c8e4218
+SERVER_TRAFFIC_SECRET_0 3d9972646e67c2b6b39c859b4ba96786aaf2c6f3c755d578d36583c0fb0d2624 9a539f04476e14900e1607062281a6033cbd907a233bb0268fd6a10b0941e2578f18247a3ff2a277f3a5a1fdea6f0461
+CLIENT_HANDSHAKE_TRAFFIC_SECRET 3d9972646e67c2b6b39c859b4ba96786aaf2c6f3c755d578d36583c0fb0d2624 e743c6f9d6110e3896383e404b0bf01fe4e84115e1bc491fec17d0f88514dc2a157a11db6b772ed6b2417ba3956b4158
+CLIENT_TRAFFIC_SECRET_0 3d9972646e67c2b6b39c859b4ba96786aaf2c6f3c755d578d36583c0fb0d2624 ce3ef00e0b66ac39a73d7997d0f3e373b88578cee1f67d051311e1c8ec29fdf6b0a8dd4812c7781685d0b0b434b7b36f
+SERVER_HANDSHAKE_TRAFFIC_SECRET 8b7835e0c0fc3ee8865cc7bab0b5216205b36b53add840eb9d12ff19d8e847e6 fc8c59fa1a311fe16ee88e2413e0d66a66da3c398ed7e13d911a87a7b424443ddc5b55b40087d639b1d1b9d42c9d602e
+EXPORTER_SECRET 8b7835e0c0fc3ee8865cc7bab0b5216205b36b53add840eb9d12ff19d8e847e6 13a8c7a5631286773bf9256c111423cfd3f569e29e7cdaac55edccf10aaedfff4251d5dd4193e09638bbc493c27a4f88
+SERVER_TRAFFIC_SECRET_0 8b7835e0c0fc3ee8865cc7bab0b5216205b36b53add840eb9d12ff19d8e847e6 255817ac031ed97041d0636621a856a5bd9ba29e5aeb64a60cd5d6138d0b9c8f898a30a0b9f561607118cf309227acba
+CLIENT_HANDSHAKE_TRAFFIC_SECRET 8b7835e0c0fc3ee8865cc7bab0b5216205b36b53add840eb9d12ff19d8e847e6 b0bef9f1304adb1c7ee0572ab1d1c89578d9018d30b9eb5122659b3c7db16c8b289898b9ff9c3d81d17f5a7529f12713
+CLIENT_TRAFFIC_SECRET_0 8b7835e0c0fc3ee8865cc7bab0b5216205b36b53add840eb9d12ff19d8e847e6 c7883936db574abfa567c2452bdb2118d2fd35bd3131c1da1d4ed86a385032f624c2a9ccbd6180ca4519711f58554619
+
+```
+<img width="1353" height="278" alt="image" src="https://github.com/user-attachments/assets/4aa4ed06-cbc4-466a-8c19-1f88ce82a590" />
 
