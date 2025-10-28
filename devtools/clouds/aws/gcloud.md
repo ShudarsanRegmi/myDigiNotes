@@ -15,3 +15,10 @@ gcloud compute firewall-rules create default-allow-http \
 ```
 
 > Debug  using python http.server
+
+### Setting up ssh connection from local device
+- This command creates user, sets up ssh connection, generate keypairs and transports the private key to the server(authorized_keys)
+  
+```bash
+gcloud compute ssh instance-20251015-154727 --project=acnctf --zone=us-central1-f
+```
