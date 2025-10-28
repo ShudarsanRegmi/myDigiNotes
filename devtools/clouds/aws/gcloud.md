@@ -22,3 +22,9 @@ gcloud compute firewall-rules create default-allow-http \
 ```bash
 gcloud compute ssh instance-20251015-154727 --project=acnctf --zone=us-central1-f
 ```
+
+
+**Subsequent connections can be made using the following command**
+```bash
+ssh -i .ssh/google_compute_engine aparichit@35.225.48.199
+```
