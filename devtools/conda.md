@@ -69,3 +69,9 @@ conda init cmd.exe
 
 > These commands should be used to init conda environment. With the command, Conda modifies your PowerShell startup profile so that every time you open PowerShell, the conda environment is automatically set up and ready to use.
 
+
+
+## Bind Jupyter Notebook / Lab to any host
+```bash
+jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+```
