@@ -17,3 +17,9 @@ ssh -L localport:localhost:serverport user@server
 ```bash
 mongodb://mongoadmin:secret@localhost:27018
 ```
+
+## Creating a socks proxy
+```bash
+ssh -D 1080 -C -N user@host
+```
+ > This command cna be used to create a socks proxy. Configuring system to proxy the trafic thorugh this socks proxy will effectively encrypt the traffic and routes it to the server. Effectively acting as a VPN Tunnel.
