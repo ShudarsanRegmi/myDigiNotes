@@ -1,3 +1,14 @@
+# Google AI Products / Services
+
+
+- [Google AI](https://ai.google) -> A platform for showcasing google ai products 
+- [Google Deepmind](https://deepmind.google/) -> Website of Google AI Research Team/Project
+- [Google Labs](https://labs.google) -> Experimetal end user produces powered by AIs(not yet rolled out to public)
+- [Google Research](https://research.google) -> Google Research
+- [Google AI Studio](https://aistudio.google.com) -> Platform for AI Engineers who wants to play with different models, inspect behavior of prompts, across several models
+- [Google AI Dev](https://ai.google.dev) -> The formal documentation of all model, api level things, meant for developers
+
+
 
 - Rate Limit Info - https://ai.google.dev/gemini-api/docs/rate-limits
 
