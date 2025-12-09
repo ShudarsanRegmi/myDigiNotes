@@ -1,5 +1,9 @@
 # Google AI Studio
 
+[Guide: Gemini Chat Link](https://gemini.google.com/share/ef31ceec3a5f)
+[Ai Studio Conversatoin]([url](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jlZLcjr2wWKttx4sXo00GoqD3auy3E-m%22%5D,%22action%22:%22open%22,%22userId%22:%22115886215425326951646%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing))
+
+
 ## Tooling
 
 We've to define our funciton(tools) like this:
