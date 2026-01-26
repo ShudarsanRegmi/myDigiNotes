@@ -51,5 +51,11 @@ print(shared_key_alice == shared_key_bob)  # Should be True
 
   ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/638b5087-e10f-4919-9c7c-0b23dc753198)
 
+### Another Example
+
+<img width="820" height="421" alt="image" src="https://github.com/user-attachments/assets/3dbe5454-ee2c-4f35-813d-d067093e1aee" />
+
+
 ### How it worked?
- will upload
+<img width="712" height="516" alt="image" src="https://github.com/user-attachments/assets/5c48749d-2343-4c19-b2ae-2d2f9ce7c090" />
+
