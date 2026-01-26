@@ -51,11 +51,24 @@ print(shared_key_alice == shared_key_bob)  # Should be True
 
   ![image](https://github.com/ShudarsanRegmi/myDigiNotes/assets/65646203/638b5087-e10f-4919-9c7c-0b23dc753198)
 
-### Another Example
+### Example 1
 
 <img width="820" height="421" alt="image" src="https://github.com/user-attachments/assets/3dbe5454-ee2c-4f35-813d-d067093e1aee" />
+
+### Example 2
+<img width="856" height="580" alt="image" src="https://github.com/user-attachments/assets/2dc8877c-c4d2-43d4-b013-a33ee62cb00c" />
+
 
 
 ### How it worked?
 <img width="712" height="516" alt="image" src="https://github.com/user-attachments/assets/5c48749d-2343-4c19-b2ae-2d2f9ce7c090" />
+
+
+<img width="853" height="492" alt="image" src="https://github.com/user-attachments/assets/4003a410-ec39-4cb3-8d65-b485d5a665de" />
+
+
+### Discrete Logarithms
+<img width="826" height="491" alt="image" src="https://github.com/user-attachments/assets/3e3165dc-1ecd-422b-bb38-ea64c3411154" />
+
+
 
