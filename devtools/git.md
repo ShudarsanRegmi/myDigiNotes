@@ -94,6 +94,16 @@ git checkout $BRANCHNAME
 # Example
 git fetch origin pull/2/head:pr-x 
 ```
+### Fetching new commits from the PR
+
+```bash
+git fetch origin pull/17/head
+git merge FETCH_HEAD
+```
+**OR**
+```bash
+git fetch origin pull/17/head:pr-x
+```
 
 ### Going back to main after working in feature branch without commiting in feature branch
 
