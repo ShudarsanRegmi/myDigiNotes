@@ -3,6 +3,8 @@
 
 Good. Now let’s build you a **deep, no-BS roadmap**.
 
+https://chatgpt.com/c/69d87d7b-1c4c-83e8-9768-4bc4084a28db
+
 ---
 
 # :da → MASTER ROADMAP TO LEARN EMAIL SYSTEMS (FROM ZERO → EXPERT)
