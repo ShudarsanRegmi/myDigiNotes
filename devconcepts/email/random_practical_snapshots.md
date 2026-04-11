@@ -5,7 +5,13 @@
 
 - found that gmail.com delegetaes spf records to different doamin `_spf.googel.com`
 
-**Checking the text record `_spf.google.com`**
+**Checking the txt record `_spf.google.com`**
 <img width="1278" height="435" alt="image" src="https://github.com/user-attachments/assets/ec2316b4-7645-4d63-a73c-90b2af06eb9d" />
 - found actual ip ranges which is allowed to send email from the behalf of gmail.com
 
+
+**Checking the DMARC policy of gmail**
+```bash
+dig TXT _dmarc.gmail.com
+```
+![alt text](image.png)
