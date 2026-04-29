@@ -1,7 +1,82 @@
 # Producer Consumer Problem
 
+## Problem Without Synchronization
+```cpp
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
 
-**Using C - mutexes and counting semaphores**
+#define BUFFER_SIZE 5
+
+int buffer[BUFFER_SIZE];
+int in = 0;
+int out = 0;
+int count = 0; // number of items in buffer (no protection!)
+
+void* producer(void* arg) {
+    int item;
+    while (1) {
+        item = rand() % 100;
+
+        if (count == BUFFER_SIZE) {
+            printf("[Producer] Thinks buffer is full, skipping...\n");
+            usleep(100000);
+            continue;
+        }
+
+        // CRITICAL SECTION (no protection!)
+        buffer[in] = item;
+        printf("[Producer] Produced %d at %d\n", item, in);
+
+        in = (in + 1) % BUFFER_SIZE;
+        count++;  // race condition here
+
+        usleep(rand() % 200000);
+    }
+}
+
+void* consumer(void* arg) {
+    int item;
+    while (1) {
+        if (count == 0) {
+            printf("[Consumer] Thinks buffer is empty, skipping...\n");
+            usleep(150000);
+            continue;
+        }
+
+        // CRITICAL SECTION (no protection!)
+        item = buffer[out];
+        printf("[Consumer] Consumed %d from %d\n", item, out);
+
+        out = (out + 1) % BUFFER_SIZE;
+        count--;  // race condition here
+
+        usleep(rand() % 250000);
+    }
+}
+
+int main() {
+    pthread_t p1, p2, c1, c2;
+
+    pthread_create(&p1, NULL, producer, NULL);
+    pthread_create(&p2, NULL, producer, NULL);
+    pthread_create(&c1, NULL, consumer, NULL);
+    pthread_create(&c2, NULL, consumer, NULL);
+
+    pthread_join(p1, NULL);
+    pthread_join(p2, NULL);
+    pthread_join(c1, NULL);
+    pthread_join(c2, NULL);
+
+    return 0;
+}
+```
+
+<img width="581" height="527" alt="image" src="https://github.com/user-attachments/assets/8efcdd65-1658-4e1f-8e2b-9911a723ce41" />
+
+
+## Using C - mutexes and counting semaphores
 
 ```c
 #include <stdio.h>
@@ -77,13 +152,12 @@ int main() {
 }
 ```
 
-**Output**
+## Output
 
 <img width="791" height="500" alt="image" src="https://github.com/user-attachments/assets/0a777305-9668-49fc-99ca-76042b8bc826" />
 
 
-
-**More Verbose version of above**
+## More Verbose Version of Above
 
 ```c
 #include <stdio.h>
@@ -257,248 +331,101 @@ int main() {
 [Producer] Leaving critical section
 [Producer] Signaled full (item available)
 
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 93 from index 4
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Found empty slot → proceeding
-[Producer] Entered critical section
-[Producer] Produced 49 at index 3
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Found empty slot → proceeding
-[Producer] Entered critical section
-[Producer] Produced 21 at index 4
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 35 from index 0
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Found empty slot → proceeding
-[Producer] Entered critical section
-[Producer] Produced 62 at index 0
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 86 from index 1
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 27 at index 1
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 92 from index 2
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 90 at index 2
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 49 from index 3
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 59 at index 3
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 21 from index 4
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 63 at index 4
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 62 from index 0
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 26 at index 0
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 27 from index 1
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 40 at index 1
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 90 from index 2
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 26 at index 2
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 59 from index 3
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 72 at index 3
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 63 from index 4
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 36 at index 4
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 26 from index 0
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 11 at index 0
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 40 from index 1
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 68 at index 1
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 26 from index 2
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 67 at index 2
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 72 from index 3
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 29 at index 3
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 36 from index 4
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 82 at index 4
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 11 from index 0
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 30 at index 0
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 68 from index 1
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 62 at index 1
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 67 from index 2
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
-
-[Producer] Entered critical section
-[Producer] Produced 23 at index 2
-[Producer] Leaving critical section
-[Producer] Signaled full (item available)
-
-[Producer] Buffer full → waiting...
-[Consumer] Found item → proceeding
-[Consumer] Entered critical section
-[Consumer] Consumed 29 from index 3
-[Consumer] Leaving critical section
-[Consumer] Signaled empty (slot free)
 
 ```
+## Multiple Producers and Multiple Consumers
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <semaphore.h>
+#include <unistd.h>
+
+#define BUFFER_SIZE 5
+#define PRODUCERS 3
+#define CONSUMERS 3
+
+int buffer[BUFFER_SIZE];
+int in = 0, out = 0;
+
+sem_t empty, full;
+pthread_mutex_t mutex;
+
+void* producer(void* arg) {
+    int id = *(int*)arg;
+    int item;
+
+    while (1) {
+        item = rand() % 100;
+
+        sem_wait(&empty);
+        pthread_mutex_lock(&mutex);
+
+        buffer[in] = item;
+        printf("[Producer %d] Produced %d at index %d\n", id, item, in);
+        in = (in + 1) % BUFFER_SIZE;
+
+        pthread_mutex_unlock(&mutex);
+        sem_post(&full);
+
+        usleep(rand() % 300000);
+    }
+}
+
+void* consumer(void* arg) {
+    int id = *(int*)arg;
+    int item;
+
+    while (1) {
+        sem_wait(&full);
+        pthread_mutex_lock(&mutex);
+
+        item = buffer[out];
+        printf("[Consumer %d] Consumed %d from index %d\n", id, item, out);
+        out = (out + 1) % BUFFER_SIZE;
+
+        pthread_mutex_unlock(&mutex);
+        sem_post(&empty);
+
+        usleep(rand() % 400000);
+    }
+}
+
+int main() {
+    pthread_t prod[PRODUCERS], cons[CONSUMERS];
+    int p_ids[PRODUCERS], c_ids[CONSUMERS];
+
+    sem_init(&empty, 0, BUFFER_SIZE);
+    sem_init(&full, 0, 0);
+    pthread_mutex_init(&mutex, NULL);
+
+    for (int i = 0; i < PRODUCERS; i++) {
+        p_ids[i] = i + 1;
+        pthread_create(&prod[i], NULL, producer, &p_ids[i]);
+    }
+
+    for (int i = 0; i < CONSUMERS; i++) {
+        c_ids[i] = i + 1;
+        pthread_create(&cons[i], NULL, consumer, &c_ids[i]);
+    }
+
+    for (int i = 0; i < PRODUCERS; i++)
+        pthread_join(prod[i], NULL);
+
+    for (int i = 0; i < CONSUMERS; i++)
+        pthread_join(cons[i], NULL);
+
+    pthread_mutex_destroy(&mutex);
+    sem_destroy(&empty);
+    sem_destroy(&full);
+
+    return 0;
+}
+```
+**Output**
+
+<img width="551" height="514" alt="image" src="https://github.com/user-attachments/assets/66bf7258-efe4-4c1a-b0d5-6a5d264edf49" />
 
 **Using C++ : Condition Variables**
 
