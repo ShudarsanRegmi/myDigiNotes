@@ -132,6 +132,26 @@ You should notice the answer follows your Linux mentor persona.
 
 <img width="659" height="250" alt="image" src="https://github.com/user-attachments/assets/d0d5962c-f146-4889-b7d5-6ce728cadb38" />
 
+<img width="676" height="440" alt="image" src="https://github.com/user-attachments/assets/5119a396-24c0-43b8-bbea-6f061c823863" />
+
+<img width="677" height="177" alt="image" src="https://github.com/user-attachments/assets/61b8518c-2477-4682-b948-5982276bb31e" />
+
+
+# Connecting Antigravity CLI (agy) to my custom MCP server
+
+**MCP server code**
+
+```
+
+```
+
+<img width="1066" height="201" alt="image" src="https://github.com/user-attachments/assets/f55e0903-8b36-40a8-a430-04ee5ff37401" />
+<img width="1088" height="603" alt="image" src="https://github.com/user-attachments/assets/293ff46f-5409-48f0-a927-54a89f31cd5c" />
+<img width="1004" height="632" alt="image" src="https://github.com/user-attachments/assets/eb05c817-1287-4a8b-9fa2-107b8bd78ad3" />
+<img width="1263" height="593" alt="image" src="https://github.com/user-attachments/assets/03f7de83-0fc9-43c0-9482-b9f63376f1f6" />
+
+
+
 
 
 
