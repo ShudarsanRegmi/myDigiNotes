@@ -110,6 +110,31 @@ You should notice the answer follows your Linux mentor persona.
 **Other Screenshots**
 <img width="465" height="514" alt="image" src="https://github.com/user-attachments/assets/be2c2ba3-1d36-4742-875b-e761b6d4b00d" />
 
+<img width="945" height="403" alt="image" src="https://github.com/user-attachments/assets/ad75fa79-805e-4e8a-a298-d4a96f3d2f59" />
+
+<img width="1002" height="692" alt="image" src="https://github.com/user-attachments/assets/4e2aab82-13a0-432c-a09e-54ae936837a2" />
+
+<img width="937" height="285" alt="image" src="https://github.com/user-attachments/assets/37ee460a-6d58-4627-b994-e2794f5f99bc" />
+
+<img width="883" height="662" alt="image" src="https://github.com/user-attachments/assets/ab47ae27-1336-4ef1-8af1-874be23d75e1" />
+
+<img width="1032" height="659" alt="image" src="https://github.com/user-attachments/assets/b26034a8-0b57-4c30-87ae-5b5a0e67912d" />
+
+
+<img width="1009" height="466" alt="image" src="https://github.com/user-attachments/assets/bf22bcd7-20a2-4699-b634-fa118268c1e1" />
+
+
+  
+
+**Todo**
+
+<img width="708" height="480" alt="image" src="https://github.com/user-attachments/assets/59188b28-aa43-435e-b3d7-e1056485399b" />
+
+<img width="659" height="250" alt="image" src="https://github.com/user-attachments/assets/d0d5962c-f146-4889-b7d5-6ce728cadb38" />
+
+
+
+
 
 
 
