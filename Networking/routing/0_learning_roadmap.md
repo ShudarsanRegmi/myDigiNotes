@@ -293,3 +293,7 @@ For your current interview goal, we can keep these at awareness level unless an 
 That keeps the preparation **interview-focused rather than textbook-comprehensive**.
 
 So I suggest we start with **Part 1: the conceptual flow**, and make it sufficiently deep that the later DVR, LSR, Path Vector, LPM, etc. sessions feel like drilling into things you already understand rather than learning disconnected chapters.
+
+
+<img width="763" height="365" alt="image" src="https://github.com/user-attachments/assets/6c500367-ec1a-4d3e-86d0-8da69871e226" />
+
