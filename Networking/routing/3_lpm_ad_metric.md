@@ -1,3 +1,7 @@
+
+<img width="1181" height="1332" alt="image" src="https://github.com/user-attachments/assets/c85219ce-1a9a-4695-93ae-38c3fbd097b5" />
+
+
 Your refined question: **"Let's move to Topic 2: route selection, especially how LPM, Administrative Distance, and metrics interact when multiple routes exist."**
 
 # 2. Route Selection: LPM → Preference → Metric
