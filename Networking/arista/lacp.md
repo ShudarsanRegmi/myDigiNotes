@@ -1,3 +1,7 @@
+<img width="1402" height="1122" alt="image" src="https://github.com/user-attachments/assets/19eddcaa-3446-4867-8ed6-241c5633d8e5" />
+
+
+
 Absolutely. LACP is a good one-shot topic for your Arista prep because the **core concept is simple**, but there are a few interview-worthy details worth knowing.
 
 # LACP: From Zero to Interview-Ready
