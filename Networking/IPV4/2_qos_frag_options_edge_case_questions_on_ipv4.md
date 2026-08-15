@@ -1,3 +1,7 @@
+<img width="1312" height="1199" alt="image" src="https://github.com/user-attachments/assets/31b15f95-045c-4d89-9879-da334dcfcba7" />
+
+
+
 Yes. One correction to keep crystal clear before the note:
 
 **A router does NOT normally send an ICMP message whenever it drops a packet because of congestion.** Congestion-related drops are generally silent. The important ICMP case we discussed is **DF=1 + packet larger than outgoing MTU**, where the router drops the packet and sends **ICMP Destination Unreachable, Code 4: Fragmentation Needed**.
