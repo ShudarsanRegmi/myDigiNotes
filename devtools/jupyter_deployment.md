@@ -316,3 +316,20 @@ sudo docker logs -f jupyter_sandbox
 # 4. Stop & Teardown
 sudo docker rm -f jupyter_sandbox jupyter_tunnel
 ```
+
+
+## Mount Additional Directories
+
+sudo docker rm -f jupyter_sandbox
+
+sudo docker run -d \
+  --name jupyter_sandbox \
+  --restart unless-stopped \
+  --gpus all \
+  -p 8888:8888 \
+  -v /mnt/jupyter-data/user_workspace:/home/jovyan/work \
+  -v /mnt/jupyter-data/user_pip_packages:/home/jovyan/.local \
+  -v /mnt/windows_c/Users/<USERNAME>/Desktop/project:/home/jovyan/work/project:ro \
+  quay.io/jupyter/pytorch-notebook:cuda12-latest \
+  start-notebook.sh --NotebookApp.token='mysecrettoken123'
+
